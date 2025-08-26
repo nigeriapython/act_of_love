@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acts of Love International - Transforming Lives, Building Hope</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #203B76;
+            --secondary: #D406B7;
+            --accent: #38b2ac;
+            --light: #F7FAFC;
+            --dark: #2D3748;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .hero-slide-1 {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/slide/act_slide2.png');
+        }
+
+        .hero-slide-2 {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/slide/act_slide3.png');
+        }
+
+        .hero-slide-3 {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/slide/act_slide1.png');
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary) 0%, #2c5282 100%);
+            box-shadow: 0 4px 15px 0 rgba(32, 59, 118, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 6px 20px 0 rgba(32, 59, 118, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(90deg, var(--secondary) 0%, #e53e3e 100%);
+            box-shadow: 0 4px 15px 0 rgba(212, 6, 183, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            box-shadow: 0 6px 20px 0 rgba(212, 6, 183, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-accent {
+            background: linear-gradient(90deg, var(--accent) 0%, #38a169 100%);
+            box-shadow: 0 4px 15px 0 rgba(56, 178, 172, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-accent:hover {
+            box-shadow: 0 6px 20px 0 rgba(56, 178, 172, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .slide-indicators {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            z-index: 20;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .slide-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slide-indicator.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        .slide-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.2);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .slide-nav:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .slide-nav.prev {
+            left: 20px;
+        }
+
+        .slide-nav.next {
+            right: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .slide-nav {
+                width: 40px;
+                height: 40px;
+            }
+
+            .slide-nav.prev {
+                left: 10px;
+            }
+
+            .slide-nav.next {
+                right: 10px;
+            }
+        }
+
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            width: 100%;
+            z-index: 20;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: white;
+            width: 0%;
+            transition: width 5s linear;
+        }
+
+        .progress-fill.animate {
+            width: 100%;
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .success-slide {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        .success-slide.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .gradient-border {
+            position: relative;
+            background: white;
+            border-radius: 16px;
+        }
+
+        .gradient-border::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 18px;
+            z-index: -1;
+        }
+
+        .counter {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .menu-open {
+            transform: translateX(0);
+        }
+
+        .menu-closed {
+            transform: translateX(100%);
+        }
+
+        .program-icon {
+            transition: all 0.3s ease;
+        }
+
+        .program-card:hover .program-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .stats-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .illustration {
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header / Navigation -->
+    <header class="fixed w-full bg-white backdrop-blur-md shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="#">
+                        <img src="images/act_of_love_logo.png" alt="Acts of Love Logo" class="h-12">
+                    </a>
+                </div>
+
+
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium relative group">
+                        Home
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#203B76] transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium relative group">
+                        About Us
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#203B76] transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium relative group">
+                        Our Work
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#203B76] transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium relative group">
+                        Rhema House
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#203B76] transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium relative group">
+                        Get Involved
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#203B76] transition-all group-hover:w-full"></span>
+                    </a>
+                    
+                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium relative group">
+                        Contact
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#203B76] transition-all group-hover:w-full"></span>
+                    </a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="btn-primary px-6 py-2 rounded-full text-white font-semibold hidden md:block">
+                        Donate Now
+                    </a>
+
+                    <button class="lg:hidden text-gray-700" id="menuToggle">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 transition-transform duration-300 menu-closed"
+            id="mobileMenu">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-10">
+                    <a href="#" class="text-xl font-bold text-[#203B76]">AOLI</a>
+                    <button id="closeMenu">
+                        <i class="fas fa-times text-gray-700"></i>
+                    </button>
+                </div>
+
+                <nav class="flex flex-col space-y-6">
+                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">About Us</a>
+                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">Our Work</a>
+                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">Rhema House</a>
+                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">Get
+                        Involved</a>
+                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">Contact</a>
+                    <a href="#" class="btn-primary px-6 py-3 rounded-full text-white font-semibold text-center mt-4">
+                        Donate Now
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Slideshow -->
+    <section class="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
+        <!-- Slide 1 -->
+        <div class="hero-slide hero-slide-1 active">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="md:w-1/2 text-white text-center md:text-left mb-10 md:mb-0 fade-in">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                            Transforming Lives Through <span class="gradient-text">Community Support</span>
+                        </h1>
+                        <p class="text-xl md:text-2xl mb-8">
+                            Join us in providing essential resources and support to those in need within our community.
+                        </p>
+                        <a href="#"
+                            class="btn-primary inline-flex items-center px-8 py-4 rounded-full text-white font-semibold text-lg">
+                            <i class="fas fa-hands-helping mr-3"></i> Volunteer Today
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide hero-slide-2">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="md:w-1/2 text-white text-center md:text-left mb-10 md:mb-0 fade-in">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                            Help Us <span class="gradient-text">Fight Hunger</span> in Our Community
+                        </h1>
+                        <p class="text-xl md:text-2xl mb-8">
+                            Your donation can provide meals for families struggling with food insecurity.
+                        </p>
+                        <a href="#"
+                            class="btn-secondary inline-flex items-center px-8 py-4 rounded-full text-white font-semibold text-lg">
+                            <i class="fas fa-donate mr-3"></i> Donate Now
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hero-slide hero-slide-3">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="md:w-1/2 text-white text-center md:text-left mb-10 md:mb-0 fade-in">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                            Building <span class="gradient-text">Inclusive Communities</span> Together
+                        </h1>
+                        <p class="text-xl md:text-2xl mb-8">
+                            Discover our programs that celebrate diversity and foster understanding.
+                        </p>
+                        <a href="#"
+                            class="btn-accent inline-flex items-center px-8 py-4 rounded-full text-white font-semibold text-lg">
+                            <i class="fas fa-list-alt mr-3"></i> Explore Programs
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <div class="slide-nav prev">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="slide-nav next">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+
+        <!-- Indicators -->
+        <div class="slide-indicators">
+            <div class="slide-indicator active" data-slide="0"></div>
+            <div class="slide-indicator" data-slide="1"></div>
+            <div class="slide-indicator" data-slide="2"></div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill animate"></div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-gradient-to-r from-[#203B76] to-[#D406B7] text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="fade-in">
+                    <div class="text-5xl font-bold mb-2 stats-number" data-target="15000">0</div>
+                    <div class="text-sm uppercase tracking-wider">Meals Provided</div>
+                </div>
+                <div class="fade-in">
+                    <div class="text-5xl font-bold mb-2 stats-number" data-target="2500">0</div>
+                    <div class="text-sm uppercase tracking-wider">People Helped</div>
+                </div>
+                <div class="fade-in">
+                    <div class="text-5xl font-bold mb-2 stats-number" data-target="350">0</div>
+                    <div class="text-sm uppercase tracking-wider">Volunteers</div>
+                </div>
+                <div class="fade-in">
+                    <div class="text-5xl font-bold mb-2 stats-number" data-target="12">0</div>
+                    <div class="text-sm uppercase tracking-wider">Communities Served</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Our Key Programs</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">We're committed to making a difference
+                through these essential community programs</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Program 1 -->
+                <div class="bg-white p-6 rounded-xl card-hover gradient-border program-card">
+                    <div class="text-5xl mb-4 program-icon">🏠</div>
+                    <h3 class="text-xl font-semibold mb-3 text-[#203B76]">Rhema House</h3>
+                    <p class="text-gray-600 mb-4">A safe haven providing support and resources for vulnerable community
+                        members.</p>
+                    <a href="#" class="text-[#203B76] font-semibold flex items-center group">
+                        Learn more
+                        <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="bg-white p-6 rounded-xl card-hover gradient-border program-card">
+                    <div class="text-5xl mb-4 program-icon">🍞</div>
+                    <h3 class="text-xl font-semibold mb-3 text-[#203B76]">Foodbank</h3>
+                    <p class="text-gray-600 mb-4">Providing essential nutrition to families and individuals facing food
+                        insecurity.</p>
+                    <a href="#" class="text-[#203B76] font-semibold flex items-center group">
+                        Learn more
+                        <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="bg-white p-6 rounded-xl card-hover gradient-border program-card">
+                    <div class="text-5xl mb-4 program-icon">⚽</div>
+                    <h3 class="text-xl font-semibold mb-3 text-[#203B76]">Sports & Wellbeing</h3>
+                    <p class="text-gray-600 mb-4">Promoting physical and mental health through inclusive sports
+                        activities.</p>
+                    <a href="#" class="text-[#203B76] font-semibold flex items-center group">
+                        Learn more
+                        <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Program 4 -->
+                <div class="bg-white p-6 rounded-xl card-hover gradient-border program-card">
+                    <div class="text-5xl mb-4 program-icon">🌍</div>
+                    <h3 class="text-xl font-semibold mb-3 text-[#203B76]">Cultural Awareness</h3>
+                    <p class="text-gray-600 mb-4">Fostering understanding and celebrating diversity within our
+                        communities.</p>
+                    <a href="#" class="text-[#203B76] font-semibold flex items-center group">
+                        Learn more
+                        <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Stay Updated</h2>
+                <p class="text-xl text-gray-600 mb-8">Subscribe to our newsletter to receive updates on our programs and impact</p>
+                
+                <form class="flex flex-col sm:flex-row gap-4">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                    <button type="submit" class="btn-primary text-white px-8 py-4 rounded-full font-semibold transition-colors shadow-lg">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Acts of Love International</h3>
+                    <p class="mb-6">Dedicated to strengthening communities, tackling poverty, and creating opportunities for all.</p>
+                    <p class="text-sm">Charity Registration No: 1119687</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+                    <p class="mb-2 flex items-center">
+                        <i class="fas fa-map-marker-alt mr-2 text-green-400"></i> 
+                        123 Community Street, Stockton-on-Tees, UK
+                    </p>
+                    <p class="mb-2 flex items-center">
+                        <i class="fas fa-envelope mr-2 text-green-400"></i> 
+                        info@actsoflove.org
+                    </p>
+                    <p class="mb-2 flex items-center">
+                        <i class="fas fa-phone mr-2 text-green-400"></i> 
+                        +44 123 456 789
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Home</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Our Programs</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Get Involved</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">News & Events</a></li>
+                    </ul>
+                </div>
+                
+                
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>© 2025 Acts of Love International. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery Scripts -->
+    <script>
+        $(document).ready(function () {
+            // Mobile menu toggle
+            $('#menuToggle').click(function () {
+                $('#mobileMenu').removeClass('menu-closed').addClass('menu-open');
+            });
+
+            $('#closeMenu').click(function () {
+                $('#mobileMenu').removeClass('menu-open').addClass('menu-closed');
+            });
+
+            // Initialize slideshow
+            let currentSlide = 0;
+            const slides = $('.hero-slide');
+            const indicators = $('.slide-indicator');
+            const totalSlides = slides.length;
+            let slideInterval;
+
+            // Fade-in animation on scroll
+            function checkFade() {
+                $('.fade-in').each(function () {
+                    var position = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+
+                    if (scroll + windowHeight - 100 > position) {
+                        $(this).addClass('visible');
+                    }
+                });
+            }
+
+            checkFade();
+            $(window).scroll(checkFade);
+
+            // Function to show a specific slide
+            function showSlide(index) {
+                // Remove active class from all slides and indicators
+                slides.removeClass('active');
+                indicators.removeClass('active');
+
+                // Add active class to current slide and indicator
+                $(slides[index]).addClass('active');
+                $(indicators[index]).addClass('active');
+
+                // Reset and restart progress bar animation
+                $('.progress-fill').removeClass('animate');
+                setTimeout(function () {
+                    $('.progress-fill').addClass('animate');
+                }, 10);
+
+                currentSlide = index;
+            }
+
+            // Function to go to next slide
+            function nextSlide() {
+                let next = (currentSlide + 1) % totalSlides;
+                showSlide(next);
+            }
+
+            // Click handlers for navigation arrows
+            $('.slide-nav.next').click(function () {
+                clearInterval(slideInterval);
+                nextSlide();
+                startSlideShow();
+            });
+
+            $('.slide-nav.prev').click(function () {
+                clearInterval(slideInterval);
+                let prev = (currentSlide - 1 + totalSlides) % totalSlides;
+                showSlide(prev);
+                startSlideShow();
+            });
+
+            // Click handlers for indicators
+            $('.slide-indicator').click(function () {
+                clearInterval(slideInterval);
+                let slideIndex = $(this).data('slide');
+                showSlide(slideIndex);
+                startSlideShow();
+            });
+
+            // Start the slideshow
+            function startSlideShow() {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+
+            // Initialize the slideshow
+            startSlideShow();
+
+            // Pause slideshow on hover
+            $('.hero-slide, .slide-nav, .slide-indicators').hover(
+                function () {
+                    clearInterval(slideInterval);
+                    $('.progress-fill').css('animation-play-state', 'paused');
+                },
+                function () {
+                    startSlideShow();
+                    $('.progress-fill').css('animation-play-state', 'running');
+                }
+            );
+
+            // Animate stats counters
+            function animateCounters() {
+                $('.stats-number').each(function () {
+                    var $this = $(this);
+                    var target = $this.data('target');
+                    var current = 0;
+                    var increment = target / 50;
+
+                    var timer = setInterval(function () {
+                        if (current < target) {
+                            current += increment;
+                            if (current > target) current = target;
+                            $this.text(Math.floor(current));
+                        } else {
+                            clearInterval(timer);
+                        }
+                    }, 50);
+                });
+            }
+
+            // Check if stats are in view
+            function checkStats() {
+                var position = $('.stats-number').first().offset().top;
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+
+                if (scroll + windowHeight - 200 > position) {
+                    animateCounters();
+                    $(window).off('scroll', checkStats);
+                }
+            }
+
+            $(window).scroll(checkStats);
+            checkStats();
+
+            // Header scroll effect
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('header').addClass('shadow-lg');
+                } else {
+                    $('header').removeClass('shadow-lg');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

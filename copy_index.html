@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acts of Love International - Transforming Lives, Building Hope</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2B6CB0;
+            --secondary: #38A169;
+            --accent: #D69E2E;
+            --light: #F7FAFC;
+            --dark: #2D3748;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #38A169 0%, #2B6CB0 50%, #D69E2E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .success-slide {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+        
+        .success-slide.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .gradient-border {
+            position: relative;
+            background: white;
+            border-radius: 16px;
+        }
+        
+        .gradient-border::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #38A169, #2B6CB0, #D69E2E);
+            border-radius: 18px;
+            z-index: -1;
+        }
+        
+        .counter {
+            font-variant-numeric: tabular-nums;
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .donate-btn {
+            background: linear-gradient(90deg, #38A169 0%, #2B6CB0 100%);
+            box-shadow: 0 4px 15px 0 rgba(56, 161, 105, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .donate-btn:hover {
+            box-shadow: 0 6px 20px 0 rgba(56, 161, 105, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .menu-open {
+            transform: translateX(0);
+        }
+        
+        .menu-closed {
+            transform: translateX(100%);
+        }
+        
+        .program-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .program-card:hover .program-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+        
+        .progress-bar {
+            height: 6px;
+            background: #E2E8F0;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #38A169, #2B6CB0);
+            width: 0%;
+            transition: width 0.8s ease;
+        }
+        
+        .stats-number {
+            font-variant-numeric: tabular-nums;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header / Navigation -->
+    <header class="fixed w-full bg-white/90 backdrop-blur-md shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-green-600 flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-2">
+                            <i class="fas fa-hands-helping text-green-600"></i>
+                        </div>
+                        <span class="hidden md:inline">Acts of Love International</span>
+                    </a>
+                </div>
+                
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-green-600 transition-colors font-medium relative group">
+                        Home
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-green-600 transition-colors font-medium relative group">
+                        About Us
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-green-600 transition-colors font-medium relative group">
+                        Our Work
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-green-600 transition-colors font-medium relative group">
+                        Rhema House
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-green-600 transition-colors font-medium relative group">
+                        Get Involved
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-green-600 transition-colors font-medium relative group">
+                        News
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-green-600 transition-colors font-medium relative group">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-600 transition-all group-hover:w-full"></span>
+                    </a>
+                </nav>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="donate-btn px-6 py-2 rounded-full text-white font-semibold hidden md:block">
+                        Donate Now
+                    </a>
+                    
+                    <button class="lg:hidden text-gray-700" id="menuToggle">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 transition-transform duration-300 menu-closed" id="mobileMenu">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-10">
+                    <a href="#" class="text-xl font-bold text-green-600">AOLI</a>
+                    <button id="closeMenu">
+                        <i class="fas fa-times text-gray-700"></i>
+                    </button>
+                </div>
+                
+                <nav class="flex flex-col space-y-6">
+                    <a href="#" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-green-600 transition-colors font-medium">About Us</a>
+                    <a href="#" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Our Work</a>
+                    <a href="#" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Rhema House</a>
+                    <a href="#" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Get Involved</a>
+                    <a href="#" class="text-gray-700 hover:text-green-600 transition-colors font-medium">News</a>
+                    <a href="#" class="text-gray-700 hover:text-green-600 transition-colors font-medium">Contact</a>
+                    <a href="#" class="donate-btn px-6 py-3 rounded-full text-white font-semibold text-center mt-4">
+                        Donate Now
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center pt-20 pb-16">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 fade-in">
+                Transforming Lives.<br>
+                <span class="gradient-text">Building Hope.</span><br>
+                Celebrating Diversity.
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto fade-in">
+                Acts of Love International (Charity No. 1119687) is dedicated to strengthening communities, tackling poverty, and creating opportunities in Stockton-on-Tees and beyond.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in">
+                <a href="#" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg flex items-center justify-center">
+                    <i class="fas fa-heart mr-2"></i> Donate Now
+                </a>
+                <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg flex items-center justify-center">
+                    <i class="fas fa-hands-helping mr-2"></i> Volunteer With Us
+                </a>
+                <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg flex items-center justify-center">
+                    <i class="fas fa-list-alt mr-2"></i> See Our Programs
+                </a>
+            </div>
+            
+            <div class="mt-16 fade-in">
+                <div class="flex justify-center">
+                    <div class="animate-bounce w-6 h-6 border-t-2 border-r-2 border-white rounded-full transform rotate-45"></div>
+                </div>
+                <p class="mt-2 text-sm opacity-80">Scroll to explore</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-gradient-to-r from-green-50 to-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="fade-in">
+                    <div class="text-5xl font-bold text-green-600 mb-2 stats-number" data-target="15000">0</div>
+                    <div class="text-gray-600">Meals Provided</div>
+                </div>
+                <div class="fade-in">
+                    <div class="text-5xl font-bold text-blue-600 mb-2 stats-number" data-target="2500">0</div>
+                    <div class="text-gray-600">People Helped</div>
+                </div>
+                <div class="fade-in">
+                    <div class="text-5xl font-bold text-yellow-500 mb-2 stats-number" data-target="350">0</div>
+                    <div class="text-gray-600">Volunteers</div>
+                </div>
+                <div class="fade-in">
+                    <div class="text-5xl font-bold text-purple-600 mb-2 stats-number" data-target="12">0</div>
+                    <div class="text-gray-600">Communities Served</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Our Key Programs</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">We're committed to making a difference through these essential community programs</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Program 1 -->
+                <div class="bg-white p-6 rounded-xl card-hover gradient-border program-card">
+                    <div class="text-5xl mb-4 program-icon">🏠</div>
+                    <h3 class="text-xl font-semibold mb-3 text-green-600">Rhema House</h3>
+                    <p class="text-gray-600 mb-4">A safe haven providing support and resources for vulnerable community members.</p>
+                    <a href="#" class="text-green-600 font-semibold flex items-center group">
+                        Learn more
+                        <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Program 2 -->
+                <div class="bg-white p-6 rounded-xl card-hover gradient-border program-card">
+                    <div class="text-5xl mb-4 program-icon">🍞</div>
+                    <h3 class="text-xl font-semibold mb-3 text-green-600">Foodbank</h3>
+                    <p class="text-gray-600 mb-4">Providing essential nutrition to families and individuals facing food insecurity.</p>
+                    <a href="#" class="text-green-600 font-semibold flex items-center group">
+                        Learn more
+                        <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Program 3 -->
+                <div class="bg-white p-6 rounded-xl card-hover gradient-border program-card">
+                    <div class="text-5xl mb-4 program-icon">⚽</div>
+                    <h3 class="text-xl font-semibold mb-3 text-green-600">Sports & Wellbeing</h3>
+                    <p class="text-gray-600 mb-4">Promoting physical and mental health through inclusive sports activities.</p>
+                    <a href="#" class="text-green-600 font-semibold flex items-center group">
+                        Learn more
+                        <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Program 4 -->
+                <div class="bg-white p-6 rounded-xl card-hover gradient-border program-card">
+                    <div class="text-5xl mb-4 program-icon">🌍</div>
+                    <h3 class="text-xl font-semibold mb-3 text-green-600">Cultural Awareness</h3>
+                    <p class="text-gray-600 mb-4">Fostering understanding and celebrating diversity within our communities.</p>
+                    <a href="#" class="text-green-600 font-semibold flex items-center group">
+                        Learn more
+                        <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">About Acts of Love International</h2>
+                    <p class="text-gray-600 mb-4">Founded in 2005, Acts of Love International has been at the forefront of community development and poverty alleviation in Stockton-on-Tees and surrounding areas.</p>
+                    <p class="text-gray-600 mb-6">Our holistic approach addresses immediate needs while working on long-term solutions that empower individuals and strengthen communities.</p>
+                    
+                    <div class="mb-6">
+                        <div class="flex items-center mb-2">
+                            <div class="w-5 h-5 rounded-full bg-green-500 mr-3 flex items-center justify-center">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <p class="text-gray-700">Community-centered programs</p>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <div class="w-5 h-5 rounded-full bg-green-500 mr-3 flex items-center justify-center">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <p class="text-gray-700">Inclusive and diverse initiatives</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 rounded-full bg-green-500 mr-3 flex items-center justify-center">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <p class="text-gray-700">Sustainable impact focus</p>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="inline-flex items-center text-green-600 font-semibold hover:text-green-700 transition-colors group">
+                        Learn More About Our Mission
+                        <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                <div class="md:w-1/2 fade-in">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Community gathering" class="rounded-xl shadow-md">
+                        <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-green-500 rounded-xl flex flex-col items-center justify-center text-white z-10 floating">
+                            <span class="text-4xl font-bold">18</span>
+                            <span class="text-sm">Years of Service</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Our Success Stories</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">Real impact through dedicated community work</p>
+            
+            <div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-green-50 to-blue-50 shadow-md p-1">
+                <!-- Slide 1 -->
+                <div class="success-slide active flex flex-col md:flex-row p-6 md:p-0">
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1541979667479-339a9c826894?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Foodbank impact" class="w-full h-64 md:h-full object-cover rounded-t-xl md:rounded-l-xl md:rounded-tr-none">
+                    </div>
+                    <div class="md:w-1/2 p-8 flex flex-col justify-center">
+                        <h3 class="text-2xl font-semibold mb-4 text-green-600">Foodbank Impact</h3>
+                        <p class="text-gray-600 mb-4">In 2022, our foodbank provided over 50,000 meals to families and individuals in need, a 35% increase from the previous year.</p>
+                        <p class="text-gray-600 mb-6">We've expanded our delivery services to reach isolated community members who cannot access our physical location.</p>
+                        
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-700">Meals provided goal</span>
+                                <span class="text-sm font-medium text-gray-700">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="text-green-600 font-semibold flex items-center group mt-2">
+                            Read full story
+                            <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="success-slide flex flex-col md:flex-row p-6 md:p-0">
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rhema House renovation" class="w-full h-64 md:h-full object-cover rounded-t-xl md:rounded-l-xl md:rounded-tr-none">
+                    </div>
+                    <div class="md:w-1/2 p-8 flex flex-col justify-center">
+                        <h3 class="text-2xl font-semibold mb-4 text-green-600">Rhema House Renovation</h3>
+                        <p class="text-gray-600 mb-4">Thanks to generous donations and volunteer efforts, we've completely renovated Rhema House, creating a safe and welcoming space.</p>
+                        <p class="text-gray-600 mb-6">The renovation included new facilities for counseling, community meetings, and educational workshops.</p>
+                        
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-700">Renovation progress</span>
+                                <span class="text-sm font-medium text-gray-700">100%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="text-green-600 font-semibold flex items-center group mt-2">
+                            Read full story
+                            <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="success-slide flex flex-col md:flex-row p-6 md:p-0">
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Community events" class="w-full h-64 md:h-full object-cover rounded-t-xl md:rounded-l-xl md:rounded-tr-none">
+                    </div>
+                    <div class="md:w-1/2 p-8 flex flex-col justify-center">
+                        <h3 class="text-2xl font-semibold mb-4 text-green-600">Community Events</h3>
+                        <p class="text-gray-600 mb-4">Our annual cultural festival attracted over 3,000 participants, celebrating the diversity of our community.</p>
+                        <p class="text-gray-600 mb-6">We've launched monthly community dinners that bring together people from all backgrounds to share food and stories.</p>
+                        
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-gray-700">Event participation goal</span>
+                                <span class="text-sm font-medium text-gray-700">120%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="text-green-600 font-semibold flex items-center group mt-2">
+                            Read full story
+                            <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Navigation arrows -->
+                <button id="prevSlide" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-md text-green-600 hover:text-green-700 transition-colors">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="nextSlide" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-md text-green-600 hover:text-green-700 transition-colors">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    <button class="slide-indicator w-3 h-3 rounded-full bg-white border border-gray-300" data-index="0"></button>
+                    <button class="slide-indicator w-3 h-3 rounded-full bg-white border border-gray-300" data-index="1"></button>
+                    <button class="slide-indicator w-3 h-3 rounded-full bg-white border border-gray-300" data-index="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Involved CTA -->
+    <section class="py-16 bg-gradient-to-r from-green-600 to-blue-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Make a Difference Today</h2>
+            <p class="text-xl mb-10 max-w-2xl mx-auto">Join us in our mission to transform lives and build stronger communities. Your support can create lasting change.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="bg-white text-green-600 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg flex items-center justify-center">
+                    <i class="fas fa-hands-helping mr-2"></i> Volunteer
+                </a>
+                <a href="#" class="bg-yellow-400 text-gray-800 hover:bg-yellow-500 px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg flex items-center justify-center">
+                    <i class="fas fa-donate mr-2"></i> Donate
+                </a>
+                <a href="#" class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg flex items-center justify-center">
+                    <i class="fas fa-handshake mr-2"></i> Partner With Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Stay Updated</h2>
+                <p class="text-xl text-gray-600 mb-8">Subscribe to our newsletter to receive updates on our programs and impact</p>
+                
+                <form class="flex flex-col sm:flex-row gap-4">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-semibold transition-colors shadow-lg">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Acts of Love International</h3>
+                    <p class="mb-6">Dedicated to strengthening communities, tackling poverty, and creating opportunities for all.</p>
+                    <p class="text-sm">Charity Registration No: 1119687</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+                    <p class="mb-2 flex items-center">
+                        <i class="fas fa-map-marker-alt mr-2 text-green-400"></i> 
+                        123 Community Street, Stockton-on-Tees, UK
+                    </p>
+                    <p class="mb-2 flex items-center">
+                        <i class="fas fa-envelope mr-2 text-green-400"></i> 
+                        info@actsoflove.org
+                    </p>
+                    <p class="mb-2 flex items-center">
+                        <i class="fas fa-phone mr-2 text-green-400"></i> 
+                        +44 123 456 789
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Home</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Our Programs</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Get Involved</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">News & Events</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <p class="text-sm opacity-75">Follow us for updates and stories of impact</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>© 2025 Acts of Love International. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery Scripts -->
+    <script>
+        $(document).ready(function() {
+            // Mobile menu toggle
+            $('#menuToggle').click(function() {
+                $('#mobileMenu').removeClass('menu-closed').addClass('menu-open');
+            });
+            
+            $('#closeMenu').click(function() {
+                $('#mobileMenu').removeClass('menu-open').addClass('menu-closed');
+            });
+            
+            // Fade-in animation on scroll
+            function checkFade() {
+                $('.fade-in').each(function() {
+                    var position = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    
+                    if (scroll + windowHeight - 100 > position) {
+                        $(this).addClass('visible');
+                    }
+                });
+            }
+            
+            checkFade();
+            $(window).scroll(checkFade);
+            
+            // Success Stories Carousel
+            var currentSlide = 0;
+            var slides = $('.success-slide');
+            var totalSlides = slides.length;
+            
+            function showSlide(index) {
+                slides.removeClass('active');
+                $(slides[index]).addClass('active');
+                $('.slide-indicator').removeClass('bg-green-500').addClass('bg-white');
+                $($('.slide-indicator')[index]).removeClass('bg-white').addClass('bg-green-500');
+                currentSlide = index;
+            }
+            
+            $('#nextSlide').click(function() {
+                var nextSlide = (currentSlide + 1) % totalSlides;
+                showSlide(nextSlide);
+            });
+            
+            $('#prevSlide').click(function() {
+                var prevSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                showSlide(prevSlide);
+            });
+            
+            $('.slide-indicator').click(function() {
+                var index = $(this).data('index');
+                showSlide(index);
+            });
+            
+            // Auto-advance slides
+            setInterval(function() {
+                $('#nextSlide').click();
+            }, 6000);
+            
+            // Animate stats counters
+            function animateCounters() {
+                $('.stats-number').each(function() {
+                    var $this = $(this);
+                    var target = $this.data('target');
+                    var current = 0;
+                    var increment = target / 50;
+                    
+                    var timer = setInterval(function() {
+                        if (current < target) {
+                            current += increment;
+                            if (current > target) current = target;
+                            $this.text(Math.floor(current));
+                        } else {
+                            clearInterval(timer);
+                        }
+                    }, 50);
+                });
+            }
+            
+            // Check if stats are in view
+            function checkStats() {
+                var position = $('.stats-number').first().offset().top;
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                
+                if (scroll + windowHeight - 200 > position) {
+                    animateCounters();
+                    $(window).off('scroll', checkStats);
+                }
+            }
+            
+            $(window).scroll(checkStats);
+            checkStats();
+            
+            // Header scroll effect
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('header').addClass('shadow-lg');
+                } else {
+                    $('header').removeClass('shadow-lg');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
