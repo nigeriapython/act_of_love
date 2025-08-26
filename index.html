@@ -315,52 +315,58 @@
     <header class="fixed w-full bg-white backdrop-blur-md shadow-md z-50 transition-all duration-300">
         <div class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
+                <!-- Logo -->
                 <div class="flex items-center">
                     <a href="#">
                         <img src="images/act_of_love_logo.png" alt="Acts of Love Logo" class="h-12">
                     </a>
                 </div>
 
-
+                <!-- Desktop Nav -->
                 <nav class="hidden lg:flex space-x-8">
-                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium relative group">
+                    <a href="#"
+                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium relative group">
                         Home
                         <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#203B76] transition-all group-hover:w-full"></span>
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--primary)] transition-all group-hover:w-full"></span>
                     </a>
-                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium relative group">
+                    <a href="#"
+                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium relative group">
                         About Us
                         <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#203B76] transition-all group-hover:w-full"></span>
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--primary)] transition-all group-hover:w-full"></span>
                     </a>
-                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium relative group">
+                    <a href="#"
+                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium relative group">
                         Our Work
                         <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#203B76] transition-all group-hover:w-full"></span>
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--primary)] transition-all group-hover:w-full"></span>
                     </a>
-                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium relative group">
+                    <a href="#"
+                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium relative group">
                         Rhema House
                         <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#203B76] transition-all group-hover:w-full"></span>
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--primary)] transition-all group-hover:w-full"></span>
                     </a>
-                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium relative group">
+                    <a href="#"
+                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium relative group">
                         Get Involved
                         <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#203B76] transition-all group-hover:w-full"></span>
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--primary)] transition-all group-hover:w-full"></span>
                     </a>
-                    
-                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium relative group">
+                    <a href="#"
+                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium relative group">
                         Contact
                         <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#203B76] transition-all group-hover:w-full"></span>
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--primary)] transition-all group-hover:w-full"></span>
                     </a>
                 </nav>
 
+                <!-- Buttons -->
                 <div class="flex items-center space-x-4">
                     <a href="#" class="btn-primary px-6 py-2 rounded-full text-white font-semibold hidden md:block">
                         Donate Now
                     </a>
-
                     <button class="lg:hidden text-gray-700" id="menuToggle">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
@@ -372,21 +378,29 @@
         <div class="fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 transition-transform duration-300 menu-closed"
             id="mobileMenu">
             <div class="p-6">
+                <!-- Logo & Close Button -->
                 <div class="flex justify-between items-center mb-10">
-                    <a href="#" class="text-xl font-bold text-[#203B76]">AOLI</a>
+                    <a href="#">
+                        <img src="images/act_of_love_logo.png" alt="Acts of Love Logo" class="h-10">
+                    </a>
                     <button id="closeMenu">
-                        <i class="fas fa-times text-gray-700"></i>
+                        <i class="fas fa-times text-gray-700 text-xl"></i>
                     </button>
                 </div>
 
-                <nav class="flex flex-col space-y-6">
-                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">Home</a>
-                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">About Us</a>
-                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">Our Work</a>
-                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">Rhema House</a>
-                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">Get
+                <!-- Mobile Nav -->
+                <nav class="flex flex-col space-y-6 bg-white">
+                    <a href="#" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">About
+                        Us</a>
+                    <a href="#" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Our
+                        Work</a>
+                    <a href="#" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Rhema
+                        House</a>
+                    <a href="#" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Get
                         Involved</a>
-                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">Contact</a>
+                    <a href="#"
+                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Contact</a>
                     <a href="#" class="btn-primary px-6 py-3 rounded-full text-white font-semibold text-center mt-4">
                         Donate Now
                     </a>
@@ -394,6 +408,7 @@
             </div>
         </div>
     </header>
+
 
     <!-- Hero Section with Slideshow -->
     <section class="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
@@ -413,7 +428,7 @@
                             <i class="fas fa-hands-helping mr-3"></i> Volunteer Today
                         </a>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -434,7 +449,7 @@
                             <i class="fas fa-donate mr-3"></i> Donate Now
                         </a>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -455,7 +470,7 @@
                             <i class="fas fa-list-alt mr-3"></i> Explore Programs
                         </a>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -482,7 +497,7 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="py-16 bg-gradient-to-r from-[#203B76] to-[#D406B7] text-white">
+    <!-- <section class="py-16 bg-gradient-to-r from-[#203B76] to-[#D406B7] text-white">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
                 <div class="fade-in">
@@ -503,82 +518,183 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Highlights Section -->
-    <section class="py-16 bg-white">
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Our Key Programs</h2>
+    <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+      We're committed to making a difference through these essential community programs
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      
+      <!-- Program Card -->
+      <div class="bg-white p-6 rounded-xl shadow-md transition-all duration-300 hover:bg-[var(--primary)] hover:text-white">
+        <div class="text-5xl mb-4 program-icon">🏠</div>
+        <h3 class="text-xl font-semibold mb-3 text-[var(--primary)] group-hover:text-light">Rhema House</h3>
+        <p class="text-gray-600 mb-4 group-hover:text-white">A safe haven providing support and resources for vulnerable community members.</p>
+        <a href="#" class="font-semibold flex items-center group-hover:text-white">
+          Learn more
+          <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+               fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Repeat same for others -->
+      <div class="bg-white p-6 rounded-xl shadow-md transition-all duration-300 hover:bg-[var(--primary)] hover:text-white">
+        <div class="text-5xl mb-4 program-icon">🍞</div>
+        <h3 class="text-xl font-semibold mb-3 text-[var(--primary)] group-hover:text-white">Foodbank</h3>
+        <p class="text-gray-600 mb-4 group-hover:text-white">Providing essential nutrition to families and individuals facing food insecurity.</p>
+        <a href="#" class="font-semibold flex items-center group-hover:text-white">
+          Learn more
+          <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+               fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-md transition-all duration-300 hover:bg-[var(--primary)] hover:text-white">
+        <div class="text-5xl mb-4 program-icon">⚽</div>
+        <h3 class="text-xl font-semibold mb-3 text-[var(--primary)] group-hover:text-white">Sports & Wellbeing</h3>
+        <p class="text-gray-600 mb-4 group-hover:text-white">Promoting physical and mental health through inclusive sports activities.</p>
+        <a href="#" class="font-semibold flex items-center group-hover:text-white">
+          Learn more
+          <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+               fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow-md transition-all duration-300 hover:bg-[var(--primary)] hover:text-white">
+        <div class="text-5xl mb-4 program-icon">🌍</div>
+        <h3 class="text-xl font-semibold mb-3 text-[var(--primary)] group-hover:text-white">Cultural Awareness</h3>
+        <p class="text-gray-600 mb-4 group-hover:text-white">Fostering understanding and celebrating diversity within our communities.</p>
+        <a href="#" class="font-semibold flex items-center group-hover:text-white">
+          Learn more
+          <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+               fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- About Us Section -->
+    <section class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Our Key Programs</h2>
-            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">We're committed to making a difference
-                through these essential community programs</p>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
+                        About Acts of Love International
+                    </h2>
+                    <p class="text-gray-600 mb-4">
+                        Founded in 2005, Acts of Love International has been at the forefront of community development
+                        and poverty alleviation in Stockton-on-Tees and surrounding areas.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Our holistic approach addresses immediate needs while working on long-term solutions that
+                        empower individuals and strengthen communities.
+                    </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Program 1 -->
-                <div class="bg-white p-6 rounded-xl card-hover gradient-border program-card">
-                    <div class="text-5xl mb-4 program-icon">🏠</div>
-                    <h3 class="text-xl font-semibold mb-3 text-[#203B76]">Rhema House</h3>
-                    <p class="text-gray-600 mb-4">A safe haven providing support and resources for vulnerable community
-                        members.</p>
-                    <a href="#" class="text-[#203B76] font-semibold flex items-center group">
-                        Learn more
+                    <div class="mb-6">
+                        <div class="flex items-center mb-2">
+                            <div class="w-5 h-5 rounded-full mr-3 flex items-center justify-center"
+                                style="background-color: var(--primary);">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <p class="text-gray-700">Community-centered programs</p>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <div class="w-5 h-5 rounded-full mr-3 flex items-center justify-center"
+                                style="background-color: var(--primary);">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <p class="text-gray-700">Inclusive and diverse initiatives</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 rounded-full mr-3 flex items-center justify-center"
+                                style="background-color: var(--primary);">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <p class="text-gray-700">Sustainable impact focus</p>
+                        </div>
+                    </div>
+
+                    <a href="#" class="inline-flex items-center font-semibold transition-colors group"
+                        style="color: var(--primary);">
+                        Learn More About Our Mission
                         <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                         </svg>
                     </a>
                 </div>
 
-                <!-- Program 2 -->
-                <div class="bg-white p-6 rounded-xl card-hover gradient-border program-card">
-                    <div class="text-5xl mb-4 program-icon">🍞</div>
-                    <h3 class="text-xl font-semibold mb-3 text-[#203B76]">Foodbank</h3>
-                    <p class="text-gray-600 mb-4">Providing essential nutrition to families and individuals facing food
-                        insecurity.</p>
-                    <a href="#" class="text-[#203B76] font-semibold flex items-center group">
-                        Learn more
-                        <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
-                    </a>
-                </div>
-
-                <!-- Program 3 -->
-                <div class="bg-white p-6 rounded-xl card-hover gradient-border program-card">
-                    <div class="text-5xl mb-4 program-icon">⚽</div>
-                    <h3 class="text-xl font-semibold mb-3 text-[#203B76]">Sports & Wellbeing</h3>
-                    <p class="text-gray-600 mb-4">Promoting physical and mental health through inclusive sports
-                        activities.</p>
-                    <a href="#" class="text-[#203B76] font-semibold flex items-center group">
-                        Learn more
-                        <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
-                    </a>
-                </div>
-
-                <!-- Program 4 -->
-                <div class="bg-white p-6 rounded-xl card-hover gradient-border program-card">
-                    <div class="text-5xl mb-4 program-icon">🌍</div>
-                    <h3 class="text-xl font-semibold mb-3 text-[#203B76]">Cultural Awareness</h3>
-                    <p class="text-gray-600 mb-4">Fostering understanding and celebrating diversity within our
-                        communities.</p>
-                    <a href="#" class="text-[#203B76] font-semibold flex items-center group">
-                        Learn more
-                        <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
-                    </a>
+                <div class="md:w-1/2 fade-in">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Community gathering" class="rounded-xl shadow-md" />
+                        <div class="absolute -bottom-6 -left-6 w-32 h-32 rounded-xl flex flex-col items-center justify-center text-white z-10 floating"
+                            style="background-color: var(--primary);">
+                            <span class="text-4xl font-bold">18</span>
+                            <span class="text-sm">Years of Service</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Get Involved CTA -->
+    <section class="py-16 text-white" style="background: linear-gradient(to right, var(--primary), var(--secondary));">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Make a Difference Today</h2>
+            <p class="text-xl mb-10 max-w-2xl mx-auto">
+                Join us in our mission to transform lives and build stronger communities. Your support can create
+                lasting change.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+
+                <!-- Volunteer -->
+                <a href="#"
+                    class="bg-white hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg flex items-center justify-center"
+                    style="color: var(--primary);">
+                    <i class="fas fa-hands-helping mr-2"></i> Volunteer
+                </a>
+
+                <!-- Donate -->
+                <a href="#"
+                    class="px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg flex items-center justify-center"
+                    style="background-color: var(--secondary); color: var(--light);">
+                    <i class="fas fa-donate mr-2"></i> Donate
+                </a>
+
+                <!-- Partner -->
+                <a href="#"
+                    class="bg-transparent border-2 text-white hover:bg-white/10 px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg flex items-center justify-center"
+                    style="border-color: var(--light);">
+                    <i class="fas fa-handshake mr-2"></i> Partner With Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+
 
 
     <!-- Newsletter Section -->
@@ -586,11 +702,14 @@
         <div class="container mx-auto px-4">
             <div class="max-w-3xl mx-auto text-center">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Stay Updated</h2>
-                <p class="text-xl text-gray-600 mb-8">Subscribe to our newsletter to receive updates on our programs and impact</p>
-                
+                <p class="text-xl text-gray-600 mb-8">Subscribe to our newsletter to receive updates on our programs and
+                    impact</p>
+
                 <form class="flex flex-col sm:flex-row gap-4">
-                    <input type="email" placeholder="Your email address" class="flex-grow px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
-                    <button type="submit" class="btn-primary text-white px-8 py-4 rounded-full font-semibold transition-colors shadow-lg">
+                    <input type="email" placeholder="Your email address"
+                        class="flex-grow px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                    <button type="submit"
+                        class="btn-primary text-white px-8 py-4 rounded-full font-semibold transition-colors shadow-lg">
                         Subscribe
                     </button>
                 </form>
@@ -604,26 +723,27 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Acts of Love International</h3>
-                    <p class="mb-6">Dedicated to strengthening communities, tackling poverty, and creating opportunities for all.</p>
+                    <p class="mb-6">Dedicated to strengthening communities, tackling poverty, and creating opportunities
+                        for all.</p>
                     <p class="text-sm">Charity Registration No: 1119687</p>
                 </div>
-                
+
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
                     <p class="mb-2 flex items-center">
-                        <i class="fas fa-map-marker-alt mr-2 text-green-400"></i> 
+                        <i class="fas fa-map-marker-alt mr-2 text-green-400"></i>
                         123 Community Street, Stockton-on-Tees, UK
                     </p>
                     <p class="mb-2 flex items-center">
-                        <i class="fas fa-envelope mr-2 text-green-400"></i> 
+                        <i class="fas fa-envelope mr-2 text-green-400"></i>
                         info@actsoflove.org
                     </p>
                     <p class="mb-2 flex items-center">
-                        <i class="fas fa-phone mr-2 text-green-400"></i> 
+                        <i class="fas fa-phone mr-2 text-green-400"></i>
                         +44 123 456 789
                     </p>
                 </div>
-                
+
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
@@ -634,10 +754,10 @@
                         <li><a href="#" class="hover:text-green-400 transition-colors">News & Events</a></li>
                     </ul>
                 </div>
-                
-                
+
+
             </div>
-            
+
             <div class="border-t border-gray-700 mt-8 pt-8 text-center">
                 <p>© 2025 Acts of Love International. All rights reserved.</p>
             </div>
