@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Acts of Love International</title>
+    <title>Acts of Love International - Transforming Lives, Building Hope</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -42,6 +45,38 @@
             font-family: 'Playfair Display', serif;
         }
 
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.2s ease-in-out;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .hero-slide-1 {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/slide/act_slide2.png');
+        }
+
+        .hero-slide-2 {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/slide/act_slide3.png');
+        }
+
+        .hero-slide-3 {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/slide/act_slide1.png');
+        }
+
         .gradient-text {
             background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
             -webkit-background-clip: text;
@@ -71,6 +106,17 @@
             transform: translateY(-2px);
         }
 
+        .btn-accent {
+            background: linear-gradient(90deg, var(--accent) 0%, #38a169 100%);
+            box-shadow: 0 4px 15px 0 rgba(56, 178, 172, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-accent:hover {
+            box-shadow: 0 6px 20px 0 rgba(56, 178, 172, 0.5);
+            transform: translateY(-2px);
+        }
+
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -82,6 +128,102 @@
             transform: translateY(0);
         }
 
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .slide-indicators {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            z-index: 20;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .slide-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slide-indicator.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        .slide-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.2);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .slide-nav:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .slide-nav.prev {
+            left: 20px;
+        }
+
+        .slide-nav.next {
+            right: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .slide-nav {
+                width: 40px;
+                height: 40px;
+            }
+
+            .slide-nav.prev {
+                left: 10px;
+            }
+
+            .slide-nav.next {
+                right: 10px;
+            }
+        }
+
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            width: 100%;
+            z-index: 20;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: white;
+            width: 0%;
+            transition: width 5s linear;
+        }
+
+        .progress-fill.animate {
+            width: 100%;
+        }
+
         .card-hover {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
@@ -91,12 +233,79 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
-        .blue-bg {
-            background-color: rgba(32, 59, 118, 0.05);
+        .floating {
+            animation: float 6s ease-in-out infinite;
         }
 
-        .pink-bg {
-            background-color: rgba(212, 6, 183, 0.05);
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .success-slide {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        .success-slide.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .gradient-border {
+            position: relative;
+            background: white;
+            border-radius: 16px;
+        }
+
+        .gradient-border::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 18px;
+            z-index: -1;
+        }
+
+        .counter {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .menu-open {
+            transform: translateX(0);
+        }
+
+        .menu-closed {
+            transform: translateX(100%);
+        }
+
+        .program-icon {
+            transition: all 0.3s ease;
+        }
+
+        .program-card:hover .program-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .stats-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .illustration {
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
         }
 
         .contact-info-item {
@@ -127,42 +336,106 @@
 
 <body class="bg-gray-50">
     <!-- Header / Navigation -->
-    <header class="fixed w-full bg-white/90 backdrop-blur-md shadow-md z-50 transition-all duration-300">
+    <header class="fixed w-full bg-white backdrop-blur-md shadow-md z-50 transition-all duration-300">
         <div class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
+                <!-- Logo -->
                 <div class="flex items-center">
-                    <a href="#" class="text-2xl font-bold text-[#203B76] flex items-center">
-                        <div
-                            class="w-10 h-10 rounded-full bg-[#203B76] bg-opacity-10 flex items-center justify-center mr-2">
-                            <i class="fas fa-hands-helping text-[#203B76]"></i>
-                        </div>
-                        <span class="hidden md:inline">Acts of Love International</span>
+                    <a href="index.html">
+                        <img src="images/act_of_love_logo.png" alt="Acts of Love Logo" class="h-12">
                     </a>
                 </div>
 
+                <!-- Desktop Nav -->
                 <nav class="hidden lg:flex space-x-8">
-                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">Home</a>
-                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">About Us</a>
-                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">Our Work</a>
-                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">Rhema House</a>
-                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">Get
-                        Involved</a>
-                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">News</a>
-                    <a href="#" class="text-[#203B76] font-medium relative group">
-                        Contact Us
-                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#203B76]"></span>
+                    <a href="index.html"
+                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium relative group">
+                        Home
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--secondary)] transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="about.html"
+                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium relative group">
+                        About Us
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--secondary)] transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="about.html#our-work"
+                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium relative group">
+                        Our Work
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--secondary)] transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="rhema-house.html"
+                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium relative group">
+                        Rhema House
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--secondary)] transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="get-involved.html"
+                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium relative group">
+                        Get Involved
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--secondary)] transition-all group-hover:w-full"></span>
+                    </a>
+                    <a href="contact.html"
+                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium relative group">
+                        Contact
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--secondary)] transition-all group-hover:w-full"></span>
                     </a>
                 </nav>
 
+                <!-- Buttons -->
                 <div class="flex items-center space-x-4">
-                    <a href="#" class="btn-primary px-6 py-2 rounded-full text-white font-semibold hidden md:block">
+                    <a href="donate.html"
+                        class="btn-primary px-6 py-2 rounded-full text-white font-semibold hidden md:block">
                         Donate Now
                     </a>
-
                     <button class="lg:hidden text-gray-700" id="menuToggle">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 transition-transform duration-300 menu-closed"
+            id="mobileMenu">
+            <div class="p-6">
+                <!-- Logo & Close Button -->
+                <div class="flex justify-between items-center mb-10">
+                    <a href="#">
+                        <img src="images/act_of_love_logo.png" alt="Acts of Love Logo" class="h-10">
+                    </a>
+                    <button id="closeMenu">
+                        <i class="fas fa-times text-gray-700 text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Nav -->
+                <nav class="flex flex-col space-y-6 bg-white">
+                    <a href="index.html"
+                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Home</a>
+                    <a href="about.html"
+                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">About
+                        Us</a>
+                    <a href="about.html#our-work"
+                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Our
+                        Work</a>
+                    <a href="rhema-house.html"
+                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Rhema
+                        House</a>
+                    <a href="get-involved.html"
+                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Get
+                        Involved</a>
+                    <a href="contact.html"
+                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Contact</a>
+                    <a href="donate.html"
+                        class="btn-primary px-6 py-3 rounded-full text-white font-semibold text-center mt-4">
+                        Donate Now
+                    </a>
+                </nav>
             </div>
         </div>
     </header>
@@ -339,91 +612,11 @@
             <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">Visit us at our location in
                 Stockton-on-Tees</p>
 
-            <div class="max-w-4xl mx-auto">
-                <!-- Google Maps Embed Placeholder -->
-                <div class="map-container bg-gray-200 h-96 rounded-xl flex items-center justify-center">
-                    <div class="text-center p-8">
-                        <i class="fas fa-map-marked-alt text-4xl text-gray-400 mb-4"></i>
-                        <h3 class="text-xl font-semibold text-gray-600 mb-2">Google Maps Embed</h3>
-                        <p class="text-gray-500 mb-4">To embed Google Maps, replace this placeholder with your embed
-                            code</p>
-                        <a href="https://www.google.com/maps/place/2+Portrack+Ln,+Stockton-on-Tees+TS18+2HG,+UK/@54.5689668,-1.3133562,17z/data=!3m1!4b1!4m6!3m5!1s0x487e7d853d4b3f2d:0x5b5c6c9b9b9b9b9b!8m2!3d54.5689668!4d-1.3107813!16s%2Fg%2F11c5x5x5x5?entry=ttu"
-                            target="_blank"
-                            class="btn-primary inline-flex items-center px-4 py-2 rounded-full text-white font-semibold text-sm">
-                            <i class="fas fa-external-link-alt mr-2"></i> Open in Google Maps
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Instructions for embedding Google Maps -->
-                <div class="mt-6 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
-                        <i class="fas fa-info-circle text-yellow-500 mr-2"></i>
-                        How to embed Google Maps
-                    </h4>
-                    <ol class="list-decimal list-inside text-sm text-gray-600 space-y-1">
-                        <li>Go to <a href="https://www.google.com/maps" class="text-[#203B76] hover:underline">Google
-                                Maps</a></li>
-                        <li>Search for "2 Portrack Lane, Stockton-on-Tees, TS18 2HG"</li>
-                        <li>Click on the Share button → Embed a map → Copy HTML</li>
-                        <li>Replace this placeholder with the copied code</li>
-                    </ol>
-                </div>
-            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d43999.9719608378!2d-1.3677361478274943!3d54.57820362538238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s123%20Community%20Street%2C%20Stockton-on-Tees%2C%20UK!5e0!3m2!1sen!2sng!4v1756379681757!5m2!1sen!2sng" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full"></iframe>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Frequently Asked Questions</h2>
-            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">Quick answers to common questions</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <h3 class="font-semibold text-gray-800 mb-3 flex items-center">
-                        <i class="fas fa-question-circle text-[#203B76] mr-2"></i>
-                        What are your foodbank hours?
-                    </h3>
-                    <p class="text-gray-600">Our foodbank is open Sunday, Wednesday, and Friday from 8am to 2pm.</p>
-                </div>
-
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <h3 class="font-semibold text-gray-800 mb-3 flex items-center">
-                        <i class="fas fa-question-circle text-[#203B76] mr-2"></i>
-                        Do I need to book to visit?
-                    </h3>
-                    <p class="text-gray-600">No appointment is necessary for most services, but we recommend calling
-                        ahead for specific programs.</p>
-                </div>
-
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <h3 class="font-semibold text-gray-800 mb-3 flex items-center">
-                        <i class="fas fa-question-circle text-[#203B76] mr-2"></i>
-                        Is there parking available?
-                    </h3>
-                    <p class="text-gray-600">Yes, we have limited parking available on site, plus street parking nearby.
-                    </p>
-                </div>
-
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <h3 class="font-semibold text-gray-800 mb-3 flex items-center">
-                        <i class="fas fa-question-circle text-[#203B76] mr-2"></i>
-                        How can I donate items?
-                    </h3>
-                    <p class="text-gray-600">You can bring donations during our opening hours. Please check our website
-                        for current needs.</p>
-                </div>
-            </div>
-
-            <div class="text-center mt-12">
-                <a href="#" class="text-[#203B76] font-semibold hover:underline flex items-center justify-center">
-                    <span>View all frequently asked questions</span>
-                    <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- CTA Section -->
     <section class="py-16 bg-gradient-to-r from-[#203B76] to-[#D406B7] text-white">
@@ -448,7 +641,7 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Acts of Love International</h3>
                     <p class="mb-6">Dedicated to strengthening communities, tackling poverty, and creating opportunities
@@ -460,7 +653,7 @@
                     <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
                     <p class="mb-2 flex items-center">
                         <i class="fas fa-map-marker-alt mr-2 text-[#D406B7]"></i>
-                        Rhema House, 2 Portrack Lane, Stockton-on-Tees, TS18 2HG
+                        123 Community Street, Stockton-on-Tees, UK
                     </p>
                     <p class="mb-2 flex items-center">
                         <i class="fas fa-envelope mr-2 text-[#D406B7]"></i>
@@ -483,24 +676,7 @@
                     </ul>
                 </div>
 
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Connect With Us</h3>
-                    <div class="flex space-x-4 mb-4">
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-[#D406B7] transition-colors">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-[#D406B7] transition-colors">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-[#D406B7] transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                    <p class="text-sm opacity-75">Follow us for updates and announcements</p>
-                </div>
+
             </div>
 
             <div class="border-t border-gray-700 mt-8 pt-8 text-center">
@@ -512,6 +688,22 @@
     <!-- jQuery Scripts -->
     <script>
         $(document).ready(function () {
+            // Mobile menu toggle
+            $('#menuToggle').click(function () {
+                $('#mobileMenu').removeClass('menu-closed').addClass('menu-open');
+            });
+
+            $('#closeMenu').click(function () {
+                $('#mobileMenu').removeClass('menu-open').addClass('menu-closed');
+            });
+
+            // Initialize slideshow
+            let currentSlide = 0;
+            const slides = $('.hero-slide');
+            const indicators = $('.slide-indicator');
+            const totalSlides = slides.length;
+            let slideInterval;
+
             // Fade-in animation on scroll
             function checkFade() {
                 $('.fade-in').each(function () {
@@ -527,6 +719,118 @@
 
             checkFade();
             $(window).scroll(checkFade);
+
+            // Function to show a specific slide
+            function showSlide(index) {
+                // Remove active class from all slides and indicators
+                slides.removeClass('active');
+                indicators.removeClass('active');
+
+                // Add active class to current slide and indicator
+                $(slides[index]).addClass('active');
+                $(indicators[index]).addClass('active');
+
+                // Reset and restart progress bar animation
+                $('.progress-fill').removeClass('animate');
+                setTimeout(function () {
+                    $('.progress-fill').addClass('animate');
+                }, 10);
+
+                currentSlide = index;
+            }
+
+            // Function to go to next slide
+            function nextSlide() {
+                let next = (currentSlide + 1) % totalSlides;
+                showSlide(next);
+            }
+
+            // Click handlers for navigation arrows
+            $('.slide-nav.next').click(function () {
+                clearInterval(slideInterval);
+                nextSlide();
+                startSlideShow();
+            });
+
+            $('.slide-nav.prev').click(function () {
+                clearInterval(slideInterval);
+                let prev = (currentSlide - 1 + totalSlides) % totalSlides;
+                showSlide(prev);
+                startSlideShow();
+            });
+
+            // Click handlers for indicators
+            $('.slide-indicator').click(function () {
+                clearInterval(slideInterval);
+                let slideIndex = $(this).data('slide');
+                showSlide(slideIndex);
+                startSlideShow();
+            });
+
+            // Start the slideshow
+            function startSlideShow() {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+
+            // Initialize the slideshow
+            startSlideShow();
+
+            // Pause slideshow on hover
+            $('.hero-slide, .slide-nav, .slide-indicators').hover(
+                function () {
+                    clearInterval(slideInterval);
+                    $('.progress-fill').css('animation-play-state', 'paused');
+                },
+                function () {
+                    startSlideShow();
+                    $('.progress-fill').css('animation-play-state', 'running');
+                }
+            );
+
+            // Animate stats counters
+            function animateCounters() {
+                $('.stats-number').each(function () {
+                    var $this = $(this);
+                    var target = $this.data('target');
+                    var current = 0;
+                    var increment = target / 50;
+
+                    var timer = setInterval(function () {
+                        if (current < target) {
+                            current += increment;
+                            if (current > target) current = target;
+                            $this.text(Math.floor(current));
+                        } else {
+                            clearInterval(timer);
+                        }
+                    }, 50);
+                });
+            }
+
+            // Check if stats are in view
+            function checkStats() {
+                var position = $('.stats-number').first().offset().top;
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+
+                if (scroll + windowHeight - 200 > position) {
+                    animateCounters();
+                    $(window).off('scroll', checkStats);
+                }
+            }
+
+            $(window).scroll(checkStats);
+            checkStats();
+
+            // Header scroll effect
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('header').addClass('shadow-lg');
+                } else {
+                    $('header').removeClass('shadow-lg');
+                }
+            });
         });
     </script>
 </body>
