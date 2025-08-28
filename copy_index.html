@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rhema House - Acts of Love International</title>
+    <title>Get Involved - Acts of Love International</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -64,6 +64,17 @@
             transform: translateY(-2px);
         }
         
+        .btn-accent {
+            background: linear-gradient(90deg, var(--accent) 0%, #38a169 100%);
+            box-shadow: 0 4px 15px 0 rgba(56, 178, 172, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-accent:hover {
+            box-shadow: 0 6px 20px 0 rgba(56, 178, 172, 0.5);
+            transform: translateY(-2px);
+        }
+        
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -94,10 +105,6 @@
             100% { transform: translateY(0px); }
         }
         
-        .illustration {
-            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
-        }
-        
         .blue-bg {
             background-color: rgba(32, 59, 118, 0.05);
         }
@@ -106,46 +113,38 @@
             background-color: rgba(212, 6, 183, 0.05);
         }
         
-        .timeline {
-            position: relative;
-            padding-left: 3rem;
+        .teal-bg {
+            background-color: rgba(56, 178, 172, 0.05);
         }
         
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 4px;
-            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        .illustration {
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
         }
         
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2rem;
+        .volunteer-role {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
         }
         
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -3.3rem;
-            top: 0.5rem;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: var(--primary);
-            border: 4px solid white;
-            box-shadow: 0 0 0 2px var(--primary);
+        .volunteer-role:hover {
+            border-left-color: var(--primary);
+            transform: translateX(5px);
         }
         
-        .floor-plan {
+        .donation-option {
             transition: all 0.3s ease;
         }
         
-        .floor-plan:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        .donation-option:hover {
+            transform: scale(1.03);
+        }
+        
+        .partner-logo {
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -167,11 +166,11 @@
                     <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">Home</a>
                     <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">About Us</a>
                     <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">Our Work</a>
+                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">Rhema House</a>
                     <a href="#" class="text-[#203B76] font-medium relative group">
-                        Rhema House
+                        Get Involved
                         <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#203B76]"></span>
                     </a>
-                    <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">Get Involved</a>
                     <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">News</a>
                     <a href="#" class="text-gray-700 hover:text-[#203B76] transition-colors font-medium">Contact</a>
                 </nav>
@@ -195,57 +194,131 @@
             <div class="flex items-center space-x-2 text-sm">
                 <a href="#" class="hover:underline">Home</a>
                 <span><i class="fas fa-chevron-right text-xs"></i></span>
-                <span>Rhema House</span>
+                <span>Get Involved</span>
             </div>
-            <h1 class="text-4xl md:text-5xl font-bold mt-4">Rhema House: Our Community Hub</h1>
+            <h1 class="text-4xl md:text-5xl font-bold mt-4">You Can Help Us Make a Difference</h1>
         </div>
     </section>
 
     <!-- Hero Section -->
     <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+                Join us in our mission to transform lives and build stronger communities. Your support, whether through time, resources, or partnership, creates lasting change.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="bg-blue-50 p-8 rounded-xl card-hover">
+                    <div class="text-5xl mb-6 text-[#203B76]">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Volunteer</h3>
+                    <p class="text-gray-600 mb-6">Join our friendly team and use your skills to change lives.</p>
+                    <a href="#volunteer" class="btn-primary px-6 py-3 rounded-full text-white font-semibold">
+                        Learn More
+                    </a>
+                </div>
+                
+                <div class="bg-pink-50 p-8 rounded-xl card-hover">
+                    <div class="text-5xl mb-6 text-[#D406B7]">
+                        <i class="fas fa-donate"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Donate</h3>
+                    <p class="text-gray-600 mb-6">Your support helps us run the foodbank, sports programs, and more.</p>
+                    <a href="#donate" class="btn-secondary px-6 py-3 rounded-full text-white font-semibold">
+                        Donate Now
+                    </a>
+                </div>
+                
+                <div class="bg-teal-50 p-8 rounded-xl card-hover">
+                    <div class="text-5xl mb-6 text-[#38b2ac]">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Partner With Us</h3>
+                    <p class="text-gray-600 mb-6">We work with organisations, churches, and local businesses to create lasting impact.</p>
+                    <a href="#partner" class="btn-accent px-6 py-3 rounded-full text-white font-semibold">
+                        Partner Today
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Section -->
+    <section id="volunteer" class="py-16 blue-bg">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 fade-in">
                     <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
-                        The Heart of Our Operations
+                        Volunteer Opportunities
                     </h2>
-                    <p class="text-xl text-gray-600 mb-6">
-                        Rhema House is the heart of our operations—a place of safety, learning, and opportunity for the entire community.
-                    </p>
                     <p class="text-gray-600 mb-6">
-                        This vibrant community hub serves as the central location for all our programs and initiatives, bringing people together from all backgrounds and walks of life.
+                        Our volunteers are the heart of our organization. Whether you can give a few hours a week or make a regular commitment, your time and skills make a real difference in our community.
                     </p>
-
-                    <div class="flex flex-wrap gap-4 mt-8">
-                        <div class="bg-blue-50 px-4 py-2 rounded-full flex items-center">
-                            <div class="w-6 h-6 rounded-full bg-[#203B76] flex items-center justify-center mr-2">
-                                <i class="fas fa-check text-white text-xs"></i>
-                            </div>
-                            <span class="text-sm">Foodbank Services</span>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="volunteer-role bg-white p-5 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 flex items-center">
+                                <i class="fas fa-utensils text-[#203B76] mr-3"></i>
+                                Foodbank Assistant
+                            </h4>
+                            <p class="text-gray-600 text-sm mt-1">Help sort, pack, and distribute food to those in need. Shifts available weekdays.</p>
                         </div>
-                        <div class="bg-blue-50 px-4 py-2 rounded-full flex items-center">
-                            <div class="w-6 h-6 rounded-full bg-[#203B76] flex items-center justify-center mr-2">
-                                <i class="fas fa-check text-white text-xs"></i>
-                            </div>
-                            <span class="text-sm">Community Classes</span>
+                        
+                        <div class="volunteer-role bg-white p-5 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 flex items-center">
+                                <i class="fas fa-chalkboard-teacher text-[#203B76] mr-3"></i>
+                                ESOL Tutor
+                            </h4>
+                            <p class="text-gray-600 text-sm mt-1">Support non-native speakers in improving their English language skills.</p>
                         </div>
-                        <div class="bg-blue-50 px-4 py-2 rounded-full flex items-center">
-                            <div class="w-6 h-6 rounded-full bg-[#203B76] flex items-center justify-center mr-2">
-                                <i class="fas fa-check text-white text-xs"></i>
-                            </div>
-                            <span class="text-sm">Sports Facilities</span>
+                        
+                        <div class="volunteer-role bg-white p-5 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 flex items-center">
+                                <i class="fas fa-running text-[#203B76] mr-3"></i>
+                                Sports Coach
+                            </h4>
+                            <p class="text-gray-600 text-sm mt-1">Lead or assist with sports activities for various age groups and abilities.</p>
+                        </div>
+                        
+                        <div class="volunteer-role bg-white p-5 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 flex items-center">
+                                <i class="fas fa-hands text-[#203B76] mr-3"></i>
+                                Community Events Helper
+                            </h4>
+                            <p class="text-gray-600 text-sm mt-1">Assist with organizing and running community events and activities.</p>
                         </div>
                     </div>
+                    
+                    <a href="#" class="btn-primary inline-flex items-center px-6 py-3 rounded-full text-white font-semibold">
+                        <i class="fas fa-file-alt mr-2"></i> Apply to Volunteer
+                    </a>
                 </div>
 
                 <div class="md:w-1/2 fade-in">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            alt="Rhema House building" class="rounded-xl shadow-md" />
-                        <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-xl flex flex-col items-center justify-center text-white z-10 floating"
-                            style="background-color: var(--secondary);">
-                            <span class="text-4xl font-bold"><i class="fas fa-heart"></i></span>
-                            <span class="text-sm text-center">Community Hub</span>
+                    <div class="bg-white p-8 rounded-xl">
+                        <h3 class="text-2xl font-semibold mb-6 text-gray-800">Volunteer Testimonials</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Volunteer" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <p class="text-gray-600 italic">"Volunteering at the foodbank has been incredibly rewarding. I've met amazing people and seen firsthand how our work helps families in need."</p>
+                                    <p class="text-sm font-semibold text-gray-800 mt-2">— James, Volunteer for 2 years</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Volunteer" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <p class="text-gray-600 italic">"Teaching ESOL classes has allowed me to connect with people from diverse backgrounds and help them build confidence in their language skills."</p>
+                                    <p class="text-sm font-semibold text-gray-800 mt-2">— Sarah, ESOL Tutor</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -253,116 +326,88 @@
         </div>
     </section>
 
-    <!-- Facilities Section -->
-    <section class="py-16 blue-bg">
+    <!-- Donate Section -->
+    <section id="donate" class="py-16 pink-bg">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Our Facilities</h2>
-            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">Rhema House offers diverse spaces to serve our community's needs</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Make a Donation</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">Your financial support enables us to continue our vital work in the community</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- Upstairs -->
-                <div class="bg-white p-8 rounded-xl card-hover">
-                    <div class="text-5xl mb-6 text-[#203B76]">
-                        <i class="fas fa-arrow-up"></i>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="donation-option bg-white p-6 rounded-xl text-center card-hover">
+                    <div class="text-5xl mb-4 text-[#D406B7]">
+                        <i class="fas fa-utensils"></i>
                     </div>
-                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Upstairs Facilities</h3>
-                    <p class="text-gray-600 mb-6">Our upstairs area houses multiple spaces designed for learning, gathering, and support services.</p>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-users text-[#203B76]"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Meeting Rooms</h4>
-                                <p class="text-gray-600">Spaces for community groups, counseling sessions, and small gatherings</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-chalkboard-teacher text-[#203B76]"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Classrooms</h4>
-                                <p class="text-gray-600">Dedicated spaces for ESOL classes, training workshops, and educational programs</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-utensils text-[#203B76]"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Foodbank</h4>
-                                <p class="text-gray-600">Distribution center providing essential nutrition to families in need</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-tshirt text-[#203B76]"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Clothing Store</h4>
-                                <p class="text-gray-600">Quality clothing available for those who need it most</p>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Foodbank Support</h3>
+                    <p class="text-gray-600 mb-4">£15 provides a family with a week's worth of groceries</p>
+                    <a href="#" class="btn-secondary px-6 py-2 rounded-full text-white font-semibold text-sm">
+                        Donate Now
+                    </a>
                 </div>
                 
-                <!-- Downstairs -->
-                <div class="bg-white p-8 rounded-xl card-hover">
-                    <div class="text-5xl mb-6 text-[#D406B7]">
-                        <i class="fas fa-arrow-down"></i>
+                <div class="donation-option bg-white p-6 rounded-xl text-center card-hover">
+                    <div class="text-5xl mb-4 text-[#D406B7]">
+                        <i class="fas fa-running"></i>
                     </div>
-                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Downstairs Transformation</h3>
-                    <p class="text-gray-600 mb-6">Our downstairs area is being transformed into a vibrant sports space with plans already approved!</p>
-                    
-                    <div class="bg-pink-50 p-6 rounded-lg mb-6">
-                        <h4 class="font-bold text-[#D406B7] mb-2">Coming Soon:</h4>
-                        <p class="text-gray-700">A modern, inclusive sports facility for the entire community</p>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Sports Programs</h3>
+                    <p class="text-gray-600 mb-4">£25 provides sports equipment for a child for a year</p>
+                    <a href="#" class="btn-secondary px-6 py-2 rounded-full text-white font-semibold text-sm">
+                        Donate Now
+                    </a>
+                </div>
+                
+                <div class="donation-option bg-white p-6 rounded-xl text-center card-hover">
+                    <div class="text-5xl mb-4 text-[#D406B7]">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Rhema House</h3>
+                    <p class="text-gray-600 mb-4">£50 helps maintain and improve our community hub</p>
+                    <a href="#" class="btn-secondary px-6 py-2 rounded-full text-white font-semibold text-sm">
+                        Donate Now
+                    </a>
+                </div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-xl">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-800">Other Ways to Give</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-pink-50 flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-calendar-alt text-[#D406B7]"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Regular Giving</h4>
+                            <p class="text-gray-600">Set up a monthly donation to provide consistent support for our programs</p>
+                        </div>
                     </div>
                     
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 rounded-full bg-pink-50 flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-basketball-ball text-[#D406B7]"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Multi-Sport Court</h4>
-                                <p class="text-gray-600">Space for basketball, volleyball, and other indoor sports</p>
-                            </div>
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-pink-50 flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-gift text-[#D406B7]"></i>
                         </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 rounded-full bg-pink-50 flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-dumbbell text-[#D406B7]"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Fitness Area</h4>
-                                <p class="text-gray-600">Equipment and space for physical fitness activities</p>
-                            </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">In-Kind Donations</h4>
+                            <p class="text-gray-600">Donate food, clothing, or other essential items directly to our center</p>
                         </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 rounded-full bg-pink-50 flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-child text-[#D406B7]"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Youth Programs</h4>
-                                <p class="text-gray-600">Dedicated activities for young people in a safe environment</p>
-                            </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-pink-50 flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-briefcase text-[#D406B7]"></i>
                         </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-8 h-8 rounded-full bg-pink-50 flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-female text-[#D406B7]"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Women-Only Sessions</h4>
-                                <p class="text-gray-600">Culturally sensitive sports activities for women</p>
-                            </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Corporate Matching</h4>
+                            <p class="text-gray-600">Many employers will match charitable donations made by their employees</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-pink-50 flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-hand-holding-heart text-[#D406B7]"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Fundraise for Us</h4>
+                            <p class="text-gray-600">Organize your own fundraising event or challenge in support of our work</p>
                         </div>
                     </div>
                 </div>
@@ -370,113 +415,95 @@
         </div>
     </section>
 
-    <!-- Future Vision Section -->
-    <section class="py-16 bg-white">
+    <!-- Partner Section -->
+    <section id="partner" class="py-16 teal-bg">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
-                    <img src="https://images.unsplash.com/photo-1541979667479-339a9c826894?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Community vision" class="rounded-xl shadow-md">
-                </div>
-                
-                <div class="md:w-1/2 md:pl-10 fade-in">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Our Future Vision</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Partner With Us</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">We collaborate with organizations, churches, and businesses to maximize our impact</p>
+            
+            <div class="flex flex-col md:flex-row items-center mb-12">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 fade-in">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800">Why Partner With Acts of Love?</h3>
                     <p class="text-gray-600 mb-6">
-                        Rhema House is poised to become the first dedicated, purpose-built space for the BAME and wider community in Teesside, with high-quality facilities and cultural understanding at its core.
+                        Strategic partnerships allow us to extend our reach and effectiveness in serving the community. We offer various partnership opportunities tailored to your organization's goals and capabilities.
                     </p>
                     
-                    <div class="bg-gradient-to-r from-[#203B76] to-[#D406B7] p-6 rounded-xl text-white mb-6">
-                        <h3 class="text-xl font-semibold mb-3">Transformative Impact</h3>
-                        <p>Our vision extends beyond physical spaces to creating genuine opportunities for connection, growth, and empowerment across all communities.</p>
-                    </div>
-                    
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <h4 class="font-semibold text-gray-800">Phase 1: Foundation</h4>
-                            <p class="text-gray-600">Establishing Rhema House as a community hub (Completed)</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-[#38b2ac] text-sm"></i>
+                            </div>
+                            <p class="text-gray-700">Increase your organization's social impact</p>
                         </div>
-                        <div class="timeline-item">
-                            <h4 class="font-semibold text-gray-800">Phase 2: Expansion</h4>
-                            <p class="text-gray-600">Developing the downstairs sports facility (In Progress)</p>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-[#38b2ac] text-sm"></i>
+                            </div>
+                            <p class="text-gray-700">Engage employees in meaningful volunteer opportunities</p>
                         </div>
-                        <div class="timeline-item">
-                            <h4 class="font-semibold text-gray-800">Phase 3: Enhancement</h4>
-                            <p class="text-gray-600">Creating specialized spaces for cultural programs (Future)</p>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-[#38b2ac] text-sm"></i>
+                            </div>
+                            <p class="text-gray-700">Demonstrate commitment to corporate social responsibility</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-[#38b2ac] text-sm"></i>
+                            </div>
+                            <p class="text-gray-700">Build positive brand association with community work</p>
                         </div>
                     </div>
                 </div>
+                
+                <div class="md:w-1/2 fade-in">
+                    <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Partnership meeting" class="rounded-xl shadow-md">
+                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Impact Section -->
-    <section class="py-16 pink-bg">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Rhema House by the Numbers</h2>
-            <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">The measurable impact of our community hub</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="bg-white p-6 rounded-xl card-hover">
-                    <div class="text-5xl font-bold mb-2 text-[#203B76]">500+</div>
-                    <div class="text-gray-600">Weekly Visitors</div>
-                </div>
-                <div class="bg-white p-6 rounded-xl card-hover">
-                    <div class="text-5xl font-bold mb-2 text-[#203B76]">12</div>
-                    <div class="text-gray-600">Programs Hosted</div>
-                </div>
-                <div class="bg-white p-6 rounded-xl card-hover">
-                    <div class="text-5xl font-bold mb-2 text-[#203B76]">50+</div>
-                    <div class="text-gray-600">Weekly Volunteers</div>
-                </div>
-                <div class="bg-white p-6 rounded-xl card-hover">
-                    <div class="text-5xl font-bold mb-2 text-[#203B76]">2024</div>
-                    <div class="text-gray-600">Sports Facility Completion</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Visit Us Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Visit Rhema House</h2>
-                <p class="text-xl text-gray-600 mb-10">We welcome everyone to our community hub. Come see what makes Rhema House special.</p>
+            <div class="bg-white p-8 rounded-xl">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-800">Our Current Partners</h3>
                 
-                <div class="bg-blue-50 p-8 rounded-xl mb-10">
-                    <h3 class="text-2xl font-semibold mb-4 text-[#203B76]">Location & Hours</h3>
-                    <p class="text-gray-700 mb-2"><i class="fas fa-map-marker-alt text-[#203B76] mr-2"></i> Rhema House, Stockton-on-Tees, UK</p>
-                    <p class="text-gray-700 mb-2"><i class="fas fa-clock text-[#203B76] mr-2"></i> Open Monday-Saturday: 9am-5pm</p>
-                    <p class="text-gray-700"><i class="fas fa-phone text-[#203B76] mr-2"></i> +44 123 456 789</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+                    <div class="partner-logo bg-gray-100 h-32 rounded-lg flex items-center justify-center p-4">
+                        <span class="text-gray-500 font-semibold">FareShare NE</span>
+                    </div>
+                    <div class="partner-logo bg-gray-100 h-32 rounded-lg flex items-center justify-center p-4">
+                        <span class="text-gray-500 font-semibold">Moses Project</span>
+                    </div>
+                    <div class="partner-logo bg-gray-100 h-32 rounded-lg flex items-center justify-center p-4">
+                        <span class="text-gray-500 font-semibold">Local Council</span>
+                    </div>
+                    <div class="partner-logo bg-gray-100 h-32 rounded-lg flex items-center justify-center p-4">
+                        <span class="text-gray-500 font-semibold">Community Church</span>
+                    </div>
                 </div>
                 
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#" class="btn-primary px-8 py-4 rounded-full text-white font-semibold text-lg">
-                        <i class="fas fa-directions mr-2"></i> Get Directions
-                    </a>
-                    <a href="#" class="btn-secondary px-8 py-4 rounded-full text-white font-semibold text-lg">
-                        <i class="fas fa-calendar-alt mr-2"></i> Schedule a Visit
+                <div class="text-center">
+                    <a href="#" class="btn-accent inline-flex items-center px-6 py-3 rounded-full text-white font-semibold">
+                        <i class="fas fa-envelope mr-2"></i> Contact Us About Partnership
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Support Section -->
+    <!-- CTA Section -->
     <section class="py-16 bg-gradient-to-r from-[#203B76] to-[#D406B7] text-white">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Support Rhema House</h2>
-            <p class="text-xl mb-10 max-w-3xl mx-auto">Help us maintain and expand our facilities to serve even more community members</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Make a Difference?</h2>
+            <p class="text-xl mb-10 max-w-3xl mx-auto">Join us in creating lasting change in our community. Every contribution, big or small, makes an impact.</p>
             
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#" class="bg-white text-[#203B76] hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg">
-                    <i class="fas fa-donate mr-2"></i> Make a Donation
-                </a>
-                <a href="#" class="bg-yellow-400 text-gray-800 hover:bg-yellow-500 px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg">
                     <i class="fas fa-hands-helping mr-2"></i> Volunteer
                 </a>
+                <a href="#" class="bg-white text-[#D406B7] hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg">
+                    <i class="fas fa-donate mr-2"></i> Donate
+                </a>
                 <a href="#" class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg">
-                    <i class="fas fa-share-alt mr-2"></i> Spread the Word
+                    <i class="fas fa-handshake mr-2"></i> Partner With Us
                 </a>
             </div>
         </div>
@@ -532,7 +559,7 @@
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
-                    <p class="text-sm opacity-75">Follow us for updates on Rhema House</p>
+                    <p class="text-sm opacity-75">Follow us for updates on how to get involved</p>
                 </div>
             </div>
             
@@ -560,6 +587,16 @@
             
             checkFade();
             $(window).scroll(checkFade);
+            
+            // Smooth scrolling for anchor links
+            $('a[href^="#"]').on('click', function(e) {
+                e.preventDefault();
+                var target = this.hash;
+                var $target = $(target);
+                $('html, body').animate({
+                    'scrollTop': $target.offset().top - 100
+                }, 800, 'swing');
+            });
         });
     </script>
 </body>

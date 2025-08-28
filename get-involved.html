@@ -307,6 +307,32 @@
         .illustration {
             filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
         }
+
+        .volunteer-role {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .volunteer-role:hover {
+            border-left-color: var(--primary);
+            transform: translateX(5px);
+        }
+        
+        .donation-option {
+            transition: all 0.3s ease;
+        }
+        
+        .donation-option:hover {
+            transform: scale(1.03);
+        }
+        
+        .partner-logo {
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 
@@ -328,37 +354,37 @@
                         class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium relative group">
                         Home
                         <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--secondary)] transition-all group-hover:w-full"></span>
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--primary)] transition-all group-hover:w-full"></span>
                     </a>
                     <a href="about.html"
                         class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium relative group">
                         About Us
                         <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--secondary)] transition-all group-hover:w-full"></span>
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--primary)] transition-all group-hover:w-full"></span>
                     </a>
                     <a href="about.html#our-work"
                         class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium relative group">
                         Our Work
                         <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--secondary)] transition-all group-hover:w-full"></span>
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--primary)] transition-all group-hover:w-full"></span>
                     </a>
                     <a href="rhema-house.html"
                         class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium relative group">
                         Rhema House
                         <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--secondary)] transition-all group-hover:w-full"></span>
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--primary)] transition-all group-hover:w-full"></span>
                     </a>
                     <a href="get-involved.html"
                         class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium relative group">
                         Get Involved
                         <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--secondary)] transition-all group-hover:w-full"></span>
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--primary)] transition-all group-hover:w-full"></span>
                     </a>
                     <a href="contact.html"
                         class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium relative group">
                         Contact
                         <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--secondary)] transition-all group-hover:w-full"></span>
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--primary)] transition-all group-hover:w-full"></span>
                     </a>
                 </nav>
 
@@ -410,264 +436,137 @@
     </header>
 
 
-    <!-- Hero Section with Slideshow -->
-    <section class="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden">
-        <!-- Slide 1 -->
-        <div class="hero-slide hero-slide-1 active">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-col md:flex-row items-center justify-between">
-                    <div class="md:w-1/2 text-white text-center md:text-left mb-10 md:mb-0 fade-in">
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                            Transforming Lives Through <span class="gradient-text">Community Support</span>
-                        </h1>
-                        <p class="text-xl md:text-2xl mb-8">
-                            Join us in providing essential resources and support to those in need within our community.
-                        </p>
-                        <a href="#"
-                            class="btn-primary inline-flex items-center px-8 py-4 rounded-full text-white font-semibold text-lg">
-                            <i class="fas fa-hands-helping mr-3"></i> Volunteer Today
-                        </a>
-                    </div>
-
-                </div>
+    <!-- Breadcrumb -->
+    <section class="pt-28 pb-8 bg-gradient-to-r from-[#203B76] to-[#D406B7] text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center space-x-2 text-sm">
+                <a href="#" class="hover:underline">Home</a>
+                <span><i class="fas fa-chevron-right text-xs"></i></span>
+                <span>Get Involved</span>
             </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="hero-slide hero-slide-2">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-col md:flex-row items-center justify-between">
-                    <div class="md:w-1/2 text-white text-center md:text-left mb-10 md:mb-0 fade-in">
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                            Help Us <span class="gradient-text">Fight Hunger</span> in Our Community
-                        </h1>
-                        <p class="text-xl md:text-2xl mb-8">
-                            Your donation can provide meals for families struggling with food insecurity.
-                        </p>
-                        <a href="#"
-                            class="btn-secondary inline-flex items-center px-8 py-4 rounded-full text-white font-semibold text-lg">
-                            <i class="fas fa-donate mr-3"></i> Donate Now
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="hero-slide hero-slide-3">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-col md:flex-row items-center justify-between">
-                    <div class="md:w-1/2 text-white text-center md:text-left mb-10 md:mb-0 fade-in">
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                            Building <span class="gradient-text">Inclusive Communities</span> Together
-                        </h1>
-                        <p class="text-xl md:text-2xl mb-8">
-                            Discover our programs that celebrate diversity and foster understanding.
-                        </p>
-                        <a href="#"
-                            class="btn-accent inline-flex items-center px-8 py-4 rounded-full text-white font-semibold text-lg">
-                            <i class="fas fa-list-alt mr-3"></i> Explore Programs
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- Navigation Arrows -->
-        <div class="slide-nav prev">
-            <i class="fas fa-chevron-left"></i>
-        </div>
-        <div class="slide-nav next">
-            <i class="fas fa-chevron-right"></i>
-        </div>
-
-        <!-- Indicators -->
-        <div class="slide-indicators">
-            <div class="slide-indicator active" data-slide="0"></div>
-            <div class="slide-indicator" data-slide="1"></div>
-            <div class="slide-indicator" data-slide="2"></div>
-        </div>
-
-        <!-- Progress Bar -->
-        <div class="progress-bar">
-            <div class="progress-fill animate"></div>
+            <h1 class="text-4xl md:text-5xl font-bold mt-4">You Can Help Us Make a Difference</h1>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <!-- <section class="py-16 bg-gradient-to-r from-[#203B76] to-[#D406B7] text-white">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-                <div class="fade-in">
-                    <div class="text-5xl font-bold mb-2 stats-number" data-target="15000">0</div>
-                    <div class="text-sm uppercase tracking-wider">Meals Provided</div>
-                </div>
-                <div class="fade-in">
-                    <div class="text-5xl font-bold mb-2 stats-number" data-target="2500">0</div>
-                    <div class="text-sm uppercase tracking-wider">People Helped</div>
-                </div>
-                <div class="fade-in">
-                    <div class="text-5xl font-bold mb-2 stats-number" data-target="350">0</div>
-                    <div class="text-sm uppercase tracking-wider">Volunteers</div>
-                </div>
-                <div class="fade-in">
-                    <div class="text-5xl font-bold mb-2 stats-number" data-target="12">0</div>
-                    <div class="text-sm uppercase tracking-wider">Communities Served</div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Highlights Section -->
+    <!-- Hero Section -->
     <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Our Key Programs</h2>
-            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-                We're committed to making a difference through these essential community programs
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+                Join us in our mission to transform lives and build stronger communities. Your support, whether through time, resources, or partnership, creates lasting change.
             </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-                <!-- Program Card -->
-                <div
-                    class="group bg-white p-6 rounded-xl shadow-md transition-all duration-300 hover:bg-[var(--primary)]">
-                    <div class="text-5xl mb-4 program-icon group-hover:text-white">🏠</div>
-                    <h3 class="text-xl font-semibold mb-3 text-[var(--primary)] group-hover:text-white">Rhema House</h3>
-                    <p class="text-gray-600 mb-4 group-hover:text-white">
-                        A safe haven providing support and resources for vulnerable community members.
-                    </p>
-                    <a href="#" class="font-semibold flex items-center text-[var(--primary)] group-hover:text-white">
-                        Learn more
-                        <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="bg-blue-50 p-8 rounded-xl card-hover">
+                    <div class="text-5xl mb-6 text-[#203B76]">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Volunteer</h3>
+                    <p class="text-gray-600 mb-6">Join our friendly team and use your skills to change lives.</p>
+                    <a href="#volunteer" class="btn-primary px-6 py-3 rounded-full text-white font-semibold">
+                        Learn More
                     </a>
                 </div>
-
-                <!-- Repeat for others -->
-                <div
-                    class="group bg-white p-6 rounded-xl shadow-md transition-all duration-300 hover:bg-[var(--primary)]">
-                    <div class="text-5xl mb-4 program-icon group-hover:text-white">🍞</div>
-                    <h3 class="text-xl font-semibold mb-3 text-[var(--primary)] group-hover:text-white">Foodbank</h3>
-                    <p class="text-gray-600 mb-4 group-hover:text-white">
-                        Providing essential nutrition to families and individuals facing food insecurity.
-                    </p>
-                    <a href="#" class="font-semibold flex items-center text-[var(--primary)] group-hover:text-white">
-                        Learn more
-                        <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
+                
+                <div class="bg-pink-50 p-8 rounded-xl card-hover">
+                    <div class="text-5xl mb-6 text-[#D406B7]">
+                        <i class="fas fa-donate"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Donate</h3>
+                    <p class="text-gray-600 mb-6">Your support helps us run the foodbank, sports programs, and more.</p>
+                    <a href="#donate" class="btn-secondary px-6 py-3 rounded-full text-white font-semibold">
+                        Donate Now
                     </a>
                 </div>
-
-                <div
-                    class="group bg-white p-6 rounded-xl shadow-md transition-all duration-300 hover:bg-[var(--primary)]">
-                    <div class="text-5xl mb-4 program-icon group-hover:text-white">⚽</div>
-                    <h3 class="text-xl font-semibold mb-3 text-[var(--primary)] group-hover:text-white">Sports &
-                        Wellbeing</h3>
-                    <p class="text-gray-600 mb-4 group-hover:text-white">
-                        Promoting physical and mental health through inclusive sports activities.
-                    </p>
-                    <a href="#" class="font-semibold flex items-center text-[var(--primary)] group-hover:text-white">
-                        Learn more
-                        <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
+                
+                <div class="bg-teal-50 p-8 rounded-xl card-hover">
+                    <div class="text-5xl mb-6 text-[#38b2ac]">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Partner With Us</h3>
+                    <p class="text-gray-600 mb-6">We work with organisations, churches, and local businesses to create lasting impact.</p>
+                    <a href="#partner" class="btn-accent px-6 py-3 rounded-full text-white font-semibold">
+                        Partner Today
                     </a>
                 </div>
-
-                <div
-                    class="group bg-white p-6 rounded-xl shadow-md transition-all duration-300 hover:bg-[var(--primary)]">
-                    <div class="text-5xl mb-4 program-icon group-hover:text-white">🌍</div>
-                    <h3 class="text-xl font-semibold mb-3 text-[var(--primary)] group-hover:text-white">Cultural
-                        Awareness</h3>
-                    <p class="text-gray-600 mb-4 group-hover:text-white">
-                        Fostering understanding and celebrating diversity within our communities.
-                    </p>
-                    <a href="#" class="font-semibold flex items-center text-[var(--primary)] group-hover:text-white">
-                        Learn more
-                        <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
-                    </a>
-                </div>
-
             </div>
         </div>
     </section>
 
-
-
-    <!-- About Us Section -->
-    <section class="py-16 bg-gray-100">
+    <!-- Volunteer Section -->
+    <section id="volunteer" class="py-16 blue-bg">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 fade-in">
                     <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
-                        About Acts of Love International
+                        Volunteer Opportunities
                     </h2>
-                    <p class="text-gray-600 mb-4">
-                        Founded in 2005, Acts of Love International has been at the forefront of community development
-                        and poverty alleviation in Stockton-on-Tees and surrounding areas.
-                    </p>
                     <p class="text-gray-600 mb-6">
-                        Our holistic approach addresses immediate needs while working on long-term solutions that
-                        empower individuals and strengthen communities.
+                        Our volunteers are the heart of our organization. Whether you can give a few hours a week or make a regular commitment, your time and skills make a real difference in our community.
                     </p>
-
-                    <div class="mb-6">
-                        <div class="flex items-center mb-2">
-                            <div class="w-5 h-5 rounded-full mr-3 flex items-center justify-center"
-                                style="background-color: var(--primary);">
-                                <i class="fas fa-check text-white text-xs"></i>
-                            </div>
-                            <p class="text-gray-700">Community-centered programs</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="volunteer-role bg-white p-5 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 flex items-center">
+                                <i class="fas fa-utensils text-[#203B76] mr-3"></i>
+                                Foodbank Assistant
+                            </h4>
+                            <p class="text-gray-600 text-sm mt-1">Help sort, pack, and distribute food to those in need. Shifts available weekdays.</p>
                         </div>
-                        <div class="flex items-center mb-2">
-                            <div class="w-5 h-5 rounded-full mr-3 flex items-center justify-center"
-                                style="background-color: var(--primary);">
-                                <i class="fas fa-check text-white text-xs"></i>
-                            </div>
-                            <p class="text-gray-700">Inclusive and diverse initiatives</p>
+                        
+                        <div class="volunteer-role bg-white p-5 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 flex items-center">
+                                <i class="fas fa-chalkboard-teacher text-[#203B76] mr-3"></i>
+                                ESOL Tutor
+                            </h4>
+                            <p class="text-gray-600 text-sm mt-1">Support non-native speakers in improving their English language skills.</p>
                         </div>
-                        <div class="flex items-center">
-                            <div class="w-5 h-5 rounded-full mr-3 flex items-center justify-center"
-                                style="background-color: var(--primary);">
-                                <i class="fas fa-check text-white text-xs"></i>
-                            </div>
-                            <p class="text-gray-700">Sustainable impact focus</p>
+                        
+                        <div class="volunteer-role bg-white p-5 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 flex items-center">
+                                <i class="fas fa-running text-[#203B76] mr-3"></i>
+                                Sports Coach
+                            </h4>
+                            <p class="text-gray-600 text-sm mt-1">Lead or assist with sports activities for various age groups and abilities.</p>
+                        </div>
+                        
+                        <div class="volunteer-role bg-white p-5 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 flex items-center">
+                                <i class="fas fa-hands text-[#203B76] mr-3"></i>
+                                Community Events Helper
+                            </h4>
+                            <p class="text-gray-600 text-sm mt-1">Assist with organizing and running community events and activities.</p>
                         </div>
                     </div>
-
-                    <a href="#" class="inline-flex items-center font-semibold transition-colors group"
-                        style="color: var(--primary);">
-                        Learn More About Our Mission
-                        <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
+                    
+                    <a href="#" class="btn-primary inline-flex items-center px-6 py-3 rounded-full text-white font-semibold">
+                        <i class="fas fa-file-alt mr-2"></i> Apply to Volunteer
                     </a>
                 </div>
 
                 <div class="md:w-1/2 fade-in">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            alt="Community gathering" class="rounded-xl shadow-md" />
-                        <div class="absolute -bottom-6 -left-6 w-32 h-32 rounded-xl flex flex-col items-center justify-center text-white z-10 floating"
-                            style="background-color: var(--primary);">
-                            <span class="text-4xl font-bold">18</span>
-                            <span class="text-sm">Years of Service</span>
+                    <div class="bg-white p-8 rounded-xl">
+                        <h3 class="text-2xl font-semibold mb-6 text-gray-800">Volunteer Testimonials</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Volunteer" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <p class="text-gray-600 italic">"Volunteering at the foodbank has been incredibly rewarding. I've met amazing people and seen firsthand how our work helps families in need."</p>
+                                    <p class="text-sm font-semibold text-gray-800 mt-2">— James, Volunteer for 2 years</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Volunteer" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <p class="text-gray-600 italic">"Teaching ESOL classes has allowed me to connect with people from diverse backgrounds and help them build confidence in their language skills."</p>
+                                    <p class="text-sm font-semibold text-gray-800 mt-2">— Sarah, ESOL Tutor</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -675,62 +574,166 @@
         </div>
     </section>
 
-    <!-- Get Involved CTA -->
-    <section class="py-16 text-white" style="background: linear-gradient(to right, var(--primary), var(--secondary));">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Make a Difference Today</h2>
-            <p class="text-xl mb-10 max-w-2xl mx-auto">
-                Join us in our mission to transform lives and build stronger communities. Your support can create
-                lasting change.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
+    <!-- Donate Section -->
+    <section id="donate" class="py-16 pink-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Make a Donation</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">Your financial support enables us to continue our vital work in the community</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="donation-option bg-white p-6 rounded-xl text-center card-hover">
+                    <div class="text-5xl mb-4 text-[#D406B7]">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Foodbank Support</h3>
+                    <p class="text-gray-600 mb-4">£15 provides a family with a week's worth of groceries</p>
+                    <a href="#" class="btn-secondary px-6 py-2 rounded-full text-white font-semibold text-sm">
+                        Donate Now
+                    </a>
+                </div>
+                
+                <div class="donation-option bg-white p-6 rounded-xl text-center card-hover">
+                    <div class="text-5xl mb-4 text-[#D406B7]">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Sports Programs</h3>
+                    <p class="text-gray-600 mb-4">£25 provides sports equipment for a child for a year</p>
+                    <a href="#" class="btn-secondary px-6 py-2 rounded-full text-white font-semibold text-sm">
+                        Donate Now
+                    </a>
+                </div>
+                
+                <div class="donation-option bg-white p-6 rounded-xl text-center card-hover">
+                    <div class="text-5xl mb-4 text-[#D406B7]">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Rhema House</h3>
+                    <p class="text-gray-600 mb-4">£50 helps maintain and improve our community hub</p>
+                    <a href="#" class="btn-secondary px-6 py-2 rounded-full text-white font-semibold text-sm">
+                        Donate Now
+                    </a>
+                </div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-xl">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-800">Other Ways to Give</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-pink-50 flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-calendar-alt text-[#D406B7]"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Regular Giving</h4>
+                            <p class="text-gray-600">Set up a monthly donation to provide consistent support for our programs</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-pink-50 flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-gift text-[#D406B7]"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">In-Kind Donations</h4>
+                            <p class="text-gray-600">Donate food, clothing, or other essential items directly to our center</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-pink-50 flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-briefcase text-[#D406B7]"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Corporate Matching</h4>
+                            <p class="text-gray-600">Many employers will match charitable donations made by their employees</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-pink-50 flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-hand-holding-heart text-[#D406B7]"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Fundraise for Us</h4>
+                            <p class="text-gray-600">Organize your own fundraising event or challenge in support of our work</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Volunteer -->
-                <a href="#"
-                    class="bg-white hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg flex items-center justify-center"
-                    style="color: var(--primary);">
+    <!-- Partner Section -->
+    <section id="partner" class="py-16 teal-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Partner With Us</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">We collaborate with organizations, churches, and businesses to maximize our impact</p>
+            
+            <div class="flex flex-col md:flex-row items-center mb-12">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 fade-in">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800">Why Partner With Acts of Love?</h3>
+                    <p class="text-gray-600 mb-6">
+                        Strategic partnerships allow us to extend our reach and effectiveness in serving the community. We offer various partnership opportunities tailored to your organization's goals and capabilities.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-[#38b2ac] text-sm"></i>
+                            </div>
+                            <p class="text-gray-700">Increase your organization's social impact</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-[#38b2ac] text-sm"></i>
+                            </div>
+                            <p class="text-gray-700">Engage employees in meaningful volunteer opportunities</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-[#38b2ac] text-sm"></i>
+                            </div>
+                            <p class="text-gray-700">Demonstrate commitment to corporate social responsibility</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-[#38b2ac] text-sm"></i>
+                            </div>
+                            <p class="text-gray-700">Build positive brand association with community work</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 fade-in">
+                    <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Partnership meeting" class="rounded-xl shadow-md">
+                </div>
+            </div>
+            
+            
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-[#203B76] to-[#D406B7] text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Make a Difference?</h2>
+            <p class="text-xl mb-10 max-w-3xl mx-auto">Join us in creating lasting change in our community. Every contribution, big or small, makes an impact.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="bg-white text-[#203B76] hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg">
                     <i class="fas fa-hands-helping mr-2"></i> Volunteer
                 </a>
-
-                <!-- Donate -->
-                <a href="#"
-                    class="px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg flex items-center justify-center"
-                    style="background-color: var(--secondary); color: var(--light);">
+                <a href="#" class="bg-white text-[#D406B7] hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg">
                     <i class="fas fa-donate mr-2"></i> Donate
                 </a>
-
-                <!-- Partner -->
-                <a href="#"
-                    class="bg-transparent border-2 text-white hover:bg-white/10 px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg flex items-center justify-center"
-                    style="border-color: var(--light);">
+                <a href="#" class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg">
                     <i class="fas fa-handshake mr-2"></i> Partner With Us
                 </a>
             </div>
         </div>
     </section>
 
-
-
-
-    <!-- Newsletter Section -->
-    <section class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Stay Updated</h2>
-                <p class="text-xl text-gray-600 mb-8">Subscribe to our newsletter to receive updates on our programs and
-                    impact</p>
-
-                <form class="flex flex-col sm:flex-row gap-4">
-                    <input type="email" placeholder="Your email address"
-                        class="flex-grow px-6 py-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
-                    <button type="submit"
-                        class="btn-primary text-white px-8 py-4 rounded-full font-semibold transition-colors shadow-lg">
-                        Subscribe
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
