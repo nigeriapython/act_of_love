@@ -4,13 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acts of Love International - Transforming Lives, Building Hope</title>
+    <title>Rhema House - Acts of Love International</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -45,38 +42,6 @@
             font-family: 'Playfair Display', serif;
         }
 
-        .hero-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 1.2s ease-in-out;
-            z-index: 1;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-slide.active {
-            opacity: 1;
-            z-index: 2;
-        }
-
-        .hero-slide-1 {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/slide/act_slide2.png');
-        }
-
-        .hero-slide-2 {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/slide/act_slide3.png');
-        }
-
-        .hero-slide-3 {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/slide/act_slide1.png');
-        }
-
         .gradient-text {
             background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
             -webkit-background-clip: text;
@@ -106,17 +71,6 @@
             transform: translateY(-2px);
         }
 
-        .btn-accent {
-            background: linear-gradient(90deg, var(--accent) 0%, #38a169 100%);
-            box-shadow: 0 4px 15px 0 rgba(56, 178, 172, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .btn-accent:hover {
-            box-shadow: 0 6px 20px 0 rgba(56, 178, 172, 0.5);
-            transform: translateY(-2px);
-        }
-
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -128,234 +82,151 @@
             transform: translateY(0);
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 10;
+        .section-padding {
+            padding: 5rem 0;
         }
 
-        .slide-indicators {
-            position: absolute;
-            bottom: 30px;
-            left: 0;
-            right: 0;
-            z-index: 20;
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .slide-indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .slide-indicator.active {
-            background: white;
-            transform: scale(1.2);
-        }
-
-        .slide-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 20;
-            background: rgba(255, 255, 255, 0.2);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .mission-statement {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 20px;
+            padding: 3rem;
             color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(4px);
-        }
-
-        .slide-nav:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .slide-nav.prev {
-            left: 20px;
-        }
-
-        .slide-nav.next {
-            right: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .slide-nav {
-                width: 40px;
-                height: 40px;
-            }
-
-            .slide-nav.prev {
-                left: 10px;
-            }
-
-            .slide-nav.next {
-                right: 10px;
-            }
-        }
-
-        .progress-bar {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.3);
-            width: 100%;
-            z-index: 20;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: white;
-            width: 0%;
-            transition: width 5s linear;
-        }
-
-        .progress-fill.animate {
-            width: 100%;
-        }
-
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
-
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
-        .success-slide {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.8s ease;
-        }
-
-        .success-slide.active {
-            display: flex;
-            opacity: 1;
-        }
-
-        .gradient-border {
             position: relative;
-            background: white;
-            border-radius: 16px;
+            overflow: hidden;
         }
 
-        .gradient-border::before {
+        .mission-statement::before {
             content: "";
             position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            border-radius: 18px;
-            z-index: -1;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
         }
 
-        .counter {
-            font-variant-numeric: tabular-nums;
+        .impact-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
         }
 
-        .menu-open {
+        .impact-stat .number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-stat .label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .value-card {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .footer-link {
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--secondary);
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 280px;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-menu.open {
             transform: translateX(0);
         }
 
-        .menu-closed {
-            transform: translateX(100%);
-        }
-
-        .program-icon {
-            transition: all 0.3s ease;
-        }
-
-        .program-card:hover .program-icon {
-            transform: scale(1.2) rotate(5deg);
-        }
-
-        .stats-number {
-            font-variant-numeric: tabular-nums;
-        }
-
-        .illustration {
-            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
-        }
-
-        .blue-bg {
-            background-color: rgba(32, 59, 118, 0.05);
-        }
-
-        .pink-bg {
-            background-color: rgba(212, 6, 183, 0.05);
-        }
-
-        .timeline {
-            position: relative;
-            padding-left: 3rem;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
+        .overlay {
+            position: fixed;
             top: 0;
+            left: 0;
+            width: 100%;
             height: 100%;
-            width: 4px;
-            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
         }
 
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2rem;
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
 
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -3.3rem;
-            top: 0.5rem;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: var(--primary);
-            border: 4px solid white;
-            box-shadow: 0 0 0 2px var(--primary);
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
-        .floor-plan {
+        .service-card {
             transition: all 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
         }
 
-        .floor-plan:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-input {
+            transition: all 0.3s ease;
+            border: 2px solid #e2e8f0;
+        }
+
+        .form-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(32, 59, 118, 0.1);
         }
     </style>
 </head>
@@ -386,9 +257,9 @@
                         <span
                             class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--secondary)] transition-all group-hover:w-full"></span>
                     </a>
-                    <a href="about.html#our-work"
+                    <a href="programs.html"
                         class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium relative group">
-                        Our Work
+                        Our Programs
                         <span
                             class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--secondary)] transition-all group-hover:w-full"></span>
                     </a>
@@ -423,101 +294,83 @@
                 </div>
             </div>
         </div>
-
-        <!-- Mobile Menu -->
-        <div class="fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 transition-transform duration-300 menu-closed"
-            id="mobileMenu">
-            <div class="p-6">
-                <!-- Logo & Close Button -->
-                <div class="flex justify-between items-center mb-10">
-                    <a href="#">
-                        <img src="images/act_of_love_logo.png" alt="Acts of Love Logo" class="h-10">
-                    </a>
-                    <button id="closeMenu">
-                        <i class="fas fa-times text-gray-700 text-xl"></i>
-                    </button>
-                </div>
-
-                <!-- Mobile Nav -->
-                <nav class="flex flex-col space-y-6 bg-white">
-                    <a href="index.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Home</a>
-                    <a href="about.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">About
-                        Us</a>
-                    <a href="about.html#our-work" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Our
-                        Work</a>
-                    <a href="rhema-house.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Rhema
-                        House</a>
-                    <a href="get-involved.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Get
-                        Involved</a>
-                    <a href="contact.html"
-                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Contact</a>
-                    <a href="donate.html" class="btn-primary px-6 py-3 rounded-full text-white font-semibold text-center mt-4">
-                        Donate Now
-                    </a>
-                </nav>
-            </div>
-        </div>
     </header>
 
-    <!-- Breadcrumb -->
-    <section class="pt-28 pb-8 bg-gradient-to-r from-[#203B76] to-[#D406B7] text-white">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center space-x-2 text-sm">
-                <a href="#" class="hover:underline">Home</a>
-                <span><i class="fas fa-chevron-right text-xs"></i></span>
-                <span>Rhema House</span>
+    <!-- Mobile Menu Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="p-6 h-full flex flex-col">
+            <!-- Logo & Close Button -->
+            <div class="flex justify-between items-center mb-10">
+                <a href="index.html">
+                    <img src="images/act_of_love_logo.png" alt="Acts of Love Logo" class="h-10">
+                </a>
+                <button id="closeMenu">
+                    <i class="fas fa-times text-gray-700 text-xl"></i>
+                </button>
             </div>
-            <h1 class="text-4xl md:text-5xl font-bold mt-4">Rhema House: Our Community Hub</h1>
+
+            <!-- Mobile Nav -->
+            <nav class="flex flex-col space-y-6 flex-grow">
+                <a href="index.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium py-2 border-b border-gray-100 mobile-nav-link">Home</a>
+                <a href="about.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium py-2 border-b border-gray-100 mobile-nav-link">About Us</a>
+                <a href="programs.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium py-2 border-b border-gray-100 mobile-nav-link">Our Programs</a>
+                <a href="rhema-house.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium py-2 border-b border-gray-100 mobile-nav-link">Rhema House</a>
+                <a href="get-involved.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium py-2 border-b border-gray-100 mobile-nav-link">Get Involved</a>
+                <a href="contact.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium py-2 border-b border-gray-100 mobile-nav-link">Contact</a>
+            </nav>
+            
+            <!-- Donate Button -->
+            <div class="mt-auto pt-6 border-t border-gray-200">
+                <a href="donate.html" class="btn-primary w-full px-6 py-3 rounded-full text-white font-semibold text-center block">
+                    Donate Now
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="pt-32 pb-20 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Rhema House: Our Community Hub</h1>
+                <p class="text-xl">The heart of our operations, a place of safety, learning, and opportunity for the entire community</p>
+            </div>
         </div>
     </section>
 
-    <!-- Hero Section -->
-    <section class="py-16 bg-white">
+    <!-- Introduction Section -->
+    <section class="section-padding bg-white">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 fade-in">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 fade-in">
                     <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
-                        The Heart of Our Operations
+                        Welcome to Rhema House
                     </h2>
-                    <p class="text-xl text-gray-600 mb-6">
-                        Rhema House is the heart of our operations, a place of safety, learning, and opportunity for the
-                        entire community.
+                    <p class="text-gray-600 mb-6 text-lg">
+                        Rhema House is the vibrant community hub that serves as the central location for all our programs and initiatives, bringing people together from all backgrounds and walks of life.
                     </p>
                     <p class="text-gray-600 mb-6">
-                        This vibrant community hub serves as the central location for all our programs and initiatives,
-                        bringing people together from all backgrounds and walks of life.
+                        Located at the heart of Stockton-on-Tees, Rhema House provides a safe, welcoming space where community members can access essential services, participate in activities, and build meaningful connections.
                     </p>
-
-                    <div class="flex flex-wrap gap-4 mt-8">
-                        <div class="bg-blue-50 px-4 py-2 rounded-full flex items-center">
-                            <div class="w-6 h-6 rounded-full bg-[#203B76] flex items-center justify-center mr-2">
-                                <i class="fas fa-check text-white text-xs"></i>
-                            </div>
-                            <span class="text-sm">Foodbank Services</span>
-                        </div>
-                        <div class="bg-blue-50 px-4 py-2 rounded-full flex items-center">
-                            <div class="w-6 h-6 rounded-full bg-[#203B76] flex items-center justify-center mr-2">
-                                <i class="fas fa-check text-white text-xs"></i>
-                            </div>
-                            <span class="text-sm">Community Classes</span>
-                        </div>
-                        <div class="bg-blue-50 px-4 py-2 rounded-full flex items-center">
-                            <div class="w-6 h-6 rounded-full bg-[#203B76] flex items-center justify-center mr-2">
-                                <i class="fas fa-check text-white text-xs"></i>
-                            </div>
-                            <span class="text-sm">Sports Facilities</span>
-                        </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-[var(--primary)]">
+                        <p class="text-gray-700 italic">
+                            "Every pound helps us maintain our hub and continue serving our community."
+                        </p>
                     </div>
                 </div>
 
-                <div class="md:w-1/2 fade-in">
+                <div class="lg:w-1/2 fade-in">
                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            alt="Rhema House building" class="rounded-xl shadow-md" />
-                        <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-xl flex flex-col items-center justify-center text-white z-10 floating"
-                            style="background-color: var(--secondary);">
-                            <span class="text-4xl font-bold"><i class="fas fa-heart"></i></span>
-                            <span class="text-sm text-center">Community Hub</span>
+                        <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Rhema House building" class="rounded-xl shadow-md w-full" />
+                        <div class="absolute -bottom-6 -left-6 w-32 h-32 rounded-xl flex flex-col items-center justify-center text-white z-10"
+                            style="background-color: var(--primary);">
+                            <span class="text-4xl font-bold">18</span>
+                            <span class="text-sm">Years Serving</span>
                         </div>
                     </div>
                 </div>
@@ -525,253 +378,229 @@
         </div>
     </section>
 
-    <!-- Facilities Section -->
-    <section class="py-16 blue-bg">
+    <!-- Services Section -->
+    <section class="section-padding bg-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Our Facilities</h2>
-            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">Rhema House offers diverse spaces to
-                serve our community's needs</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Services at Rhema House</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                Our community hub offers essential services that support and empower local residents
+            </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- Upstairs -->
-                <div class="bg-white p-8 rounded-xl card-hover">
-                    <div class="text-5xl mb-6 text-[#203B76]">
-                        <i class="fas fa-arrow-up"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Upstairs Facilities</h3>
-                    <p class="text-gray-600 mb-6">Our upstairs area houses multiple spaces designed for learning,
-                        gathering, and support services.</p>
-
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div
-                                class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-users text-[#203B76]"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Meeting Rooms</h4>
-                                <p class="text-gray-600">Spaces for community groups, counseling sessions, and small
-                                    gatherings</p>
-                            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Foodbank Service -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1553901753-215db344677a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="p-6">
+                        <div class="text-4xl mb-4 text-[var(--primary)]">🍞</div>
+                        <h3 class="text-xl font-semibold mb-3 text-[var(--primary)]">Foodbank Services</h3>
+                        <p class="text-gray-600 mb-4">
+                            Providing essential nutrition to families and individuals facing food insecurity through our weekly foodbank services.
+                        </p>
+                        <div class="text-sm text-gray-500 mb-4">
+                            <p><strong>Wednesdays:</strong> 9am to 1pm (booking required)</p>
+                            <p><strong>Fridays:</strong> 9am to 10am (walk-in service)</p>
                         </div>
-
-                        <div class="flex items-start">
-                            <div
-                                class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-chalkboard-teacher text-[#203B76]"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Classrooms</h4>
-                                <p class="text-gray-600">Dedicated spaces for ESOL classes, training workshops, and
-                                    educational programs</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div
-                                class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-utensils text-[#203B76]"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Foodbank</h4>
-                                <p class="text-gray-600">Distribution center providing essential nutrition to families
-                                    in need</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div
-                                class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-tshirt text-[#203B76]"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Clothing Store</h4>
-                                <p class="text-gray-600">Quality clothing available for those who need it most</p>
-                            </div>
-                        </div>
+                        <a href="foodbank.html" class="font-semibold flex items-center text-[var(--primary)]">
+                            Learn more about Foodbank
+                            <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Downstairs -->
-                <div class="bg-white p-8 rounded-xl card-hover">
-                    <div class="text-5xl mb-6 text-[#D406B7]">
-                        <i class="fas fa-arrow-down"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Downstairs Transformation</h3>
-                    <p class="text-gray-600 mb-6">Our downstairs area is being transformed into a vibrant sports space
-                        with plans already approved!</p>
-
-                    <div class="bg-pink-50 p-6 rounded-lg mb-6">
-                        <h4 class="font-bold text-[#D406B7] mb-2">Coming Soon:</h4>
-                        <p class="text-gray-700">A modern, inclusive sports facility for the entire community</p>
-                    </div>
-
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div
-                                class="w-8 h-8 rounded-full bg-pink-50 flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-basketball-ball text-[#D406B7]"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Multi-Sport Court</h4>
-                                <p class="text-gray-600">Space for basketball, volleyball, and other indoor sports</p>
-                            </div>
+                <!-- Sports Facilities -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="p-6">
+                        <div class="text-4xl mb-4 text-[var(--primary)]">⚽</div>
+                        <h3 class="text-xl font-semibold mb-3 text-[var(--primary)]">Sports Facilities</h3>
+                        <p class="text-gray-600 mb-4">
+                            Promoting physical and mental health through inclusive sports activities for all age groups and abilities.
+                        </p>
+                        <div class="text-sm text-gray-500 mb-4">
+                            <p><strong>Fridays:</strong> 5pm to 8pm</p>
+                            <p><strong>Saturdays:</strong> 12 noon to 4pm</p>
+                            <p>All age groups welcome</p>
                         </div>
-
-                        <div class="flex items-start">
-                            <div
-                                class="w-8 h-8 rounded-full bg-pink-50 flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-dumbbell text-[#D406B7]"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Fitness Area</h4>
-                                <p class="text-gray-600">Equipment and space for physical fitness activities</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div
-                                class="w-8 h-8 rounded-full bg-pink-50 flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-child text-[#D406B7]"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Youth Programs</h4>
-                                <p class="text-gray-600">Dedicated activities for young people in a safe environment</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div
-                                class="w-8 h-8 rounded-full bg-pink-50 flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-female text-[#D406B7]"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800">Women-Only Sessions</h4>
-                                <p class="text-gray-600">Culturally sensitive sports activities for women</p>
-                            </div>
-                        </div>
+                        <a href="sports.html" class="font-semibold flex items-center text-[var(--primary)]">
+                            Learn more about Sports
+                            <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Future Vision Section -->
-    <section class="py-16 bg-white">
+    <!-- Location & Contact Section -->
+    <section class="section-padding bg-white">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
-                    <img src="images/slide/act_slide2.png" alt="Community vision" class="rounded-xl shadow-md">
-                </div>
-
-                <div class="md:w-1/2 md:pl-10 fade-in">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Our Future Vision</h2>
-                    <p class="text-gray-600 mb-6">
-                        Rhema House is poised to become the first dedicated, purpose-built space for the BAME and wider
-                        community in Teesside, with high-quality facilities and cultural understanding at its core.
-                    </p>
-
-                    <div class="bg-gradient-to-r from-[#203B76] to-[#D406B7] p-6 rounded-xl text-white mb-6">
-                        <h3 class="text-xl font-semibold mb-3">Transformative Impact</h3>
-                        <p>Our vision extends beyond physical spaces to creating genuine opportunities for connection,
-                            growth, and empowerment across all communities.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div class="fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Location & Hours</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-lg mr-4 flex items-center justify-center flex-shrink-0"
+                                style="background-color: var(--primary);">
+                                <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2 text-gray-800">Address</h3>
+                                <p class="text-gray-600">Rhema House, 2 Portrack Lane, Stockton-on-Tees, UK, TS18 2HG</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-lg mr-4 flex items-center justify-center flex-shrink-0"
+                                style="background-color: var(--primary);">
+                                <i class="fas fa-clock text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2 text-gray-800">Opening Hours</h3>
+                                <p class="text-gray-600">Monday to Friday: 9am - 3pm</p>
+                                <p class="text-sm text-gray-500 mt-1">*Specific program hours may vary</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-lg mr-4 flex items-center justify-center flex-shrink-0"
+                                style="background-color: var(--primary);">
+                                <i class="fas fa-phone text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2 text-gray-800">Contact</h3>
+                                <p class="text-gray-600">+44 7497 519502</p>
+                                <p class="text-gray-600">makaure@aol.com</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <h4 class="font-semibold text-gray-800">Phase 1: Foundation</h4>
-                            <p class="text-gray-600">Establishing Rhema House as a community hub (Completed)</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h4 class="font-semibold text-gray-800">Phase 2: Expansion</h4>
-                            <p class="text-gray-600">Developing the downstairs sports facility (In Progress)</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h4 class="font-semibold text-gray-800">Phase 3: Enhancement</h4>
-                            <p class="text-gray-600">Creating specialized spaces for cultural programs (Future)</p>
-                        </div>
+                    <div class="mt-8">
+                        <a href="https://maps.google.com/?q=Rhema+House+2+Portrack+Lane+Stockton-on-Tees+TS18+2HG" 
+                           target="_blank"
+                           class="btn-primary inline-flex items-center px-6 py-3 rounded-full text-white font-semibold">
+                            <i class="fas fa-directions mr-2"></i> Get Directions
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="fade-in">
+                    <div class="map-container h-96">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2308.091663888116!2d-1.332222723024688!3d54.55867317138066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487e7b5a57f5b8c5%3A0x4a0a1c8d1c8d1c8d!2s2%20Portrack%20Ln%2C%20Stockton-on-Tees%20TS18%202HG%2C%20UK!5e0!3m2!1sen!2suk!4v1690000000000!5m2!1sen!2suk" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Impact Section -->
-    <section class="py-16 pink-bg">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Rhema House by the Numbers</h2>
-            <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">The measurable impact of our community hub</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="bg-white p-6 rounded-xl card-hover">
-                    <div class="text-5xl font-bold mb-2 text-[#203B76]">500+</div>
-                    <div class="text-gray-600">Weekly Visitors</div>
-                </div>
-                <div class="bg-white p-6 rounded-xl card-hover">
-                    <div class="text-5xl font-bold mb-2 text-[#203B76]">12</div>
-                    <div class="text-gray-600">Programs Hosted</div>
-                </div>
-                <div class="bg-white p-6 rounded-xl card-hover">
-                    <div class="text-5xl font-bold mb-2 text-[#203B76]">50+</div>
-                    <div class="text-gray-600">Weekly Volunteers</div>
-                </div>
-                <div class="bg-white p-6 rounded-xl card-hover">
-                    <div class="text-5xl font-bold mb-2 text-[#203B76]">2024</div>
-                    <div class="text-gray-600">Sports Facility Completion</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Visit Us Section -->
-    <section class="py-16 bg-white">
+    <!-- Schedule Visit Section -->
+    <section class="section-padding bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Visit Rhema House</h2>
-                <p class="text-xl text-gray-600 mb-10">We welcome everyone to our community hub. Come see what makes
-                    Rhema House special.</p>
-
-                <div class="bg-blue-50 p-8 rounded-xl mb-10">
-                    <h3 class="text-2xl font-semibold mb-4 text-[#203B76]">Location & Hours</h3>
-                    <p class="text-gray-700 mb-2"><i class="fas fa-map-marker-alt text-[#203B76] mr-2"></i> Rhema House,
-                        Stockton-on-Tees, UK</p>
-                    <p class="text-gray-700 mb-2"><i class="fas fa-clock text-[#203B76] mr-2"></i> Open Monday-Saturday:
-                        9am-5pm</p>
-                    <p class="text-gray-700"><i class="fas fa-phone text-[#203B76] mr-2"></i> +44 123 456 789</p>
-                </div>
-
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#" class="btn-primary px-8 py-4 rounded-full text-white font-semibold text-lg">
-                        <i class="fas fa-directions mr-2"></i> Get Directions
-                    </a>
-                    <a href="#" class="btn-secondary px-8 py-4 rounded-full text-white font-semibold text-lg">
-                        <i class="fas fa-calendar-alt mr-2"></i> Schedule a Visit
-                    </a>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-xl shadow-md p-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-2 text-gray-800">Schedule a Visit</h2>
+                    <p class="text-xl text-center text-gray-600 mb-8">Fill out the form below and we'll get back to you to arrange your visit</p>
+                    
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                <input type="text" id="firstName" name="firstName" 
+                                       class="form-input w-full px-4 py-3 rounded-lg focus:outline-none"
+                                       required>
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" 
+                                       class="form-input w-full px-4 py-3 rounded-lg focus:outline-none"
+                                       required>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" 
+                                       class="form-input w-full px-4 py-3 rounded-lg focus:outline-none"
+                                       required>
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" 
+                                       class="form-input w-full px-4 py-3 rounded-lg focus:outline-none"
+                                       required>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="purpose" class="block text-sm font-medium text-gray-700 mb-2">Purpose of Visit</label>
+                            <select id="purpose" name="purpose" 
+                                    class="form-input w-full px-4 py-3 rounded-lg focus:outline-none"
+                                    required>
+                                <option value="">Select a purpose</option>
+                                <option value="foodbank">Foodbank Services</option>
+                                <option value="sports">Sports Activities</option>
+                                <option value="volunteer">Volunteer Opportunity</option>
+                                <option value="partnership">Partnership Inquiry</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Additional Information</label>
+                            <textarea id="message" name="message" rows="4"
+                                      class="form-input w-full px-4 py-3 rounded-lg focus:outline-none"
+                                      placeholder="Please provide any additional details about your visit..."></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" 
+                                    class="btn-primary px-8 py-4 rounded-full text-white font-semibold text-lg">
+                                <i class="fas fa-calendar-check mr-2"></i> Schedule Visit
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Support Section -->
-    <section class="py-16 bg-gradient-to-r from-[#203B76] to-[#D406B7] text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Support Rhema House</h2>
-            <p class="text-xl mb-10 max-w-3xl mx-auto">Help us maintain and expand our facilities to serve even more
-                community members</p>
-
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#"
-                    class="bg-white text-[#203B76] hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg">
-                    <i class="fas fa-donate mr-2"></i> Make a Donation
-                </a>
-                <a href="#"
-                    class="bg-yellow-400 text-gray-800 hover:bg-yellow-500 px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg">
-                    <i class="fas fa-hands-helping mr-2"></i> Volunteer
-                </a>
-                <a href="#"
-                    class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg">
-                    <i class="fas fa-share-alt mr-2"></i> Spread the Word
-                </a>
+    <section class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Support Rhema House</h2>
+                <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                    Every pound helps us maintain our hub and continue providing essential services to our community
+                </p>
+                
+                <div class="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] rounded-xl p-8 text-white">
+                    <h3 class="text-2xl font-bold mb-4">Your Support Makes a Difference</h3>
+                    <p class="mb-6">
+                        With your help, we can keep Rhema House running as a safe, welcoming space for everyone in our community.
+                    </p>
+                    <a href="donate.html" class="btn-secondary inline-flex items-center px-8 py-4 rounded-full text-white font-semibold text-lg">
+                        <i class="fas fa-donate mr-2"></i> Donate to Support Rhema House
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -779,42 +608,49 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Acts of Love International</h3>
-                    <p class="mb-6">Dedicated to strengthening communities, tackling poverty, and creating opportunities
-                        for all.</p>
+                    <p class="mb-6">Dedicated to strengthening communities, tackling poverty, and creating opportunities for all.</p>
                     <p class="text-sm">Charity Registration No: 1119687</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Our Programs</h3>
+                    <ul class="space-y-2">
+                        <li><a href="rhema-house.html" class="footer-link hover:text-[#D406B7] transition-colors">Rhema House</a></li>
+                        <li><a href="foodbank.html" class="footer-link hover:text-[#D406B7] transition-colors">Foodbank</a></li>
+                        <li><a href="sports.html" class="footer-link hover:text-[#D406B7] transition-colors">Sports & Wellbeing</a></li>
+                        <li><a href="clothing.html" class="footer-link hover:text-[#D406B7] transition-colors">Clothing & Essentials</a></li>
+                    </ul>
                 </div>
 
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
                     <p class="mb-2 flex items-center">
                         <i class="fas fa-map-marker-alt mr-2 text-[#D406B7]"></i>
-                        123 Community Street, Stockton-on-Tees, UK
+                        Rhema House, 2 Portrack Lane, Stockton-on-Tees, UK, TS18 2HG
                     </p>
                     <p class="mb-2 flex items-center">
                         <i class="fas fa-envelope mr-2 text-[#D406B7]"></i>
-                        info@actsoflove.org
+                        makaure@aol.com
                     </p>
                     <p class="mb-2 flex items-center">
                         <i class="fas fa-phone mr-2 text-[#D406B7]"></i>
-                        +44 123 456 789
+                        +44 7497 519502
                     </p>
                 </div>
 
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-[#D406B7] transition-colors">Home</a></li>
-                        <li><a href="#" class="hover:text-[#D406B7] transition-colors">About Us</a></li>
-                        <li><a href="#" class="hover:text-[#D406B7] transition-colors">Our Programs</a></li>
-                        <li><a href="#" class="hover:text-[#D406B7] transition-colors">Get Involved</a></li>
-                        <li><a href="#" class="hover:text-[#D406B7] transition-colors">News & Events</a></li>
+                        <li><a href="index.html" class="footer-link hover:text-[#D406B7] transition-colors">Home</a></li>
+                        <li><a href="about.html" class="footer-link hover:text-[#D406B7] transition-colors">About Us</a></li>
+                        <li><a href="programs.html" class="footer-link hover:text-[#D406B7] transition-colors">Our Programs</a></li>
+                        <li><a href="get-involved.html" class="footer-link hover:text-[#D406B7] transition-colors">Get Involved</a></li>
+                        <li><a href="contact.html" class="footer-link hover:text-[#D406B7] transition-colors">Contact</a></li>
                     </ul>
                 </div>
-
-
             </div>
 
             <div class="border-t border-gray-700 mt-8 pt-8 text-center">
@@ -823,24 +659,49 @@
         </div>
     </footer>
 
-    <!-- jQuery Scripts -->
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         $(document).ready(function () {
-            // Mobile menu toggle
+            // Mobile menu functionality
+            function openMobileMenu() {
+                $('#mobileMenu').addClass('open');
+                $('#overlay').addClass('active');
+                $('body').css('overflow', 'hidden');
+            }
+
+            function closeMobileMenu() {
+                $('#mobileMenu').removeClass('open');
+                $('#overlay').removeClass('active');
+                $('body').css('overflow', 'auto');
+            }
+
+            // Menu toggle button
             $('#menuToggle').click(function () {
-                $('#mobileMenu').removeClass('menu-closed').addClass('menu-open');
+                openMobileMenu();
             });
 
+            // Close button
             $('#closeMenu').click(function () {
-                $('#mobileMenu').removeClass('menu-open').addClass('menu-closed');
+                closeMobileMenu();
             });
 
-            // Initialize slideshow
-            let currentSlide = 0;
-            const slides = $('.hero-slide');
-            const indicators = $('.slide-indicator');
-            const totalSlides = slides.length;
-            let slideInterval;
+            // Close when clicking overlay
+            $('#overlay').click(function () {
+                closeMobileMenu();
+            });
+
+            // Close when clicking on mobile nav links
+            $('.mobile-nav-link').click(function () {
+                closeMobileMenu();
+            });
+
+            // Close menu with Escape key
+            $(document).keydown(function (e) {
+                if (e.key === 'Escape') {
+                    closeMobileMenu();
+                }
+            });
 
             // Fade-in animation on scroll
             function checkFade() {
@@ -858,109 +719,6 @@
             checkFade();
             $(window).scroll(checkFade);
 
-            // Function to show a specific slide
-            function showSlide(index) {
-                // Remove active class from all slides and indicators
-                slides.removeClass('active');
-                indicators.removeClass('active');
-
-                // Add active class to current slide and indicator
-                $(slides[index]).addClass('active');
-                $(indicators[index]).addClass('active');
-
-                // Reset and restart progress bar animation
-                $('.progress-fill').removeClass('animate');
-                setTimeout(function () {
-                    $('.progress-fill').addClass('animate');
-                }, 10);
-
-                currentSlide = index;
-            }
-
-            // Function to go to next slide
-            function nextSlide() {
-                let next = (currentSlide + 1) % totalSlides;
-                showSlide(next);
-            }
-
-            // Click handlers for navigation arrows
-            $('.slide-nav.next').click(function () {
-                clearInterval(slideInterval);
-                nextSlide();
-                startSlideShow();
-            });
-
-            $('.slide-nav.prev').click(function () {
-                clearInterval(slideInterval);
-                let prev = (currentSlide - 1 + totalSlides) % totalSlides;
-                showSlide(prev);
-                startSlideShow();
-            });
-
-            // Click handlers for indicators
-            $('.slide-indicator').click(function () {
-                clearInterval(slideInterval);
-                let slideIndex = $(this).data('slide');
-                showSlide(slideIndex);
-                startSlideShow();
-            });
-
-            // Start the slideshow
-            function startSlideShow() {
-                clearInterval(slideInterval);
-                slideInterval = setInterval(nextSlide, 5000);
-            }
-
-            // Initialize the slideshow
-            startSlideShow();
-
-            // Pause slideshow on hover
-            $('.hero-slide, .slide-nav, .slide-indicators').hover(
-                function () {
-                    clearInterval(slideInterval);
-                    $('.progress-fill').css('animation-play-state', 'paused');
-                },
-                function () {
-                    startSlideShow();
-                    $('.progress-fill').css('animation-play-state', 'running');
-                }
-            );
-
-            // Animate stats counters
-            function animateCounters() {
-                $('.stats-number').each(function () {
-                    var $this = $(this);
-                    var target = $this.data('target');
-                    var current = 0;
-                    var increment = target / 50;
-
-                    var timer = setInterval(function () {
-                        if (current < target) {
-                            current += increment;
-                            if (current > target) current = target;
-                            $this.text(Math.floor(current));
-                        } else {
-                            clearInterval(timer);
-                        }
-                    }, 50);
-                });
-            }
-
-            // Check if stats are in view
-            function checkStats() {
-                var position = $('.stats-number').first().offset().top;
-                var scroll = $(window).scrollTop();
-                var windowHeight = $(window).height();
-
-                if (scroll + windowHeight - 200 > position) {
-                    animateCounters();
-                    $(window).off('scroll', checkStats);
-                }
-            }
-
-            $(window).scroll(checkStats);
-            checkStats();
-
             // Header scroll effect
             $(window).scroll(function () {
                 if ($(this).scrollTop() > 100) {
@@ -968,6 +726,13 @@
                 } else {
                     $('header').removeClass('shadow-lg');
                 }
+            });
+
+            // Form submission
+            $('form').submit(function(e) {
+                e.preventDefault();
+                alert('Thank you for your interest in visiting Rhema House! We will contact you shortly to arrange your visit.');
+                this.reset();
             });
         });
     </script>

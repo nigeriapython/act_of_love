@@ -4,13 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acts of Love International - Transforming Lives, Building Hope</title>
+    <title>About Us - Acts of Love International</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -45,38 +42,6 @@
             font-family: 'Playfair Display', serif;
         }
 
-        .hero-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 1.2s ease-in-out;
-            z-index: 1;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-slide.active {
-            opacity: 1;
-            z-index: 2;
-        }
-
-        .hero-slide-1 {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/slide/act_slide2.png');
-        }
-
-        .hero-slide-2 {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/slide/act_slide3.png');
-        }
-
-        .hero-slide-3 {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/slide/act_slide1.png');
-        }
-
         .gradient-text {
             background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
             -webkit-background-clip: text;
@@ -106,17 +71,6 @@
             transform: translateY(-2px);
         }
 
-        .btn-accent {
-            background: linear-gradient(90deg, var(--accent) 0%, #38a169 100%);
-            box-shadow: 0 4px 15px 0 rgba(56, 178, 172, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .btn-accent:hover {
-            box-shadow: 0 6px 20px 0 rgba(56, 178, 172, 0.5);
-            transform: translateY(-2px);
-        }
-
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -128,305 +82,200 @@
             transform: translateY(0);
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 10;
+        .section-padding {
+            padding: 5rem 0;
         }
 
-        .slide-indicators {
-            position: absolute;
-            bottom: 30px;
-            left: 0;
-            right: 0;
-            z-index: 20;
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .slide-indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .slide-indicator.active {
-            background: white;
-            transform: scale(1.2);
-        }
-
-        .slide-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 20;
-            background: rgba(255, 255, 255, 0.2);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .mission-statement {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 20px;
+            padding: 3rem;
             color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(4px);
-        }
-
-        .slide-nav:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .slide-nav.prev {
-            left: 20px;
-        }
-
-        .slide-nav.next {
-            right: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .slide-nav {
-                width: 40px;
-                height: 40px;
-            }
-
-            .slide-nav.prev {
-                left: 10px;
-            }
-
-            .slide-nav.next {
-                right: 10px;
-            }
-        }
-
-        .progress-bar {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.3);
-            width: 100%;
-            z-index: 20;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: white;
-            width: 0%;
-            transition: width 5s linear;
-        }
-
-        .progress-fill.animate {
-            width: 100%;
-        }
-
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
-
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
-        .success-slide {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.8s ease;
-        }
-
-        .success-slide.active {
-            display: flex;
-            opacity: 1;
-        }
-
-        .gradient-border {
             position: relative;
-            background: white;
-            border-radius: 16px;
+            overflow: hidden;
         }
 
-        .gradient-border::before {
+        .mission-statement::before {
             content: "";
             position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            border-radius: 18px;
-            z-index: -1;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
         }
 
-        .counter {
-            font-variant-numeric: tabular-nums;
+        .impact-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
         }
 
-        .menu-open {
-            transform: translateX(0);
+        .impact-stat .number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
         }
 
-        .menu-closed {
-            transform: translateX(100%);
-        }
-
-        .program-icon {
-            transition: all 0.3s ease;
-        }
-
-        .program-card:hover .program-icon {
-            transform: scale(1.2) rotate(5deg);
-        }
-
-        .stats-number {
-            font-variant-numeric: tabular-nums;
-        }
-
-        .illustration {
-            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
-        }
-
-        .gradient-text {
-            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .btn-primary {
-            background: linear-gradient(90deg, var(--primary) 0%, #2c5282 100%);
-            box-shadow: 0 4px 15px 0 rgba(32, 59, 118, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 6px 20px 0 rgba(32, 59, 118, 0.5);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: linear-gradient(90deg, var(--secondary) 0%, #e53e3e 100%);
-            box-shadow: 0 4px 15px 0 rgba(212, 6, 183, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            box-shadow: 0 6px 20px 0 rgba(212, 6, 183, 0.5);
-            transform: translateY(-2px);
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
-
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
-        .illustration {
-            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
-        }
-
-        .blue-bg {
-            background-color: rgba(32, 59, 118, 0.05);
-        }
-
-        .pink-bg {
-            background-color: rgba(212, 6, 183, 0.05);
+        .impact-stat .label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .timeline {
             position: relative;
-            padding-left: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .timeline::before {
+        .timeline::after {
             content: '';
             position: absolute;
-            left: 0;
+            width: 6px;
+            background-color: var(--primary);
             top: 0;
-            height: 100%;
-            width: 4px;
-            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
         }
 
         .timeline-item {
+            padding: 10px 40px;
             position: relative;
-            margin-bottom: 2rem;
+            width: 50%;
+            box-sizing: border-box;
         }
 
-        .timeline-item::before {
+        .timeline-item::after {
             content: '';
             position: absolute;
-            left: -3.3rem;
-            top: 0.5rem;
-            width: 20px;
-            height: 20px;
+            width: 25px;
+            height: 25px;
+            right: -13px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            top: 15px;
             border-radius: 50%;
-            background: var(--primary);
-            border: 4px solid white;
-            box-shadow: 0 0 0 2px var(--primary);
+            z-index: 1;
         }
 
-        .floor-plan {
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .right::after {
+            left: -13px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 18px;
+            }
+
+            .right {
+                left: 0%;
+            }
+        }
+
+        .value-card {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
         }
 
-        .floor-plan:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        .social-icon:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .footer-link {
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--secondary);
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 280px;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
     </style>
 </head>
@@ -457,9 +306,9 @@
                         <span
                             class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--secondary)] transition-all group-hover:w-full"></span>
                     </a>
-                    <a href="about.html#our-work"
+                    <a href="programs.html"
                         class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium relative group">
-                        Our Work
+                        Our Programs
                         <span
                             class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--secondary)] transition-all group-hover:w-full"></span>
                     </a>
@@ -485,8 +334,7 @@
 
                 <!-- Buttons -->
                 <div class="flex items-center space-x-4">
-                    <a href="donate.html"
-                        class="btn-primary px-6 py-2 rounded-full text-white font-semibold hidden md:block">
+                    <a href="donate.html" class="btn-primary px-6 py-2 rounded-full text-white font-semibold hidden md:block">
                         Donate Now
                     </a>
                     <button class="lg:hidden text-gray-700" id="menuToggle">
@@ -495,118 +343,80 @@
                 </div>
             </div>
         </div>
-
-        <!-- Mobile Menu -->
-        <div class="fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 transition-transform duration-300 menu-closed"
-            id="mobileMenu">
-            <div class="p-6">
-                <!-- Logo & Close Button -->
-                <div class="flex justify-between items-center mb-10">
-                    <a href="#">
-                        <img src="images/act_of_love_logo.png" alt="Acts of Love Logo" class="h-10">
-                    </a>
-                    <button id="closeMenu">
-                        <i class="fas fa-times text-gray-700 text-xl"></i>
-                    </button>
-                </div>
-
-                <!-- Mobile Nav -->
-                <nav class="flex flex-col space-y-6 bg-white">
-                    <a href="index.html"
-                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Home</a>
-                    <a href="about.html"
-                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">About
-                        Us</a>
-                    <a href="about.html#our-work"
-                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Our
-                        Work</a>
-                    <a href="rhema-house.html"
-                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Rhema
-                        House</a>
-                    <a href="get-involved.html"
-                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Get
-                        Involved</a>
-                    <a href="contact.html"
-                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Contact</a>
-                    <a href="donate.html"
-                        class="btn-primary px-6 py-3 rounded-full text-white font-semibold text-center mt-4">
-                        Donate Now
-                    </a>
-                </nav>
-            </div>
-        </div>
     </header>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="overlay" id="overlay"></div>
 
-    <!-- Breadcrumb -->
-    <section class="pt-28 pb-8 bg-gradient-to-r from-[#203B76] to-[#D406B7] text-white">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center space-x-2 text-sm">
-                <a href="#" class="hover:underline">Home</a>
-                <span><i class="fas fa-chevron-right text-xs"></i></span>
-                <span>About Us</span>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="p-6 h-full flex flex-col">
+            <!-- Logo & Close Button -->
+            <div class="flex justify-between items-center mb-10">
+                <a href="index.html">
+                    <img src="images/act_of_love_logo.png" alt="Acts of Love Logo" class="h-10">
+                </a>
+                <button id="closeMenu">
+                    <i class="fas fa-times text-gray-700 text-xl"></i>
+                </button>
             </div>
-            <h1 class="text-4xl md:text-5xl font-bold mt-4">About Acts of Love International</h1>
+
+            <!-- Mobile Nav -->
+            <nav class="flex flex-col space-y-6 flex-grow">
+                <a href="index.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium py-2 border-b border-gray-100 mobile-nav-link">Home</a>
+                <a href="about.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium py-2 border-b border-gray-100 mobile-nav-link">About Us</a>
+                <a href="programs.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium py-2 border-b border-gray-100 mobile-nav-link">Our Programs</a>
+                <a href="rhema-house.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium py-2 border-b border-gray-100 mobile-nav-link">Rhema House</a>
+                <a href="get-involved.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium py-2 border-b border-gray-100 mobile-nav-link">Get Involved</a>
+                <a href="contact.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium py-2 border-b border-gray-100 mobile-nav-link">Contact</a>
+            </nav>
+            
+            <!-- Donate Button -->
+            <div class="mt-auto pt-6 border-t border-gray-200">
+                <a href="donate.html" class="btn-primary w-full px-6 py-3 rounded-full text-white font-semibold text-center block">
+                    Donate Now
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="pt-32 pb-20 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">About Acts of Love International</h1>
+                <p class="text-xl">Transforming communities through compassion, inclusion, and sustainable support for over 18 years</p>
+            </div>
         </div>
     </section>
 
-    <!-- Who We Are Section -->
-    <section class="py-16 bg-white">
+    <!-- Our Story Section -->
+    <section class="section-padding bg-white">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 fade-in">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 fade-in">
                     <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
-                        Who We Are
+                        Our Story
                     </h2>
                     <p class="text-gray-600 mb-4">
-                        Acts of Love International is both a church and a charity, working side-by-side to address
-                        marginalisation and build community. We focus on supporting ethnic minorities, asylum seekers,
-                        and disadvantaged white communities facing poverty, poor health, and social exclusion.
+                        Founded in 2006 and registered in 2007, Acts of Love International is based at Rhema House in Stockton-on-Tees. Our community has faced some of the toughest social challenges in the UK - poverty, unemployment, crime and poor health. Yet it is also a place of strength, resilience, and rich cultural diversity.
                     </p>
                     <p class="text-gray-600 mb-6">
-                        We do not require our staff, volunteers, or service users to share our faith but we do ask that
-                        they appreciate and respect the Christian values that guide our mission.
+                        For over 18 years, we've been working to transform these challenges into opportunities for growth and connection. Our neighbourhood is filled with incredible people who inspire us with their strength and resilience every day.
                     </p>
-
-                    <div class="mb-6">
-                        <div class="flex items-center mb-2">
-                            <div class="w-5 h-5 rounded-full mr-3 flex items-center justify-center"
-                                style="background-color: var(--primary);">
-                                <i class="fas fa-check text-white text-xs"></i>
-                            </div>
-                            <p class="text-gray-700">Community-centered programs</p>
-                        </div>
-                        <div class="flex items-center mb-2">
-                            <div class="w-5 h-5 rounded-full mr-3 flex items-center justify-center"
-                                style="background-color: var(--primary);">
-                                <i class="fas fa-check text-white text-xs"></i>
-                            </div>
-                            <p class="text-gray-700">Inclusive and diverse initiatives</p>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-5 h-5 rounded-full mr-3 flex items-center justify-center"
-                                style="background-color: var(--primary);">
-                                <i class="fas fa-check text-white text-xs"></i>
-                            </div>
-                            <p class="text-gray-700">Sustainable impact focus</p>
-                        </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-[var(--primary)]">
+                        <p class="text-gray-700 italic">
+                            "Our neighbourhood is filled with incredible people who inspire us with their strength and resilience every day."
+                        </p>
                     </div>
-
-                    <a href="#"
-                        class="inline-flex items-center font-semibold transition-colors group btn-primary px-6 py-3 rounded-full text-white">
-                        Learn More About Our Mission
-                        <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
-                    </a>
                 </div>
 
-                <div class="md:w-1/2 fade-in">
+                <div class="lg:w-1/2 fade-in">
                     <div class="relative">
-                        <img src="images/slide/act_slide3.png" alt="Community gathering" class="rounded-xl shadow-md" />
-                        <div class="absolute -bottom-6 -left-6 w-32 h-32 rounded-xl flex flex-col items-center justify-center text-white z-10 floating"
+                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Community gathering" class="rounded-xl shadow-md w-full" />
+                        <div class="absolute -bottom-6 -left-6 w-32 h-32 rounded-xl flex flex-col items-center justify-center text-white z-10"
                             style="background-color: var(--primary);">
                             <span class="text-4xl font-bold">18</span>
                             <span class="text-sm">Years of Service</span>
@@ -617,69 +427,91 @@
         </div>
     </section>
 
-    <!-- Our Vision Section -->
-    <section class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Our Vision</h2>
-            <p class="text-2xl gradient-text font-bold mb-12">Transforming and touching lives to bring hope</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-                <div class="bg-white p-6 rounded-xl card-hover">
-                    <div class="text-4xl mb-4 text-[#203B76]">
-                        <i class="fas fa-basketball-ball"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800">A Welcoming Sports Space</h3>
-                    <p class="text-gray-600">Inclusive sports facilities for all community members to improve physical
-                        and mental wellbeing.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl card-hover">
-                    <div class="text-4xl mb-4 text-[#203B76]">
-                        <i class="fas fa-hands-helping"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Volunteer Opportunities</h3>
-                    <p class="text-gray-600">Creating pathways for volunteers to grow their skills and make a meaningful
-                        impact.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl card-hover">
-                    <div class="text-4xl mb-4 text-[#203B76]">
-                        <i class="fas fa-globe-americas"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Cultural Expression</h3>
-                    <p class="text-gray-600">A safe place for cultural expression, learning, and celebrating diversity.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Story Section -->
-    <section class="py-16 bg-white">
+    <!-- Mission & Vision Section -->
+    <section class="section-padding bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
-                    <img src="images/slide/act_slide2.png" alt="Community support" class="rounded-xl shadow-md">
-                </div>
-
-                <div class="md:w-1/2 md:pl-10 fade-in">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Our Story</h2>
-                    <p class="text-gray-600 mb-4">
-                        Founded in 2006 and registered in 2007, Acts of Love International is based at Rhema House in
-                        Stockton-on-Tees. Our community has faced some of the toughest social challenges in the
-                        UK—poverty, unemployment, crime, and poor health.
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Mission -->
+                <div class="fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Our Mission</h2>
+                    <p class="text-gray-600 mb-6">
+                        Founded in 2005, Acts of Love International has been at the forefront of community development and poverty alleviation in Stockton-on-Tees and surrounding areas.
                     </p>
                     <p class="text-gray-600 mb-6">
-                        Yet it is also a place of strength, resilience, and rich cultural diversity. For over 18 years,
-                        we've been working to transform these challenges into opportunities for growth and connection.
+                        We are a registered charity (Charity No. 1119687) set up to support people from ethnic minority backgrounds, living in deprived wards to get access to sport and activities which increase health well-being, mental health, confidence and knowledge and to decrease isolation.
                     </p>
+                    <p class="text-gray-600 mb-6">
+                        Poverty and discrimination have a massive impact on our members decreasing motivation and positive mental health. Our charity works with the community to improve their quality of life underpinned by activities which develop their skills, sporting ability and talents.
+                    </p>
+                    
+                    <h3 class="text-xl font-semibold mb-4 text-[var(--primary)]">Our Approach</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 rounded-full mr-3 flex items-center justify-center mt-1 flex-shrink-0"
+                                style="background-color: var(--primary);">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <p class="text-gray-700">Community-centered programs</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 rounded-full mr-3 flex items-center justify-center mt-1 flex-shrink-0"
+                                style="background-color: var(--primary);">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <p class="text-gray-700">Inclusive and diverse initiatives</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 rounded-full mr-3 flex items-center justify-center mt-1 flex-shrink-0"
+                                style="background-color: var(--primary);">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <p class="text-gray-700">Sustainable impact focus</p>
+                        </div>
+                    </div>
+                </div>
 
-                    <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-[#203B76]">
-                        <p class="text-gray-700 italic">
-                            "Our neighbourhood ranks among the most deprived in the UK. Life expectancy is lower than
-                            average, incomes are below the national median, and many residents face barriers to
-                            accessing support. By offering practical help and a welcoming environment, we're changing
-                            lives every day."
+                <!-- Vision -->
+                <div class="fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Our Vision</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-lg mr-4 flex items-center justify-center flex-shrink-0"
+                                style="background-color: var(--primary);">
+                                <i class="fas fa-heart text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2 text-gray-800">Vibrant Sports Space</h3>
+                                <p class="text-gray-600">To provide a vibrant sports space where all the community feel welcome</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-lg mr-4 flex items-center justify-center flex-shrink-0"
+                                style="background-color: var(--primary);">
+                                <i class="fas fa-running text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2 text-gray-800">Diverse Sporting Activities</h3>
+                                <p class="text-gray-600">To develop diverse sporting activities which increase the fitness and positive mental health of community members</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-lg mr-4 flex items-center justify-center flex-shrink-0"
+                                style="background-color: var(--primary);">
+                                <i class="fas fa-hands-helping text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2 text-gray-800">Volunteer Development</h3>
+                                <p class="text-gray-600">Provide a place where the skills of volunteers can be developed, recognised, and appreciated</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 p-6 bg-white rounded-xl shadow-md">
+                        <h3 class="text-xl font-semibold mb-4 text-[var(--primary)]">Our Holistic Approach</h3>
+                        <p class="text-gray-600">
+                            Our holistic approach addresses immediate needs while working on long-term solutions that empower individuals and strengthen communities.
                         </p>
                     </div>
                 </div>
@@ -687,157 +519,255 @@
         </div>
     </section>
 
-    <!-- Our Work Section -->
-    <a name='our-work'></a>
-    <section class="py-16 bg-gray-100">
-
+    <!-- Our Impact Section -->
+    <section class="section-padding bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Our Work</h2>
-            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">We run a wide range of services to meet
-                local needs</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Our Impact</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                Making a tangible difference in the lives of individuals and families across our community
+            </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-xl card-hover">
-                    <div class="text-4xl mb-4 text-[#203B76]">
-                        <i class="fas fa-utensils"></i>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="fade-in">
+                    <div class="impact-stat" style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white;">
+                        <div class="number">6,500</div>
+                        <div class="label">People Helped Annually</div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Foodbank</h3>
-                    <p class="text-gray-600 mb-4">Open Sunday, Wednesday, and Friday (8am–2pm). Partnered with FareShare
-                        Northeast, The Moses Project, and the local community.</p>
                 </div>
-
-                <div class="bg-white p-6 rounded-xl card-hover">
-                    <div class="text-4xl mb-4 text-[#203B76]">
-                        <i class="fas fa-language"></i>
+                <div class="fade-in">
+                    <div class="impact-stat" style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white;">
+                        <div class="number">40</div>
+                        <div class="label">Families Supported Weekly</div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800">ESOL Classes</h3>
-                    <p class="text-gray-600 mb-4">Helping non-native speakers improve English skills and better
-                        integrate into the community.</p>
                 </div>
-
-                <div class="bg-white p-6 rounded-xl card-hover">
-                    <div class="text-4xl mb-4 text-[#203B76]">
-                        <i class="fas fa-running"></i>
+                <div class="fade-in">
+                    <div class="impact-stat" style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white;">
+                        <div class="number">15</div>
+                        <div class="label">Regular Volunteers</div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Sports & Wellbeing</h3>
-                    <p class="text-gray-600 mb-4">Inclusive sports programs designed with cultural sensitivity,
-                        including for women who face barriers to accessing public sports facilities.</p>
                 </div>
-
-                <div class="bg-white p-6 rounded-xl card-hover">
-                    <div class="text-4xl mb-4 text-[#203B76]">
-                        <i class="fas fa-tshirt"></i>
+                <div class="fade-in">
+                    <div class="impact-stat" style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white;">
+                        <div class="number">18</div>
+                        <div class="label">Years of Service</div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Clothing & Essentials</h3>
-                    <p class="text-gray-600 mb-4">Distribution of clothing and essential items to support those in
-                        crisis situations.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl card-hover">
-                    <div class="text-4xl mb-4 text-[#203B76]">
-                        <i class="fas fa-pray"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Faith & Fellowship</h3>
-                    <p class="text-gray-600 mb-4">Sunday services, Friday Bible studies, and pastoral care for those
-                        seeking spiritual support.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-xl card-hover">
-                    <div class="text-4xl mb-4 text-[#203B76]">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Community Events</h3>
-                    <p class="text-gray-600 mb-4">Bringing people together across cultures through celebrations,
-                        workshops, and gatherings.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Impact Section -->
-    <section class="py-16 bg-gradient-to-r from-[#203B76] to-[#D406B7] text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12">Our Impact</h2>
+    <!-- Timeline Section -->
+    <section class="section-padding bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Our Journey</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                A timeline of our growth and impact over the years
+            </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="fade-in">
-                    <div class="text-5xl font-bold mb-2 stats-number" data-target="50000">0</div>
-                    <div class="text-sm uppercase tracking-wider">Meals Provided Annually</div>
+            <div class="timeline">
+                <div class="timeline-item left fade-in">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-lg mb-2" style="color: var(--primary);">2005</h3>
+                        <p>Acts of Love International was founded to address poverty and social challenges in Stockton-on-Tees.</p>
+                    </div>
                 </div>
-                <div class="fade-in">
-                    <div class="text-5xl font-bold mb-2 stats-number" data-target="1200">0</div>
-                    <div class="text-sm uppercase tracking-wider">People Supported Weekly</div>
+                <div class="timeline-item right fade-in">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-lg mb-2" style="color: var(--primary);">2006</h3>
+                        <p>Officially established our community programs and began our work in earnest.</p>
+                    </div>
                 </div>
-                <div class="fade-in">
-                    <div class="text-5xl font-bold mb-2 stats-number" data-target="200">0</div>
-                    <div class="text-sm uppercase tracking-wider">Regular Volunteers</div>
+                <div class="timeline-item left fade-in">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-lg mb-2" style="color: var(--primary);">2007</h3>
+                        <p>Registered as a charity (Charity No. 1119687) and expanded our services.</p>
+                    </div>
                 </div>
-                <div class="fade-in">
-                    <div class="text-5xl font-bold mb-2 stats-number" data-target="18">0</div>
-                    <div class="text-sm uppercase tracking-wider">Years of Service</div>
+                <div class="timeline-item right fade-in">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-lg mb-2" style="color: var(--primary);">2010</h3>
+                        <p>Established Rhema House as our central hub for community activities and support services.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left fade-in">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-lg mb-2" style="color: var(--primary);">2015</h3>
+                        <p>Expanded our sports and wellbeing programs to serve more community members.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right fade-in">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-lg mb-2" style="color: var(--primary);">2020</h3>
+                        <p>Adapted our services during the pandemic to continue supporting vulnerable community members.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left fade-in">
+                    <div class="timeline-content">
+                        <h3 class="font-bold text-lg mb-2" style="color: var(--primary);">2024</h3>
+                        <p>Celebrating 18+ years of service and continuing to expand our impact in the community.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Work Preview Section -->
+    <section class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Our Work</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                We run a wide range of services to meet the needs of people in our community
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Foodbank -->
+                <div class="value-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1553901753-215db344677a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="p-6">
+                        <div class="text-4xl mb-4 text-[var(--primary)]">🍞</div>
+                        <h3 class="text-xl font-semibold mb-3 text-[var(--primary)]">Foodbank</h3>
+                        <p class="text-gray-600 mb-4">
+                            Providing essential nutrition to families and individuals facing food insecurity.
+                        </p>
+                        <div class="text-sm text-gray-500 mb-4">
+                            <p><strong>Wednesdays:</strong> 9am to 1pm</p>
+                            <p><strong>Fridays:</strong> 9am to 10am</p>
+                            <p class="mt-2 text-xs italic">With appreciation to Moses Project for foodbank support</p>
+                        </div>
+                        <a href="foodbank.html" class="font-semibold flex items-center text-[var(--primary)]">
+                            Learn more
+                            <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sports & Wellbeing -->
+                <div class="value-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="p-6">
+                        <div class="text-4xl mb-4 text-[var(--primary)]">⚽</div>
+                        <h3 class="text-xl font-semibold mb-3 text-[var(--primary)]">Sports & Wellbeing</h3>
+                        <p class="text-gray-600 mb-4">
+                            Inclusive sports programs designed for all age groups to improve physical and mental health.
+                        </p>
+                        <div class="text-sm text-gray-500 mb-4">
+                            <p><strong>Fridays:</strong> 5pm to 8pm</p>
+                            <p><strong>Saturdays:</strong> 12 noon to 4pm</p>
+                            <p class="mt-2 text-xs italic">With appreciation to Sports England and Awards for All</p>
+                        </div>
+                        <a href="sports.html" class="font-semibold flex items-center text-[var(--primary)]">
+                            Learn more
+                            <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Clothing & Essentials -->
+                <div class="value-card bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1589994965851-a8f479c573a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="p-6">
+                        <div class="text-4xl mb-4 text-[var(--primary)]">👕</div>
+                        <h3 class="text-xl font-semibold mb-3 text-[var(--primary)]">Clothing & Essentials</h3>
+                        <p class="text-gray-600 mb-4">
+                            Distribution of clothing and essential items to support those in crisis situations.
+                        </p>
+                        <div class="text-sm text-gray-500 mb-4">
+                            <p>Available during our regular service hours at Rhema House for those in need.</p>
+                        </div>
+                        <a href="clothing.html" class="font-semibold flex items-center text-[var(--primary)]">
+                            Learn more
+                            <svg class="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 bg-white">
+    <section class="section-padding text-white" style="background: linear-gradient(to right, var(--primary), var(--secondary));">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Join Us in Making a Difference</h2>
-            <p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">Whether through volunteering, donating, or
-                spreading the word, your support helps us continue our vital work in the community.</p>
-
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Join Us in Making a Difference</h2>
+            <p class="text-xl mb-10 max-w-2xl mx-auto">
+                Whether through volunteering or donating, your support helps us continue our vital work in the community.
+            </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#" class="btn-primary px-8 py-4 rounded-full text-white font-semibold text-lg">
+
+                <!-- Volunteer -->
+                <a href="get-involved.html#volunteer"
+                    class="bg-white hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg flex items-center justify-center"
+                    style="color: var(--primary);">
                     <i class="fas fa-hands-helping mr-2"></i> Volunteer With Us
                 </a>
-                <a href="#" class="btn-secondary px-8 py-4 rounded-full text-white font-semibold text-lg">
+
+                <!-- Donate -->
+                <a href="donate.html"
+                    class="px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg flex items-center justify-center"
+                    style="background-color: var(--secondary); color: var(--light);">
                     <i class="fas fa-donate mr-2"></i> Make a Donation
                 </a>
             </div>
         </div>
     </section>
 
-
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Acts of Love International</h3>
-                    <p class="mb-6">Dedicated to strengthening communities, tackling poverty, and creating opportunities
-                        for all.</p>
+                    <p class="mb-6">Dedicated to strengthening communities, tackling poverty, and creating opportunities for all.</p>
                     <p class="text-sm">Charity Registration No: 1119687</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Our Programs</h3>
+                    <ul class="space-y-2">
+                        <li><a href="rhema-house.html" class="footer-link hover:text-[#D406B7] transition-colors">Rhema House</a></li>
+                        <li><a href="foodbank.html" class="footer-link hover:text-[#D406B7] transition-colors">Foodbank</a></li>
+                        <li><a href="sports.html" class="footer-link hover:text-[#D406B7] transition-colors">Sports & Wellbeing</a></li>
+                        <li><a href="clothing.html" class="footer-link hover:text-[#D406B7] transition-colors">Clothing & Essentials</a></li>
+                    </ul>
                 </div>
 
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
                     <p class="mb-2 flex items-center">
                         <i class="fas fa-map-marker-alt mr-2 text-[#D406B7]"></i>
-                        123 Community Street, Stockton-on-Tees, UK
+                        Rhema House, 2 Portrack Lane, Stockton-on-Tees, UK, TS18 2HG
                     </p>
                     <p class="mb-2 flex items-center">
                         <i class="fas fa-envelope mr-2 text-[#D406B7]"></i>
-                        info@actsoflove.org
+                        makaure@aol.com
                     </p>
                     <p class="mb-2 flex items-center">
                         <i class="fas fa-phone mr-2 text-[#D406B7]"></i>
-                        +44 123 456 789
+                        +44 7497 519502
                     </p>
                 </div>
 
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-[#D406B7] transition-colors">Home</a></li>
-                        <li><a href="#" class="hover:text-[#D406B7] transition-colors">About Us</a></li>
-                        <li><a href="#" class="hover:text-[#D406B7] transition-colors">Our Programs</a></li>
-                        <li><a href="#" class="hover:text-[#D406B7] transition-colors">Get Involved</a></li>
-                        <li><a href="#" class="hover:text-[#D406B7] transition-colors">News & Events</a></li>
+                        <li><a href="index.html" class="footer-link hover:text-[#D406B7] transition-colors">Home</a></li>
+                        <li><a href="about.html" class="footer-link hover:text-[#D406B7] transition-colors">About Us</a></li>
+                        <li><a href="programs.html" class="footer-link hover:text-[#D406B7] transition-colors">Our Programs</a></li>
+                        <li><a href="get-involved.html" class="footer-link hover:text-[#D406B7] transition-colors">Get Involved</a></li>
+                        <li><a href="contact.html" class="footer-link hover:text-[#D406B7] transition-colors">Contact</a></li>
                     </ul>
                 </div>
-
-
             </div>
 
             <div class="border-t border-gray-700 mt-8 pt-8 text-center">
@@ -846,24 +776,49 @@
         </div>
     </footer>
 
-    <!-- jQuery Scripts -->
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         $(document).ready(function () {
-            // Mobile menu toggle
+            // Mobile menu functionality
+            function openMobileMenu() {
+                $('#mobileMenu').addClass('open');
+                $('#overlay').addClass('active');
+                $('body').css('overflow', 'hidden');
+            }
+
+            function closeMobileMenu() {
+                $('#mobileMenu').removeClass('open');
+                $('#overlay').removeClass('active');
+                $('body').css('overflow', 'auto');
+            }
+
+            // Menu toggle button
             $('#menuToggle').click(function () {
-                $('#mobileMenu').removeClass('menu-closed').addClass('menu-open');
+                openMobileMenu();
             });
 
+            // Close button
             $('#closeMenu').click(function () {
-                $('#mobileMenu').removeClass('menu-open').addClass('menu-closed');
+                closeMobileMenu();
             });
 
-            // Initialize slideshow
-            let currentSlide = 0;
-            const slides = $('.hero-slide');
-            const indicators = $('.slide-indicator');
-            const totalSlides = slides.length;
-            let slideInterval;
+            // Close when clicking overlay
+            $('#overlay').click(function () {
+                closeMobileMenu();
+            });
+
+            // Close when clicking on mobile nav links
+            $('.mobile-nav-link').click(function () {
+                closeMobileMenu();
+            });
+
+            // Close menu with Escape key
+            $(document).keydown(function (e) {
+                if (e.key === 'Escape') {
+                    closeMobileMenu();
+                }
+            });
 
             // Fade-in animation on scroll
             function checkFade() {
@@ -880,45 +835,6 @@
 
             checkFade();
             $(window).scroll(checkFade);
-
-
-
-
-
-            // Animate stats counters
-            function animateCounters() {
-                $('.stats-number').each(function () {
-                    var $this = $(this);
-                    var target = $this.data('target');
-                    var current = 0;
-                    var increment = target / 50;
-
-                    var timer = setInterval(function () {
-                        if (current < target) {
-                            current += increment;
-                            if (current > target) current = target;
-                            $this.text(Math.floor(current));
-                        } else {
-                            clearInterval(timer);
-                        }
-                    }, 50);
-                });
-            }
-
-            // Check if stats are in view
-            function checkStats() {
-                var position = $('.stats-number').first().offset().top;
-                var scroll = $(window).scrollTop();
-                var windowHeight = $(window).height();
-
-                if (scroll + windowHeight - 200 > position) {
-                    animateCounters();
-                    $(window).off('scroll', checkStats);
-                }
-            }
-
-            $(window).scroll(checkStats);
-            checkStats();
 
             // Header scroll effect
             $(window).scroll(function () {

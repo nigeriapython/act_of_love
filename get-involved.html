@@ -4,13 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acts of Love International - Transforming Lives, Building Hope</title>
+    <title>Get Involved - Acts of Love International</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -45,38 +42,6 @@
             font-family: 'Playfair Display', serif;
         }
 
-        .hero-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 1.2s ease-in-out;
-            z-index: 1;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-slide.active {
-            opacity: 1;
-            z-index: 2;
-        }
-
-        .hero-slide-1 {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/slide/act_slide2.png');
-        }
-
-        .hero-slide-2 {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/slide/act_slide3.png');
-        }
-
-        .hero-slide-3 {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/slide/act_slide1.png');
-        }
-
         .gradient-text {
             background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
             -webkit-background-clip: text;
@@ -106,17 +71,6 @@
             transform: translateY(-2px);
         }
 
-        .btn-accent {
-            background: linear-gradient(90deg, var(--accent) 0%, #38a169 100%);
-            box-shadow: 0 4px 15px 0 rgba(56, 178, 172, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .btn-accent:hover {
-            box-shadow: 0 6px 20px 0 rgba(56, 178, 172, 0.5);
-            transform: translateY(-2px);
-        }
-
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -128,210 +82,140 @@
             transform: translateY(0);
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 10;
+        .section-padding {
+            padding: 5rem 0;
         }
 
-        .slide-indicators {
-            position: absolute;
-            bottom: 30px;
-            left: 0;
-            right: 0;
-            z-index: 20;
+        .impact-stat {
             display: flex;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .slide-indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .slide-indicator.active {
-            background: white;
-            transform: scale(1.2);
-        }
-
-        .slide-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 20;
-            background: rgba(255, 255, 255, 0.2);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: white;
-            cursor: pointer;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .impact-stat .number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-stat .label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .value-card {
             transition: all 0.3s ease;
-            backdrop-filter: blur(4px);
-        }
-
-        .slide-nav:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .slide-nav.prev {
-            left: 20px;
-        }
-
-        .slide-nav.next {
-            right: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .slide-nav {
-                width: 40px;
-                height: 40px;
-            }
-
-            .slide-nav.prev {
-                left: 10px;
-            }
-
-            .slide-nav.next {
-                right: 10px;
-            }
-        }
-
-        .progress-bar {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.3);
-            width: 100%;
-            z-index: 20;
-        }
-
-        .progress-fill {
+            border-radius: 12px;
+            overflow: hidden;
             height: 100%;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .footer-link {
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--secondary);
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 280px;
             background: white;
-            width: 0%;
-            transition: width 5s linear;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
         }
 
-        .progress-fill.animate {
-            width: 100%;
-        }
-
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
-
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
-        .success-slide {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.8s ease;
-        }
-
-        .success-slide.active {
-            display: flex;
-            opacity: 1;
-        }
-
-        .gradient-border {
-            position: relative;
-            background: white;
-            border-radius: 16px;
-        }
-
-        .gradient-border::before {
-            content: "";
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            border-radius: 18px;
-            z-index: -1;
-        }
-
-        .counter {
-            font-variant-numeric: tabular-nums;
-        }
-
-        .menu-open {
+        .mobile-menu.open {
             transform: translateX(0);
         }
 
-        .menu-closed {
-            transform: translateX(100%);
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
         }
 
-        .program-icon {
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .form-input {
             transition: all 0.3s ease;
+            border: 2px solid #e2e8f0;
         }
 
-        .program-card:hover .program-icon {
-            transform: scale(1.2) rotate(5deg);
+        .form-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(32, 59, 118, 0.1);
         }
 
-        .stats-number {
-            font-variant-numeric: tabular-nums;
+        .donation-option {
+            transition: all 0.3s ease;
+            border: 2px solid #e2e8f0;
         }
 
-        .illustration {
-            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+        .donation-option:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .donation-option.selected {
+            border-color: var(--primary);
+            background-color: rgba(32, 59, 118, 0.05);
         }
 
         .volunteer-role {
             transition: all 0.3s ease;
-            border-left: 4px solid transparent;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
         }
-        
+
         .volunteer-role:hover {
-            border-left-color: var(--primary);
-            transform: translateX(5px);
-        }
-        
-        .donation-option {
-            transition: all 0.3s ease;
-        }
-        
-        .donation-option:hover {
-            transform: scale(1.03);
-        }
-        
-        .partner-logo {
-            transition: all 0.3s ease;
-        }
-        
-        .partner-logo:hover {
-            transform: scale(1.05);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
     </style>
 </head>
@@ -362,9 +246,9 @@
                         <span
                             class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--secondary)] transition-all group-hover:w-full"></span>
                     </a>
-                    <a href="about.html#our-work"
+                    <a href="programs.html"
                         class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium relative group">
-                        Our Work
+                        Our Programs
                         <span
                             class="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--secondary)] transition-all group-hover:w-full"></span>
                     </a>
@@ -399,380 +283,419 @@
                 </div>
             </div>
         </div>
-
-        <!-- Mobile Menu -->
-        <div class="fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 transition-transform duration-300 menu-closed"
-            id="mobileMenu">
-            <div class="p-6">
-                <!-- Logo & Close Button -->
-                <div class="flex justify-between items-center mb-10">
-                    <a href="#">
-                        <img src="images/act_of_love_logo.png" alt="Acts of Love Logo" class="h-10">
-                    </a>
-                    <button id="closeMenu">
-                        <i class="fas fa-times text-gray-700 text-xl"></i>
-                    </button>
-                </div>
-
-                <!-- Mobile Nav -->
-                <nav class="flex flex-col space-y-6 bg-white">
-                    <a href="index.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Home</a>
-                    <a href="about.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">About
-                        Us</a>
-                    <a href="about.html#our-work" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Our
-                        Work</a>
-                    <a href="rhema-house.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Rhema
-                        House</a>
-                    <a href="get-involved.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Get
-                        Involved</a>
-                    <a href="contact.html"
-                        class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium">Contact</a>
-                    <a href="donate.html" class="btn-primary px-6 py-3 rounded-full text-white font-semibold text-center mt-4">
-                        Donate Now
-                    </a>
-                </nav>
-            </div>
-        </div>
     </header>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="overlay" id="overlay"></div>
 
-    <!-- Breadcrumb -->
-    <section class="pt-28 pb-8 bg-gradient-to-r from-[#203B76] to-[#D406B7] text-white">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center space-x-2 text-sm">
-                <a href="#" class="hover:underline">Home</a>
-                <span><i class="fas fa-chevron-right text-xs"></i></span>
-                <span>Get Involved</span>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="p-6 h-full flex flex-col">
+            <!-- Logo & Close Button -->
+            <div class="flex justify-between items-center mb-10">
+                <a href="index.html">
+                    <img src="images/act_of_love_logo.png" alt="Acts of Love Logo" class="h-10">
+                </a>
+                <button id="closeMenu">
+                    <i class="fas fa-times text-gray-700 text-xl"></i>
+                </button>
             </div>
-            <h1 class="text-4xl md:text-5xl font-bold mt-4">You Can Help Us Make a Difference</h1>
-        </div>
-    </section>
 
-    <!-- Hero Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
-                Join us in our mission to transform lives and build stronger communities. Your support, whether through time, resources, or partnership, creates lasting change.
-            </p>
+            <!-- Mobile Nav -->
+            <nav class="flex flex-col space-y-6 flex-grow">
+                <a href="index.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium py-2 border-b border-gray-100 mobile-nav-link">Home</a>
+                <a href="about.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium py-2 border-b border-gray-100 mobile-nav-link">About Us</a>
+                <a href="programs.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium py-2 border-b border-gray-100 mobile-nav-link">Our Programs</a>
+                <a href="rhema-house.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium py-2 border-b border-gray-100 mobile-nav-link">Rhema House</a>
+                <a href="get-involved.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium py-2 border-b border-gray-100 mobile-nav-link">Get Involved</a>
+                <a href="contact.html" class="text-gray-700 hover:text-[var(--primary)] transition-colors font-medium py-2 border-b border-gray-100 mobile-nav-link">Contact</a>
+            </nav>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-                <div class="bg-blue-50 p-8 rounded-xl card-hover">
-                    <div class="text-5xl mb-6 text-[#203B76]">
-                        <i class="fas fa-hands-helping"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Volunteer</h3>
-                    <p class="text-gray-600 mb-6">Join our friendly team and use your skills to change lives.</p>
-                    <a href="#volunteer" class="btn-primary px-6 py-3 rounded-full text-white font-semibold">
-                        Learn More
-                    </a>
-                </div>
-                
-                <div class="bg-pink-50 p-8 rounded-xl card-hover">
-                    <div class="text-5xl mb-6 text-[#D406B7]">
-                        <i class="fas fa-donate"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Donate</h3>
-                    <p class="text-gray-600 mb-6">Your support helps us run the foodbank, sports programs, and more.</p>
-                    <a href="#donate" class="btn-secondary px-6 py-3 rounded-full text-white font-semibold">
-                        Donate Now
-                    </a>
-                </div>
-                
-                <div class="bg-teal-50 p-8 rounded-xl card-hover">
-                    <div class="text-5xl mb-6 text-[#38b2ac]">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Partner With Us</h3>
-                    <p class="text-gray-600 mb-6">We work with organisations, churches, and local businesses to create lasting impact.</p>
-                    <a href="#partner" class="btn-accent px-6 py-3 rounded-full text-white font-semibold">
-                        Partner Today
-                    </a>
-                </div>
+            <!-- Donate Button -->
+            <div class="mt-auto pt-6 border-t border-gray-200">
+                <a href="donate.html" class="btn-primary w-full px-6 py-3 rounded-full text-white font-semibold text-center block">
+                    Donate Now
+                </a>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Volunteer Section -->
-    <section id="volunteer" class="py-16 blue-bg">
+    <!-- Page Header -->
+    <section class="pt-32 pb-20 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-white">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 fade-in">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
-                        Volunteer Opportunities
-                    </h2>
-                    <p class="text-gray-600 mb-6">
-                        Our volunteers are the heart of our organization. Whether you can give a few hours a week or make a regular commitment, your time and skills make a real difference in our community.
-                    </p>
-                    
-                    <div class="space-y-4 mb-8">
-                        <div class="volunteer-role bg-white p-5 rounded-lg">
-                            <h4 class="font-semibold text-gray-800 flex items-center">
-                                <i class="fas fa-utensils text-[#203B76] mr-3"></i>
-                                Foodbank Assistant
-                            </h4>
-                            <p class="text-gray-600 text-sm mt-1">Help sort, pack, and distribute food to those in need. Shifts available weekdays.</p>
-                        </div>
-                        
-                        <div class="volunteer-role bg-white p-5 rounded-lg">
-                            <h4 class="font-semibold text-gray-800 flex items-center">
-                                <i class="fas fa-chalkboard-teacher text-[#203B76] mr-3"></i>
-                                ESOL Tutor
-                            </h4>
-                            <p class="text-gray-600 text-sm mt-1">Support non-native speakers in improving their English language skills.</p>
-                        </div>
-                        
-                        <div class="volunteer-role bg-white p-5 rounded-lg">
-                            <h4 class="font-semibold text-gray-800 flex items-center">
-                                <i class="fas fa-running text-[#203B76] mr-3"></i>
-                                Sports Coach
-                            </h4>
-                            <p class="text-gray-600 text-sm mt-1">Lead or assist with sports activities for various age groups and abilities.</p>
-                        </div>
-                        
-                        <div class="volunteer-role bg-white p-5 rounded-lg">
-                            <h4 class="font-semibold text-gray-800 flex items-center">
-                                <i class="fas fa-hands text-[#203B76] mr-3"></i>
-                                Community Events Helper
-                            </h4>
-                            <p class="text-gray-600 text-sm mt-1">Assist with organizing and running community events and activities.</p>
-                        </div>
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Get Involved</h1>
+                <p class="text-xl">Your support, whether through time, resources, or partnership, creates lasting change in our community</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How You Can Help Section -->
+    <section class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">You Can Help Us Make a Difference</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                Choose how you'd like to support our mission to strengthen communities and tackle poverty
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Volunteer Card -->
+                <div class="value-card bg-white rounded-xl shadow-md overflow-hidden border-2 border-gray-100">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="p-6">
+                        <div class="text-4xl mb-4 text-[var(--primary)]">🤝</div>
+                        <h3 class="text-2xl font-semibold mb-3 text-[var(--primary)]">Volunteer</h3>
+                        <p class="text-gray-600 mb-4 text-lg">
+                            Join our friendly team and use your skills to change lives in our community.
+                        </p>
+                        <ul class="text-gray-600 mb-6 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Flexible hours to suit your schedule
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Various roles available
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Training and support provided
+                            </li>
+                        </ul>
+                        <a href="#volunteer" class="btn-primary inline-flex items-center px-6 py-3 rounded-full text-white font-semibold">
+                            <i class="fas fa-hands-helping mr-2"></i> Learn About Volunteering
+                        </a>
                     </div>
-                    
-                    <a href="#" class="btn-primary inline-flex items-center px-6 py-3 rounded-full text-white font-semibold">
-                        <i class="fas fa-file-alt mr-2"></i> Apply to Volunteer
-                    </a>
                 </div>
 
-                <div class="md:w-1/2 fade-in">
-                    <div class="bg-white p-8 rounded-xl">
-                        <h3 class="text-2xl font-semibold mb-6 text-gray-800">Volunteer Testimonials</h3>
-                        
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0">
-                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Volunteer" class="w-full h-full object-cover">
-                                </div>
-                                <div>
-                                    <p class="text-gray-600 italic">"Volunteering at the foodbank has been incredibly rewarding. I've met amazing people and seen firsthand how our work helps families in need."</p>
-                                    <p class="text-sm font-semibold text-gray-800 mt-2">— James, Volunteer for 2 years</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0">
-                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Volunteer" class="w-full h-full object-cover">
-                                </div>
-                                <div>
-                                    <p class="text-gray-600 italic">"Teaching ESOL classes has allowed me to connect with people from diverse backgrounds and help them build confidence in their language skills."</p>
-                                    <p class="text-sm font-semibold text-gray-800 mt-2">— Sarah, ESOL Tutor</p>
-                                </div>
-                            </div>
-                        </div>
+                <!-- Donate Card -->
+                <div class="value-card bg-white rounded-xl shadow-md overflow-hidden border-2 border-gray-100">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="p-6">
+                        <div class="text-4xl mb-4 text-[var(--primary)]">💝</div>
+                        <h3 class="text-2xl font-semibold mb-3 text-[var(--primary)]">Donate</h3>
+                        <p class="text-gray-600 mb-4 text-lg">
+                            Your support makes a lasting impact in running the foodbank, sports programs and more.
+                        </p>
+                        <ul class="text-gray-600 mb-6 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                One-time or recurring donations
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Every pound makes a difference
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Transparent use of funds
+                            </li>
+                        </ul>
+                        <a href="#donate" class="btn-secondary inline-flex items-center px-6 py-3 rounded-full text-white font-semibold">
+                            <i class="fas fa-donate mr-2"></i> Make a Donation
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Donate Section -->
-    <section id="donate" class="py-16 pink-bg">
+    <!-- Volunteer Opportunities Section -->
+    <section id="volunteer" class="section-padding bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Volunteer Opportunities</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                Our volunteers are the heart of our organisation. Whether you can give a few hours a week or make a regular commitment, your time and skills make a real difference in our community.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Foodbank Volunteer -->
+                <div class="volunteer-role bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-40 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1553901753-215db344677a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-[var(--primary)]">Foodbank Volunteer</h3>
+                        <p class="text-gray-600 mb-4">
+                            Help sort, pack, and distribute food parcels to families in need. Support our Wednesday and Friday foodbank sessions.
+                        </p>
+                        <div class="text-sm text-gray-500">
+                            <p><strong>Time Commitment:</strong> 2-4 hours weekly</p>
+                            <p><strong>Skills Needed:</strong> Organisation, empathy, teamwork</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sports Volunteer -->
+                <div class="volunteer-role bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-40 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-[var(--primary)]">Sports & Activities Volunteer</h3>
+                        <p class="text-gray-600 mb-4">
+                            Assist with our Friday and Saturday sports sessions. Help set up activities and encourage participation.
+                        </p>
+                        <div class="text-sm text-gray-500">
+                            <p><strong>Time Commitment:</strong> 3-4 hours weekly</p>
+                            <p><strong>Skills Needed:</strong> Enthusiasm, basic sports knowledge</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- General Support -->
+                <div class="volunteer-role bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="h-40 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-[var(--primary)]">General Support Volunteer</h3>
+                        <p class="text-gray-600 mb-4">
+                            Help with various tasks around Rhema House including administration, cleaning, and community outreach.
+                        </p>
+                        <div class="text-sm text-gray-500">
+                            <p><strong>Time Commitment:</strong> Flexible</p>
+                            <p><strong>Skills Needed:</strong> Various - we'll match to your strengths</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Volunteer Application Form -->
+            <div class="bg-white rounded-xl shadow-md p-8 max-w-4xl mx-auto">
+                <h3 class="text-2xl md:text-3xl font-bold text-center mb-2 text-gray-800">Apply to Volunteer</h3>
+                <p class="text-center text-gray-600 mb-8">Fill out the form below and we'll get in touch about volunteer opportunities</p>
+                
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="volunteerFirstName" class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                            <input type="text" id="volunteerFirstName" name="volunteerFirstName" 
+                                   class="form-input w-full px-4 py-3 rounded-lg focus:outline-none"
+                                   required>
+                        </div>
+                        <div>
+                            <label for="volunteerLastName" class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                            <input type="text" id="volunteerLastName" name="volunteerLastName" 
+                                   class="form-input w-full px-4 py-3 rounded-lg focus:outline-none"
+                                   required>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="volunteerEmail" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="volunteerEmail" name="volunteerEmail" 
+                                   class="form-input w-full px-4 py-3 rounded-lg focus:outline-none"
+                                   required>
+                        </div>
+                        <div>
+                            <label for="volunteerPhone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                            <input type="tel" id="volunteerPhone" name="volunteerPhone" 
+                                   class="form-input w-full px-4 py-3 rounded-lg focus:outline-none"
+                                   required>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="volunteerInterest" class="block text-sm font-medium text-gray-700 mb-2">Area of Interest</label>
+                        <select id="volunteerInterest" name="volunteerInterest" 
+                                class="form-input w-full px-4 py-3 rounded-lg focus:outline-none"
+                                required>
+                            <option value="">Select an area</option>
+                            <option value="foodbank">Foodbank</option>
+                            <option value="sports">Sports & Activities</option>
+                            <option value="general">General Support</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="volunteerAvailability" class="block text-sm font-medium text-gray-700 mb-2">Availability</label>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <label class="flex items-center">
+                                <input type="checkbox" name="availability" value="weekdays" class="mr-2">
+                                <span>Weekdays</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="availability" value="evenings" class="mr-2">
+                                <span>Evenings</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="availability" value="weekends" class="mr-2">
+                                <span>Weekends</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="volunteerExperience" class="block text-sm font-medium text-gray-700 mb-2">Relevant Skills or Experience</label>
+                        <textarea id="volunteerExperience" name="volunteerExperience" rows="4"
+                                  class="form-input w-full px-4 py-3 rounded-lg focus:outline-none"
+                                  placeholder="Tell us about any relevant skills, experience, or why you'd like to volunteer with us..."></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" 
+                                class="btn-primary px-8 py-4 rounded-full text-white font-semibold text-lg">
+                            <i class="fas fa-paper-plane mr-2"></i> Submit Application
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Volunteer Testimonials Placeholder -->
+            <div class="mt-16 text-center">
+                <h3 class="text-2xl font-bold mb-4 text-gray-800">Volunteer Testimonials</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    <em>Actual testimonials from our volunteers will be added once the website is live and running.</em>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donate" class="section-padding bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Make a Donation</h2>
-            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">Your financial support enables us to continue our vital work in the community</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div class="donation-option bg-white p-6 rounded-xl text-center card-hover">
-                    <div class="text-5xl mb-4 text-[#D406B7]">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Foodbank Support</h3>
-                    <p class="text-gray-600 mb-4">£15 provides a family with a week's worth of groceries</p>
-                    <a href="#" class="btn-secondary px-6 py-2 rounded-full text-white font-semibold text-sm">
-                        Donate Now
-                    </a>
-                </div>
-                
-                <div class="donation-option bg-white p-6 rounded-xl text-center card-hover">
-                    <div class="text-5xl mb-4 text-[#D406B7]">
-                        <i class="fas fa-running"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Sports Programs</h3>
-                    <p class="text-gray-600 mb-4">£25 provides sports equipment for a child for a year</p>
-                    <a href="#" class="btn-secondary px-6 py-2 rounded-full text-white font-semibold text-sm">
-                        Donate Now
-                    </a>
-                </div>
-                
-                <div class="donation-option bg-white p-6 rounded-xl text-center card-hover">
-                    <div class="text-5xl mb-4 text-[#D406B7]">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Rhema House</h3>
-                    <p class="text-gray-600 mb-4">£50 helps maintain and improve our community hub</p>
-                    <a href="#" class="btn-secondary px-6 py-2 rounded-full text-white font-semibold text-sm">
-                        Donate Now
-                    </a>
-                </div>
-            </div>
-            
-            <div class="bg-white p-8 rounded-xl">
-                <h3 class="text-2xl font-semibold mb-6 text-gray-800">Other Ways to Give</h3>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="flex items-start">
-                        <div class="w-12 h-12 rounded-full bg-pink-50 flex items-center justify-center mr-4 flex-shrink-0">
-                            <i class="fas fa-calendar-alt text-[#D406B7]"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-800">Regular Giving</h4>
-                            <p class="text-gray-600">Set up a monthly donation to provide consistent support for our programs</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start">
-                        <div class="w-12 h-12 rounded-full bg-pink-50 flex items-center justify-center mr-4 flex-shrink-0">
-                            <i class="fas fa-gift text-[#D406B7]"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-800">In-Kind Donations</h4>
-                            <p class="text-gray-600">Donate food, clothing, or other essential items directly to our center</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start">
-                        <div class="w-12 h-12 rounded-full bg-pink-50 flex items-center justify-center mr-4 flex-shrink-0">
-                            <i class="fas fa-briefcase text-[#D406B7]"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-800">Corporate Matching</h4>
-                            <p class="text-gray-600">Many employers will match charitable donations made by their employees</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start">
-                        <div class="w-12 h-12 rounded-full bg-pink-50 flex items-center justify-center mr-4 flex-shrink-0">
-                            <i class="fas fa-hand-holding-heart text-[#D406B7]"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-800">Fundraise for Us</h4>
-                            <p class="text-gray-600">Organize your own fundraising event or challenge in support of our work</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                Your generous support helps us continue our vital work in the community
+            </p>
 
-    <!-- Partner Section -->
-    <section id="partner" class="py-16 teal-bg">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Partner With Us</h2>
-            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">We collaborate with organizations, churches, and businesses to maximize our impact</p>
-            
-            <div class="flex flex-col md:flex-row items-center mb-12">
-                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 fade-in">
-                    <h3 class="text-2xl font-semibold mb-6 text-gray-800">Why Partner With Acts of Love?</h3>
-                    <p class="text-gray-600 mb-6">
-                        Strategic partnerships allow us to extend our reach and effectiveness in serving the community. We offer various partnership opportunities tailored to your organization's goals and capabilities.
+            <div class="max-w-4xl mx-auto">
+                <!-- Donation Options -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <div class="donation-option bg-white rounded-xl shadow-md p-6 text-center cursor-pointer">
+                        <div class="text-3xl mb-4 text-[var(--primary)]">£10</div>
+                        <h3 class="text-lg font-semibold mb-2">Weekly Food Parcel</h3>
+                        <p class="text-gray-600 text-sm">Provides essential food for a family for one week</p>
+                    </div>
+                    <div class="donation-option bg-white rounded-xl shadow-md p-6 text-center cursor-pointer selected">
+                        <div class="text-3xl mb-4 text-[var(--primary)]">£25</div>
+                        <h3 class="text-lg font-semibold mb-2">Sports Session</h3>
+                        <p class="text-gray-600 text-sm">Funds a sports session for 15 participants</p>
+                    </div>
+                    <div class="donation-option bg-white rounded-xl shadow-md p-6 text-center cursor-pointer">
+                        <div class="text-3xl mb-4 text-[var(--primary)]">£50</div>
+                        <h3 class="text-lg font-semibold mb-2">Monthly Support</h3>
+                        <p class="text-gray-600 text-sm">Helps maintain Rhema House for a month</p>
+                    </div>
+                </div>
+
+                <!-- Custom Amount -->
+                <div class="bg-gray-50 rounded-xl p-6 mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-center text-gray-800">Or Choose Your Own Amount</h3>
+                    <div class="max-w-md mx-auto">
+                        <div class="flex items-center">
+                            <span class="text-xl font-semibold mr-2">£</span>
+                            <input type="number" id="customAmount" 
+                                   class="form-input flex-grow px-4 py-3 rounded-lg focus:outline-none text-center text-xl"
+                                   placeholder="Enter amount" min="1">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Donation Frequency -->
+                <div class="bg-gray-50 rounded-xl p-6 mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-center text-gray-800">Donation Frequency</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-md mx-auto">
+                        <button class="btn-primary py-3 rounded-lg text-white font-semibold">One-time</button>
+                        <button class="bg-white border-2 border-gray-300 py-3 rounded-lg font-semibold hover:border-[var(--primary)]">Monthly</button>
+                        <button class="bg-white border-2 border-gray-300 py-3 rounded-lg font-semibold hover:border-[var(--primary)]">Quarterly</button>
+                    </div>
+                </div>
+
+                <!-- Donation Impact -->
+                <div class="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] rounded-xl p-8 text-white text-center">
+                    <h3 class="text-2xl font-bold mb-4">Your Donation Makes a Difference</h3>
+                    <p class="mb-6 text-lg">
+                        Every pound donated goes directly towards supporting our community programs, maintaining Rhema House, and helping those in need.
                     </p>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <div class="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center mr-3">
-                                <i class="fas fa-check text-[#38b2ac] text-sm"></i>
-                            </div>
-                            <p class="text-gray-700">Increase your organization's social impact</p>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center mr-3">
-                                <i class="fas fa-check text-[#38b2ac] text-sm"></i>
-                            </div>
-                            <p class="text-gray-700">Engage employees in meaningful volunteer opportunities</p>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center mr-3">
-                                <i class="fas fa-check text-[#38b2ac] text-sm"></i>
-                            </div>
-                            <p class="text-gray-700">Demonstrate commitment to corporate social responsibility</p>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center mr-3">
-                                <i class="fas fa-check text-[#38b2ac] text-sm"></i>
-                            </div>
-                            <p class="text-gray-700">Build positive brand association with community work</p>
-                        </div>
+                    <button class="btn-secondary px-8 py-4 rounded-full text-white font-semibold text-lg">
+                        <i class="fas fa-credit-card mr-2"></i> Proceed to Donate
+                    </button>
+                    <p class="mt-4 text-sm opacity-80">
+                        *All listed donation amounts and impacts are to be confirmed
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Ways to Help -->
+    <section class="section-padding bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Other Ways to Help</h2>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                There are many ways to support our mission beyond volunteering and donations
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-[var(--primary)] flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                        <i class="fas fa-share-alt"></i>
                     </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Spread the Word</h3>
+                    <p class="text-gray-600">Follow us on social media and share our work with your network</p>
                 </div>
-                
-                <div class="md:w-1/2 fade-in">
-                    <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Partnership meeting" class="rounded-xl shadow-md">
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-[var(--primary)] flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Corporate Partnerships</h3>
+                    <p class="text-gray-600">Explore partnership opportunities for your business or organization</p>
                 </div>
-            </div>
-            
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-16 bg-gradient-to-r from-[#203B76] to-[#D406B7] text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Make a Difference?</h2>
-            <p class="text-xl mb-10 max-w-3xl mx-auto">Join us in creating lasting change in our community. Every contribution, big or small, makes an impact.</p>
-            
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#" class="bg-white text-[#203B76] hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg">
-                    <i class="fas fa-hands-helping mr-2"></i> Volunteer
-                </a>
-                <a href="#" class="bg-white text-[#D406B7] hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg">
-                    <i class="fas fa-donate mr-2"></i> Donate
-                </a>
-                <a href="#" class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg">
-                    <i class="fas fa-handshake mr-2"></i> Partner With Us
-                </a>
+                <div class="text-center">
+                    <div class="w-16 h-16 rounded-full bg-[var(--primary)] flex items-center justify-center text-white text-2xl mx-auto mb-4">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">In-Kind Donations</h3>
+                    <p class="text-gray-600">Donate food, clothing, or other essential items</p>
+                </div>
             </div>
         </div>
     </section>
-
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Acts of Love International</h3>
-                    <p class="mb-6">Dedicated to strengthening communities, tackling poverty, and creating opportunities
-                        for all.</p>
+                    <p class="mb-6">Dedicated to strengthening communities, tackling poverty, and creating opportunities for all.</p>
                     <p class="text-sm">Charity Registration No: 1119687</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Our Programs</h3>
+                    <ul class="space-y-2">
+                        <li><a href="rhema-house.html" class="footer-link hover:text-[#D406B7] transition-colors">Rhema House</a></li>
+                        <li><a href="foodbank.html" class="footer-link hover:text-[#D406B7] transition-colors">Foodbank</a></li>
+                        <li><a href="sports.html" class="footer-link hover:text-[#D406B7] transition-colors">Sports & Wellbeing</a></li>
+                        <li><a href="clothing.html" class="footer-link hover:text-[#D406B7] transition-colors">Clothing & Essentials</a></li>
+                    </ul>
                 </div>
 
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
                     <p class="mb-2 flex items-center">
                         <i class="fas fa-map-marker-alt mr-2 text-[#D406B7]"></i>
-                        123 Community Street, Stockton-on-Tees, UK
+                        Rhema House, 2 Portrack Lane, Stockton-on-Tees, UK, TS18 2HG
                     </p>
                     <p class="mb-2 flex items-center">
                         <i class="fas fa-envelope mr-2 text-[#D406B7]"></i>
-                        info@actsoflove.org
+                        makaure@aol.com
                     </p>
                     <p class="mb-2 flex items-center">
                         <i class="fas fa-phone mr-2 text-[#D406B7]"></i>
-                        +44 123 456 789
+                        +44 7497 519502
                     </p>
                 </div>
 
                 <div>
                     <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-[#D406B7] transition-colors">Home</a></li>
-                        <li><a href="#" class="hover:text-[#D406B7] transition-colors">About Us</a></li>
-                        <li><a href="#" class="hover:text-[#D406B7] transition-colors">Our Programs</a></li>
-                        <li><a href="#" class="hover:text-[#D406B7] transition-colors">Get Involved</a></li>
-                        <li><a href="#" class="hover:text-[#D406B7] transition-colors">News & Events</a></li>
+                        <li><a href="index.html" class="footer-link hover:text-[#D406B7] transition-colors">Home</a></li>
+                        <li><a href="about.html" class="footer-link hover:text-[#D406B7] transition-colors">About Us</a></li>
+                        <li><a href="programs.html" class="footer-link hover:text-[#D406B7] transition-colors">Our Programs</a></li>
+                        <li><a href="get-involved.html" class="footer-link hover:text-[#D406B7] transition-colors">Get Involved</a></li>
+                        <li><a href="contact.html" class="footer-link hover:text-[#D406B7] transition-colors">Contact</a></li>
                     </ul>
                 </div>
-
-
             </div>
 
             <div class="border-t border-gray-700 mt-8 pt-8 text-center">
@@ -781,24 +704,49 @@
         </div>
     </footer>
 
-    <!-- jQuery Scripts -->
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         $(document).ready(function () {
-            // Mobile menu toggle
+            // Mobile menu functionality
+            function openMobileMenu() {
+                $('#mobileMenu').addClass('open');
+                $('#overlay').addClass('active');
+                $('body').css('overflow', 'hidden');
+            }
+
+            function closeMobileMenu() {
+                $('#mobileMenu').removeClass('open');
+                $('#overlay').removeClass('active');
+                $('body').css('overflow', 'auto');
+            }
+
+            // Menu toggle button
             $('#menuToggle').click(function () {
-                $('#mobileMenu').removeClass('menu-closed').addClass('menu-open');
+                openMobileMenu();
             });
 
+            // Close button
             $('#closeMenu').click(function () {
-                $('#mobileMenu').removeClass('menu-open').addClass('menu-closed');
+                closeMobileMenu();
             });
 
-            // Initialize slideshow
-            let currentSlide = 0;
-            const slides = $('.hero-slide');
-            const indicators = $('.slide-indicator');
-            const totalSlides = slides.length;
-            let slideInterval;
+            // Close when clicking overlay
+            $('#overlay').click(function () {
+                closeMobileMenu();
+            });
+
+            // Close when clicking on mobile nav links
+            $('.mobile-nav-link').click(function () {
+                closeMobileMenu();
+            });
+
+            // Close menu with Escape key
+            $(document).keydown(function (e) {
+                if (e.key === 'Escape') {
+                    closeMobileMenu();
+                }
+            });
 
             // Fade-in animation on scroll
             function checkFade() {
@@ -816,109 +764,6 @@
             checkFade();
             $(window).scroll(checkFade);
 
-            // Function to show a specific slide
-            function showSlide(index) {
-                // Remove active class from all slides and indicators
-                slides.removeClass('active');
-                indicators.removeClass('active');
-
-                // Add active class to current slide and indicator
-                $(slides[index]).addClass('active');
-                $(indicators[index]).addClass('active');
-
-                // Reset and restart progress bar animation
-                $('.progress-fill').removeClass('animate');
-                setTimeout(function () {
-                    $('.progress-fill').addClass('animate');
-                }, 10);
-
-                currentSlide = index;
-            }
-
-            // Function to go to next slide
-            function nextSlide() {
-                let next = (currentSlide + 1) % totalSlides;
-                showSlide(next);
-            }
-
-            // Click handlers for navigation arrows
-            $('.slide-nav.next').click(function () {
-                clearInterval(slideInterval);
-                nextSlide();
-                startSlideShow();
-            });
-
-            $('.slide-nav.prev').click(function () {
-                clearInterval(slideInterval);
-                let prev = (currentSlide - 1 + totalSlides) % totalSlides;
-                showSlide(prev);
-                startSlideShow();
-            });
-
-            // Click handlers for indicators
-            $('.slide-indicator').click(function () {
-                clearInterval(slideInterval);
-                let slideIndex = $(this).data('slide');
-                showSlide(slideIndex);
-                startSlideShow();
-            });
-
-            // Start the slideshow
-            function startSlideShow() {
-                clearInterval(slideInterval);
-                slideInterval = setInterval(nextSlide, 5000);
-            }
-
-            // Initialize the slideshow
-            startSlideShow();
-
-            // Pause slideshow on hover
-            $('.hero-slide, .slide-nav, .slide-indicators').hover(
-                function () {
-                    clearInterval(slideInterval);
-                    $('.progress-fill').css('animation-play-state', 'paused');
-                },
-                function () {
-                    startSlideShow();
-                    $('.progress-fill').css('animation-play-state', 'running');
-                }
-            );
-
-            // Animate stats counters
-            function animateCounters() {
-                $('.stats-number').each(function () {
-                    var $this = $(this);
-                    var target = $this.data('target');
-                    var current = 0;
-                    var increment = target / 50;
-
-                    var timer = setInterval(function () {
-                        if (current < target) {
-                            current += increment;
-                            if (current > target) current = target;
-                            $this.text(Math.floor(current));
-                        } else {
-                            clearInterval(timer);
-                        }
-                    }, 50);
-                });
-            }
-
-            // Check if stats are in view
-            function checkStats() {
-                var position = $('.stats-number').first().offset().top;
-                var scroll = $(window).scrollTop();
-                var windowHeight = $(window).height();
-
-                if (scroll + windowHeight - 200 > position) {
-                    animateCounters();
-                    $(window).off('scroll', checkStats);
-                }
-            }
-
-            $(window).scroll(checkStats);
-            checkStats();
-
             // Header scroll effect
             $(window).scroll(function () {
                 if ($(this).scrollTop() > 100) {
@@ -926,6 +771,31 @@
                 } else {
                     $('header').removeClass('shadow-lg');
                 }
+            });
+
+            // Donation option selection
+            $('.donation-option').click(function() {
+                $('.donation-option').removeClass('selected');
+                $(this).addClass('selected');
+                $('#customAmount').val($(this).find('.text-3xl').text().replace('£', ''));
+            });
+
+            // Custom amount input
+            $('#customAmount').on('input', function() {
+                if ($(this).val()) {
+                    $('.donation-option').removeClass('selected');
+                }
+            });
+
+            // Form submissions
+            $('form').submit(function(e) {
+                e.preventDefault();
+                if ($(this).attr('id') === 'volunteerForm') {
+                    alert('Thank you for your volunteer application! We will contact you shortly to discuss opportunities.');
+                } else {
+                    alert('Thank you for your interest in volunteering! We will contact you shortly.');
+                }
+                this.reset();
             });
         });
     </script>
