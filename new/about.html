@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Acts of Love International</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #203B76;
+            --secondary: #D406B7;
+            --accent: #38b2ac;
+            --light: #F7FAFC;
+            --dark: #333333;
+            --light-text: #666666;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Act-of-love-inspired Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            flex-shrink: 0;
+        }
+
+        .logo img {
+            height: 65px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.03);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            justify-content: flex-end;
+        }
+
+        .main-menu {
+            display: flex;
+            margin-right: 20px;
+        }
+
+        .menu-item {
+            position: relative;
+        }
+
+        .menu-item > a {
+            display: block;
+            padding: 12px 18px;
+            color: var(--dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+            margin: 0 2px;
+        }
+
+        .menu-item > a:hover {
+            background: #f8f8f8;
+            color: var(--primary);
+        }
+
+        .menu-item.has-children > a::after {
+            content: '\f107';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            margin-left: 6px;
+            font-size: 12px;
+        }
+
+        .submenu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 220px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+            border-radius: 6px;
+            overflow: hidden;
+            border-top: 3px solid var(--primary);
+        }
+
+        .menu-item:hover .submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .submenu a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--light-text);
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        .submenu a:hover {
+            background: #f8f8f8;
+            color: var(--primary);
+            padding-left: 25px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .donate-btn {
+            background: linear-gradient(135deg, var(--primary), #2c5282);
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(32, 59, 118, 0.3);
+        }
+
+        .donate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(32, 59, 118, 0.4);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--dark);
+            font-size: 24px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            background: #f5f5f5;
+        }
+
+        /* Act-of-love-inspired Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 120px 0 60px;
+            color: white;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Act-of-love-inspired Section Styling */
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--dark);
+            text-align: center;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 1rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .section-title:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--light-text);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+
+        /* Act-of-love-inspired Cards */
+        .mv-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--primary);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mv-card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+
+        .mv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(32, 59, 118, 0.15);
+        }
+
+        .mv-card.vision {
+            border-left-color: var(--secondary);
+        }
+
+        .mv-icon {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .mv-card:hover .mv-icon {
+            transform: scale(1.1);
+        }
+
+        .vision .mv-icon {
+            color: var(--secondary);
+        }
+
+        .mv-title {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .mv-description {
+            color: var(--light-text);
+            line-height: 1.7;
+            font-size: 1rem;
+            flex-grow: 1;
+        }
+
+        /* Act-of-love-inspired Mission Statement */
+        .mission-statement {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 8px;
+            padding: 3rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .mission-statement::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        /* Act-of-love-inspired Impact Stats */
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .impact-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .impact-stat .number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-stat .label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Act-of-love-inspired Program Cards */
+        .program-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+            height: 100%;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(32, 59, 118, 0.15);
+        }
+
+        .program-card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            z-index: 2;
+        }
+
+        .program-image {
+            height: 200px;
+            background: linear-gradient(135deg, rgba(32, 59, 118, 0.1), rgba(212, 6, 183, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .program-card:hover .program-image img {
+            transform: scale(1.05);
+        }
+
+        .program-content {
+            padding: 1.5rem;
+        }
+
+        .program-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .program-card:hover .program-icon {
+            transform: scale(1.1);
+        }
+
+        .program-title {
+            font-size: 1.25rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .program-description {
+            color: var(--light-text);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .program-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+        }
+
+        .program-link:hover {
+            color: var(--secondary);
+        }
+
+        .program-link i {
+            margin-left: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .program-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Act-of-love-inspired CTA Section */
+        .cta-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, rgba(32, 59, 118, 0.9), rgba(212, 6, 183, 0.8)), url('https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-text {
+            font-size: 1.125rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+            opacity: 0.95;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 16px 35px;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button.outline {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        .cta-button:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button.outline:hover {
+            background: white;
+            color: var(--primary);
+            border-color: white;
+        }
+
+        /* Act-of-love-inspired Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 60px 0 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            padding-bottom: 40px;
+        }
+
+        .footer-logo img {
+            height: 80px;
+            width: auto;
+            margin-bottom: 20px;
+        }
+
+        .footer-about p {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-heading {
+            font-size: 18px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-heading:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul li a {
+            color: #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--primary);
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--primary);
+            margin-top: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: #444;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 50%;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+        }
+
+        .footer-bottom {
+            background: #222;
+            padding: 20px 0;
+            text-align: center;
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        /* Mobile Menu Styles */
+        .menu-toggle-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--dark);
+            font-size: 24px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+            display: none;
+        }
+
+        .menu-toggle-close:hover {
+            background: #f5f5f5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .menu-toggle-close {
+                display: block;
+            }
+            
+            .main-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                padding: 80px 25px 25px;
+                transition: right 0.3s ease;
+                z-index: 1001;
+                overflow-y: auto;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .main-menu.active {
+                right: 0;
+            }
+
+            .menu-item > a {
+                padding: 15px 0;
+                border-bottom: 1px solid #f0f0f0;
+                margin: 0;
+                border-radius: 0;
+            }
+
+            .submenu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background: transparent;
+                margin-left: 15px;
+                display: none;
+                border: none;
+            }
+
+            .submenu.active {
+                display: block;
+            }
+
+            .submenu a {
+                color: var(--light-text);
+                border-bottom: 1px solid #f0f0f0;
+                padding: 12px 0;
+            }
+
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .page-subtitle {
+                font-size: 1.125rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .header-main {
+                padding: 12px 0;
+            }
+
+            .logo img {
+                height: 55px;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .mv-card {
+                padding: 2rem;
+            }
+
+            .program-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .page-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .mv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mv-card {
+                padding: 1.5rem;
+            }
+
+            .program-content {
+                padding: 1.5rem;
+            }
+
+            .mission-statement {
+                padding: 2rem;
+            }
+
+            .impact-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+
+            .cta-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Act-of-love-inspired Header -->
+    <header>
+        <div class="container mx-auto px-4">
+            <div class="header-main">
+                <div class="logo">
+                    <a href="index.html" aria-label="Acts of Love International Homepage">
+                        <!-- Replace with actual Acts of Love logo -->
+                        <img src="images/act_of_love_logo.png" alt="Acts of Love Logo" class="h-12">
+
+                    </a>
+                </div>
+                
+                <div class="nav-container">
+                    <nav aria-label="Main Navigation">
+                        <ul class="main-menu">
+                            <button class="menu-toggle-close" aria-label="Close menu">
+                                <i class="fas fa-times"></i>
+                            </button>
+                            
+                            <li class="menu-item">
+                                <a href="index.html">Home</a>
+                            </li>
+                            
+                            <li class="menu-item has-children">
+                                <a href="about.html">About Us</a>
+                                <ul class="submenu">
+                                    <li><a href="about.html#vision_mission">Vision & Mission</a></li>
+                                    <li><a href="leadership.html">Our Leadership</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="menu-item has-children">
+                                <a href="#">Our Programs</a>
+                                <ul class="submenu">
+                                    <li><a href="rhema-house.html">Rhema House</a></li>
+                                    <li><a href="foodbank.html">Foodbank</a></li>
+                                    <li><a href="sports.html">Sports & Wellbeing</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="menu-item">
+                                <a href="get-involved.html">Get Involved</a>
+                            </li>
+                            
+                            <li class="menu-item">
+                                <a href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    
+                    <div class="header-actions">
+                        <button class="donate-btn" aria-label="Make a donation to Acts of Love International">
+                            <i class="fas fa-heart" aria-hidden="true"></i>
+                            Donate Now
+                        </button>
+                    </div>
+                    
+                    <button class="mobile-menu-toggle" aria-label="Open menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Act-of-love-inspired Page Header -->
+    <section class="page-header">
+        <div class="section-container">
+            <h1 class="page-title">About Acts of Love International</h1>
+            <p class="page-subtitle">Transforming communities through compassion, inclusion, and sustainable support for over 18 years</p>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="section-padding bg-white">
+        <div class="section-container">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="section-title text-left">Our Story</h2>
+                    <div class="space-y-6">
+                        <p class="text-gray-600">
+                            Founded in 2006 and registered in 2007, Acts of Love International is based at Rhema House in Stockton-on-Tees. Our community has faced some of the toughest social challenges in the UK - poverty, unemployment, crime and poor health. Yet it is also a place of strength, resilience, and rich cultural diversity.
+                        </p>
+                        <p class="text-gray-600">
+                            For over 18 years, we've been working to transform these challenges into opportunities for growth and connection. Our neighbourhood is filled with incredible people who inspire us with their strength and resilience every day.
+                        </p>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-[var(--primary)]">
+                            <p class="text-gray-700 italic">
+                                "Our neighbourhood is filled with incredible people who inspire us with their strength and resilience every day."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Community gathering" class="rounded-xl shadow-md w-full" />
+                        <div class="absolute -bottom-6 -left-6 w-32 h-32 rounded-xl flex flex-col items-center justify-center text-white z-10"
+                            style="background-color: var(--primary);">
+                            <span class="text-4xl font-bold">18</span>
+                            <span class="text-sm">Years of Service</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="section-padding bg-gray-50">
+        <div class="section-container">
+            <h2 class="section-title">Our Purpose</h2>
+            <p class="section-subtitle">Driven by a clear mission and vision to transform lives and communities through inclusive support</p>
+            
+            <div class="mission-statement">
+                <div class="relative z-10">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">Our Mission</h2>
+                    <p class="text-xl text-center mb-8 max-w-4xl mx-auto">
+                        To provide an inclusive, well‑maintained community sports hub offering diverse activities that boost physical fitness and mental wellbeing, while empowering, developing and celebrating volunteers who sustain our space.
+                    </p>
+                   
+                    <div class="impact-stats">
+                        <div class="impact-stat">
+                            <div class="number">6,500</div>
+                            <div class="label">People Helped Annually</div>
+                        </div>
+                        <div class="impact-stat">
+                            <div class="number">40</div>
+                            <div class="label">Families Supported Weekly</div>
+                        </div>
+                        <div class="impact-stat">
+                            <div class="number">15</div>
+                            <div class="label">Regular Volunteers</div>
+                        </div>
+                        <div class="impact-stat">
+                            <div class="number">18</div>
+                            <div class="label">Years of Service</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <i class="fas fa-bullseye" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="mv-title">Our Vision</h3>
+                    <p class="mv-description">
+                        A world where every community member has access to inclusive sports, wellbeing activities, and support systems that foster physical and mental health, while volunteers are empowered, developed, and celebrated for their contributions.
+                    </p>
+                </div>
+                
+                <div class="mv-card vision">
+                    <div class="mv-icon">
+                        <i class="fas fa-hand-holding-heart" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="mv-title">Our Values</h3>
+                    <p class="mv-description">
+                        We believe in inclusivity, community empowerment, volunteer development, and sustainable impact. Our approach centers on creating safe, welcoming spaces where everyone can thrive regardless of background or circumstance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Work Preview Section -->
+    <section class="section-padding bg-white">
+        <div class="section-container">
+            <h2 class="section-title">Our Work</h2>
+            <p class="section-subtitle">We run a wide range of services to meet the needs of people in our community</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Foodbank -->
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1553901753-215db344677a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Foodbank">
+                    </div>
+                    <div class="program-content">
+                        <div class="program-icon">🍞</div>
+                        <h3 class="program-title">Foodbank</h3>
+                        <p class="program-description">
+                            Providing essential nutrition to families and individuals facing food insecurity.
+                        </p>
+                        <div class="text-sm text-gray-500 mb-4">
+                            <p><strong>Wednesdays:</strong> 9am to 1pm</p>
+                            <p><strong>Fridays:</strong> 9am to 10am</p>
+                            <p class="mt-2 text-xs italic">With appreciation to Moses Project for foodbank support</p>
+                        </div>
+                        <a href="foodbank.html" class="program-link">
+                            Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sports & Wellbeing -->
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sports & Wellbeing">
+                    </div>
+                    <div class="program-content">
+                        <div class="program-icon">⚽</div>
+                        <h3 class="program-title">Sports & Wellbeing</h3>
+                        <p class="program-description">
+                            Inclusive sports programs designed for all age groups to improve physical and mental health.
+                        </p>
+                        <div class="text-sm text-gray-500 mb-4">
+                            <p><strong>Fridays:</strong> 5pm to 8pm</p>
+                            <p><strong>Saturdays:</strong> 12 noon to 4pm</p>
+                            <p class="mt-2 text-xs italic">With appreciation to Sports England and Awards for All</p>
+                        </div>
+                        <a href="sports.html" class="program-link">
+                            Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Clothing & Essentials -->
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1589994965851-a8f479c573a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Clothing & Essentials">
+                    </div>
+                    <div class="program-content">
+                        <div class="program-icon">👕</div>
+                        <h3 class="program-title">Clothing & Essentials</h3>
+                        <p class="program-description">
+                            Distribution of clothing and essential items to support those in crisis situations.
+                        </p>
+                        <div class="text-sm text-gray-500 mb-4">
+                            <p>Available during our regular service hours at Rhema House for those in need.</p>
+                        </div>
+                        <a href="clothing.html" class="program-link">
+                            Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="section-container">
+            <h2 class="cta-title">Join Us in Making a Difference</h2>
+            <p class="cta-text">
+                Whether through volunteering or donating, your support helps us continue our vital work in the community.
+            </p>
+            <div class="cta-buttons">
+                <a href="get-involved.html#volunteer" class="cta-button">
+                    <i class="fas fa-hands-helping mr-2"></i> Volunteer With Us
+                </a>
+                <a href="donate.html" class="cta-button outline">
+                    <i class="fas fa-donate mr-2"></i> Make a Donation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Act-of-love-inspired Footer -->
+    <!-- Act-of-love-inspired Footer -->
+    <footer>
+        <div class="container mx-auto px-4">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <!-- Replace with actual Acts of Love logo -->
+                        <div class="text-2xl font-bold text-white">ACTS OF LOVE</div>
+                    </div>
+                    <p>Dedicated to strengthening communities, tackling poverty, and creating opportunities for all.</p>
+                    <p class="text-sm">Charity Registration No: 1119687</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com" class="social-link" aria-label="Follow us on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.twitter.com" class="social-link" aria-label="Follow us on Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com" class="social-link" aria-label="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Our Programs</a></li>
+                        <li><a href="get-involved.html">Get Involved</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-heading">Our Programs</h3>
+                    <ul>
+                        <li><a href="rhema-house.html">Rhema House</a></li>
+                        <li><a href="foodbank.html">Foodbank</a></li>
+                        <li><a href="sports.html">Sports & Wellbeing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-heading">Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rhema House, 2 Portrack Lane, Stockton-on-Tees, UK, TS18 2HG</p>
+                    <p><i class="fas fa-envelope"></i> makaure@aol.com</p>
+                    <p><i class="fas fa-phone"></i> +44 7497 519502</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container mx-auto px-4">
+                <p>© 2025 Acts of Love International. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mainMenu = document.querySelector('.main-menu');
+        const menuToggleClose = document.querySelector('.menu-toggle-close');
+        const menuItemsWithChildren = document.querySelectorAll('.menu-item.has-children');
+        
+        mobileMenuToggle.addEventListener('click', function() {
+            mainMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        menuToggleClose.addEventListener('click', function() {
+            mainMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Toggle submenus on mobile
+        menuItemsWithChildren.forEach(item => {
+            const link = item.querySelector('a');
+            
+            link.addEventListener('click', function(e) {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    const submenu = item.querySelector('.submenu');
+                    submenu.classList.toggle('active');
+                }
+            });
+        });
+
+        // Donate button functionality
+        const donateButtons = document.querySelectorAll('.donate-btn');
+        donateButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                window.location.href = 'donate.html';
+            });
+        });
+    </script>
+</body>
+</html>
